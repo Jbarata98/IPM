@@ -17,6 +17,7 @@ function show(shown, hidden) {
     document.getElementById(shown).style.display='block';
     document.getElementById(hidden).style.display='none';
     return false;
+<<<<<<< HEAD
   }
 
   var slideIndex = 1;
@@ -49,3 +50,6 @@ function show(shown, hidden) {
                     slides[slideIndex - 1].style.display = "block";
                     dots[slideIndex - 1].className += " active";
                 }
+=======
+  }
+>>>>>>> master
