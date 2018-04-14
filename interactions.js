@@ -32,6 +32,9 @@ function currentSlide(n) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
 
 function showSlides(n) {
     var i;
@@ -51,6 +54,7 @@ function showSlides(n) {
     }
     slides[slideIndex - 1].style.display = "block";
     dots[slideIndex - 1].className += " active";
+<<<<<<< HEAD
 }
 
 =======
@@ -81,6 +85,9 @@ function showSlides(n) {
     dots[slideIndex - 1].className += " active";
 <<<<<<< HEAD
 <<<<<<< HEAD
+}
+>>>>>>> master
+=======
 }
 >>>>>>> master
 =======

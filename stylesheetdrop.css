@@ -8,12 +8,17 @@ html {
 	height:100%;
 }
 
+<<<<<<< HEAD
 body  {
+=======
+body {
+>>>>>>> master
 	height: 144px;
 	width: 144px;
 	border: 1px solid black;
 	border-width: 20px;
 	border-radius: 10px;
+<<<<<<< HEAD
 	background-image: url("back4.png");
 	background-repeat: no-repeat;
 	background-position:center center;
@@ -43,12 +48,45 @@ body  {
 	2px 2px black, 
 	3px 3px black,
 	4px 4px  black;
+=======
+	background-image: url("imagem2.png");
+	background-repeat: no-repeat;
+	background-position:center center;
+	background-color:#fff;
+   
+    border-style:solid;
+    border-top-color:#ff8080;
+    border-left-color:#ff8080;
+    border-bottom-color:#ff4d4d;
+    border-right-color:#ff4d4d;
+    
+    -moz-border-radius:10px;
+    -webkit-border-radius:15px;
+	
+
+
+
+
+}
+
+#horas{
+	color:white;
+	font-size: 21px;
+	position:fixed;
+	top:50px;
+	margin-left:8.5px;
+	font-family:Sans-serif;
+	text-shadow: 1px 1px #fe4902, 
+	2px 2px #fe4902, 
+	3px 3px #fe4902;
+>>>>>>> master
 }
 
 .material-icons{
 	
 	width:50px;
 	height:50px;
+<<<<<<< HEAD
 	top:70px;
 	left:-3px;
 
@@ -70,6 +108,20 @@ body  {
 	
 }
 
+=======
+	top:100px;
+	margin-left:0px;
+	position:fixed;
+	font-size:60px;
+	color:red;
+	
+ 
+  display: inline-block;
+  cursor: pointer;
+	
+	
+}
+>>>>>>> master
 #iRave{
 	color:white;
 	font-size: 25px;
@@ -77,11 +129,17 @@ body  {
 	position:fixed;
 	margin-left:40.5px;
 	font-family:Sans-serif;
+<<<<<<< HEAD
 	text-shadow: 1px 1px black, 
 	2px 2px black, 
 	3px 3px black,
 	4px 4px  black;
 	
+=======
+	text-shadow: 1px 1px #fe4902, 
+	2px 2px #fe4902, 
+	3px 3px #fe4902;
+>>>>>>> master
 	
 }
 
@@ -89,6 +147,7 @@ body  {
 	color:white;
 	font-size: 25px;
 	top:30px;
+<<<<<<< HEAD
 	font-family:Sans-serif;
 <<<<<<< HEAD
 	
@@ -96,6 +155,11 @@ body  {
 	width: 144px;
 	background-image: url("back4.png");
 =======
+=======
+	position:fixed;
+	margin-left:40.5px;
+	font-family:Sans-serif;
+>>>>>>> master
 	text-shadow: 1px 1px #fe4902, 
 	2px 2px #fe4902, 
 	3px 3px #fe4902;
@@ -144,6 +208,7 @@ body  {
 	border:0.4em solid black;
 	vertical-align: middle;
 	background-color: transparent;
+<<<<<<< HEAD
 >>>>>>> master
 	background-repeat: no-repeat;
 	background-position:center center;
@@ -325,4 +390,501 @@ a:active{
 	bottom:0px;
 	height:-10px;
 	left:40px;
+=======
+	background-repeat: no-repeat;
+	border: none;
+	cursor: pointer;
+	overflow: hidden;
+	outline:none;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.clickme:nth-child(3) {
+	transform: rotate(180deg) translate(-37.3%, 0%);
+}
+
+.clickme:nth-child(4) {
+	top: 50%;
+	transform: rotate(90deg) translate(-19%, 85%);
+}
+
+.clickme:nth-child(5) {
+	top: 50%;
+	transform: rotate(270deg) translate(19%, 284%);
+}
+
+.clickme:nth-child(6) {
+	transform: translate(37.3%, 345%);
+}
+
+#menu {
+	text-align: center;
+	visibility: hidden;
+}
+
+#promotable {
+	border-collapse: separate;
+	border-spacing: 0.4em 0em;
+	margin-top: 9em;
+	margin-left: 2.1em;
+}
+
+.promobutton {
+	width: 12em;
+	height: 13em;
+	font-family: Tahoma;
+	font-size: 1em;
+	font-weight: bold;
+	border:0.15em solid black;
+	overflow: hidden;
+	outline:none;
+	background:white;
+	box-shadow: inset 0 0 1.5em #000000;
+}
+
+.menubutton {
+	background: #696969;
+	background-image: linear-gradient(to bottom, #696969, #4d4d4d);
+	display: inline-block;
+	width: 12em;
+	height: 4em;
+	margin: 4px;
+	padding: none;
+	font-family: Tahoma;
+	font-size: 1.5em;
+	font-weight: bold;
+	color:white;
+	border: 0.075em solid white;
+	cursor: pointer;
+	outline: none;
+	border-radius:10px;
+	text-shadow: 1px 1px 0 #000;
+}
+
+.menubutton:hover{
+	background: #4d4d4d;
+	background-image: linear-gradient(to bottom, #4d4d4d, #696969);
+	box-shadow: inset 0 0 1.5em #000000;
+}
+
+#gohomefromscan{
+	position:absolute;
+	left: 28%;
+	bottom: 5%;
+}
+
+.hand{
+	visibility: hidden;
+	width:100%;
+	height:100%;
+	position:absolute;
+	background-color: black;
+	left:0%;
+	top:0%;
+}
+
+#lehand{
+	opacity:0.5;
+	position: absolute;
+	left:15%;
+	top:15%;
+	z-index:1;
+	box-shadow: inset 0 0 1em #000000;
+}
+
+#scanbutton {
+	background:Green;
+	color:white;
+	display: inline-block;
+	width: 15em;
+	height: 15em;
+	margin: 4px;
+	padding: none;
+	font-family: Tahoma;
+	font-size: 1.5em;
+	font-weight: bold;
+	cursor: pointer;
+	outline: none;
+	border-radius: 50%;
+	position:absolute;
+	top:3em;
+	left: 6em;
+	-webkit-animation-name: pulse;
+	-webkit-animation-duration: 2s;
+	-webkit-animation-iteration-count: infinite;
+	padding: 50px;
+	border-radius: 50em;
+	text-shadow: 1px 1px 0 #000000;
+	border:1px solid #008000;
+	box-shadow: 1px 1px 10px 6px #008000;
+}
+
+#scanbutton:hover{
+	box-shadow: inset 0 0 1em #000000,
+	1px 1px 10px 6px #008000;
+}
+
+@-webkit-keyframes pulse {
+	from { background-color: #008000;}
+	50% { background-color: #00b300; }
+	to { background-color: #008000;}
+}
+
+.scanning:after {
+  content: '';
+  /* make the element cover the whole thing */
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* and sit in front */
+  z-index: 0;
+  /* gradient with a radar like fade */
+  background:
+    linear-gradient(180deg,
+      rgba(0,0,0,1),
+      rgba(0,0,0,1) 50%,
+      rgba(0,255,0,.5) 55%,
+      rgba(0,255,0,.5) 55%,
+      rgba(0,0,0,1) 50%,
+      rgba(0,0,0,1)
+    );
+  /* make it big enough so when we slide it around still covers whole image */
+  background-size:     100% 700%;
+  background-repeat:   no-repeat;
+  /* start with the scan bar just off the left side */
+  background-position: center 84%;
+  -webkit-animation:   scan 3s linear infinite alternate;
+}
+
+@-webkit-keyframes scan {
+  /* finish with the scan bar just off the right side */
+  100% { background-position: center 25%; }
+}
+
+.title {
+	position: absolute;
+	width: 6em;
+	height: 3em;
+	top: 6%;
+	left: 6%;
+	font-family: Tahoma;
+	font-size: 2em;
+	font-weight: bold;
+	color:white;
+	text-shadow: 1px 1px 15px #000;
+}
+
+.help {
+	background: Navy;
+	color: white;
+	border-radius: 10px;
+	position: absolute;
+	width: 2em;
+	height: 2em;
+	float: right;
+	font-family: Tahoma;
+	font-size: 1.5em;
+	font-weight: bold;
+	cursor: pointer;
+	top: 1em;
+	right: 1em;
+	visibility:hidden;
+	box-shadow: 1px 1px 1px 1px #000;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.help:hover{
+	box-shadow: inset 0 0 .5em #000000;
+}
+
+
+#order {
+	visibility: hidden;
+	position: absolute;
+	text-align: center;
+	top: 0;
+	
+}
+
+.itemwindow {
+	position: relative;
+	background: DarkCyan;
+	height: 17em;
+	width: 32em;
+	text-align: center;
+	border: solid;
+	top: 7em;
+	left: 4.5em;
+	overflow-y: scroll;
+	visibility: hidden;
+	box-shadow: inset 0 0 .75em #000000;
+}
+
+.ordertable {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	margin-top: 0 auto;
+	border-collapse: separate;
+	border-spacing: 0.4em;
+	z-index: 0;
+}
+
+#drinks {
+	visibility: hidden;
+}
+
+#food {
+	visibility: hidden;
+}
+
+.orderbutton {
+	width: 7em;
+	height: 8em;
+	font-family: Tahoma;
+	font-size: 1em;
+	font-weight: bold;
+	border:0.15em solid black;
+	cursor: pointer;
+	overflow: hidden;
+	outline:none;
+	background:white;
+	box-shadow: inset 0 0 1.5em #000000;
+	z-index:0;
+}
+
+.orderbutton img {
+	display: block;
+	margin: 0 auto;
+	z-index:-1;
+}
+
+.paymentbutton {
+	position: relative;
+	display: inline-block;
+	width: 12em;
+	height: 4em;
+	top: 6em;
+	left: 2em;
+	margin: 4px;
+	padding: none;
+	font-family: Tahoma;
+	font-size: 1.5em;
+	font-weight: bold;
+	border: 0.075em solid black;
+	cursor: pointer;
+	outline: none;
+	color:white;
+	border-radius:10px;
+	text-shadow: 1px 1px 0 #000;
+}
+
+#pay{
+	background: #008000;
+	background-image: linear-gradient(to bottom, #008000, #00b300);
+	border: 0.075em solid white;
+}
+
+#pay:hover{
+	background: #00b300;
+	background-image: linear-gradiente(to bottom, #00b300, #008000);
+	box-shadow: inset 0 0 1.5em #000000;
+}
+
+#cancel{
+	background: #990000;
+	background-image: linear-gradient(to bottom, #990000, #cc0000);
+	border: 0.075em solid white;
+}
+
+#cancel:hover{
+	background: #cc0000;
+	background-image: linear-gradient(to bottom, #cc0000, #990000);
+	box-shadow: inset 0 0 1.5em #000000;
+}
+
+.separatorbutton {
+	position: relative;
+	display: block;
+	float:left;
+	width: 5em;
+	height: 2em;
+	top: 5.7em;
+	left: 3em;
+	padding: none;
+	margin: none;
+	background:#888888;
+	font-family: Tahoma;
+	font-size: 1.5em;
+	font-weight: bold;
+	border: 0.1em solid black;
+	cursor: pointer;
+	outline: none;
+	/*transform: skewX(-25deg);*/
+	z-index: 1;
+}
+
+.separatorbutton:focus{
+	background:#d0d0d0;
+}
+
+.verpedido {
+	position: relative;
+	color:white;
+	width: 6em;
+	height: 2.7em;
+	top: 2em;
+	left: 1em;
+	margin: 4px;
+	padding: none;
+	font-family: Tahoma;
+	font-size: 1.5em;
+	font-weight: bold;
+	border: 0.1em solid black;
+	outline: none;
+	z-index: 5;
+	border-radius:10px;
+	background: #696969;
+	background-image: linear-gradient(to bottom, #696969, #4d4d4d);
+	border: 0.075em solid white;
+	text-shadow: 1px 1px 0 #000;
+}
+
+.verpedido:not([disabled]):hover{
+	background: #888888;
+	background-image: linear-gradient(to bottom, #888888, #696969);
+	box-shadow: inset 0 0 1.5em #000000;
+	cursor: pointer;	
+}
+
+.verpedido:disabled{
+	opacity:.5;
+}
+
+#list { /*It's a table, but there are more important things to do at the moment*/
+	background-color: #E8E8E8; 
+	position: absolute;
+	display: inline;
+	width: 40em;
+	height: 38em;
+	max-height: 38em;
+	top: .6em;
+	left: .6em;
+	margin: 4px;
+	padding: none;
+	font-family: Tahoma;
+	font-size: 1em;
+	font-weight: bold;
+	border: 0.1em solid black;
+	outline: none;
+	overflow-y: auto;
+	visibility: hidden;
+	z-index: 6;
+}
+
+#ordertitle {
+	position: relative;
+	margin: 0 auto;
+	font-size: 2em;
+	font-weight: bold;
+}
+
+#prodtable {
+	position: absolute;
+	top: 4em;
+	width: 39em;
+	height: 34em;
+	max-height: 34em;
+	text-align: center;
+	border: 0.1em solid black;
+	table-layout: fixed;
+}
+
+#prodtable tr {
+	height: 1.5em;
+	font-size: 1.2em;
+	vertical-align: top;
+}
+
+
+#okbutton {
+	position: relative;
+	display: inline-block;
+	width: 2em;
+	height: 2em;
+	float: right;
+	margin: 4px;
+	padding: none;
+	font-family: Tahoma;
+	font-size: 1.5em;
+	font-weight: bold;
+	border: 0.075em solid black;
+	cursor: pointer;
+	outline: none;
+	color: white;
+	border-radius:10px;
+	background: #cc0000;
+	background-image: linear-gradient(to bottom, #cc0000, #990000);
+	text-shadow: -1.5px -1.5px 0 rgba(0,0,0, 0.4);
+}
+
+#okbutton:hover {
+	box-shadow: inset 0 0 .1em #000000;
+}
+#okbutton:active {
+	box-shadow: inset 0 0 .5em #000000;
+}
+
+#addtocart {
+	background-color: white;
+	position: absolute;
+	display: inline;
+	width: 15em;
+	height: 23em;
+	top: 9em;
+	left: 12.8em;
+	margin: 4px;
+	padding: none;
+	font-family: Tahoma;
+	font-size: 1em;
+	font-weight: bold;
+	border: 0.1em solid black;
+	outline: none;
+	overflow: hidden;
+	z-index: 4;
+	visibility: hidden;
+}
+
+#paywindow {
+	background-color: #E8E8E8;
+	position: absolute;
+	display: inline-block;
+	width: 20em;
+	height: 10em;
+	top: 7em;
+	left: 3em;
+	margin: 4px;
+	font-family: Tahoma;
+	font-size: 1.5em;
+	font-weight: bold;
+	border: 0.1em solid black;
+	outline: none;
+	background: white;
+	visibility: hidden;
+	z-index: 5;
+}
+
+#blocker {
+	background-color: black;
+	position: absolute;
+	width: 42em;
+	height: 40em;
+	top: 0em;
+	opacity: 0.3;
+	visibility: hidden;
+	z-index:4;
+>>>>>>> master
 }
