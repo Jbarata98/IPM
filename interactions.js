@@ -14,8 +14,9 @@ function checkTime(i) {
     return i;
 }
 function show(shown, hidden) {
-    document.getElementById(shown).style.display='block';
     document.getElementById(hidden).style.display='none';
+    document.getElementById(shown).style.display='block';
+   
     return false;
   }
 
@@ -49,4 +50,96 @@ function showSlides(n) {
     slides[slideIndex - 1].style.display = "block";
     dots[slideIndex - 1].className += " active";
 }
+
+showSlidesInformacao(slideIndex);
+
+function plusSlidesInformacao(n) {
+    showSlidesInformacao(slideIndex += n);
+}
+
+function currentSlideInformacao(n) {
+    showSlidesInformacao(slideIndex = n);
+}
+
+function showSlidesInformacao(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlidesInformacao");
+    var dots = document.getElementsByClassName("dotInformacao");
+    if (n > slides.length) {
+        slideIndex = 1
+    }
+    if (n < 1) {
+        slideIndex = slides.length
+    }
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
+}
+
+showSlidesConcertos(slideIndex);
+
+function plusSlidesConcertos(n) {
+    showSlidesConcertos(slideIndex += n);
+}
+
+function currentSlideConcertos(n) {
+    showSlidesConcertos(slideIndex = n);
+}
+
+function showSlidesConcertos(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlidesConcertos");
+    var dots = document.getElementsByClassName("dotConcerto");
+    if (n > slides.length) {
+        slideIndex = 1
+    }
+    if (n < 1) {
+        slideIndex = slides.length
+    }
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
+}
+
+showSlidesPassatempos(slideIndex);
+
+function plusSlidesPassatempos(n) {
+    showSlidesPassatempos(slideIndex += n);
+}
+
+function currentSlidePassatempos(n) {
+    showSlidesPassatempos(slideIndex = n);
+}
+
+function showSlidesPassatempos(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlidesPassatempos");
+    var dots = document.getElementsByClassName("dotPassatempo");
+    if (n > slides.length) {
+        slideIndex = 1
+    }
+    if (n < 1) {
+        slideIndex = slides.length
+    }
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
+}
+
+
 

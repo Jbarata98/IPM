@@ -24,11 +24,11 @@ body  {
     border-left-color:#181818;
     border-bottom-color:#202020;
     border-right-color:#202020;
-    box-shadow:0px 2px .7px 1px #777
+	box-shadow:0px 2px .7px 1px #777;
+	border-bottom-width:35px;
+	overflow:auto;
     
 }
-
-
 
 #horas{
 	color:white;
@@ -57,7 +57,7 @@ body  {
   	cursor: pointer;
 }
 
-.material-icons:active{
+.material-icons:hover{
 	color:#202020;
 	text-shadow: 0 0 10px rgba(255,255,255,1) , 0 0 20px rgba(255,255,255,1) , 0 0 30px rgba(255,255,255,1) , 0 0 40px white , 0 0 70px white , 0 0 80px white , 0 0 100px white ;
 	-webkit-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
@@ -65,7 +65,6 @@ body  {
 	-o-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
 	transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
 
-	
 }
 
 #iRave{
@@ -74,12 +73,11 @@ body  {
 	top:30px;
 	position:fixed;
 	margin-left:40.5px;
-	font-family:Sans-serif;
+	font-family:"Gill Sans Extrabold",Helvetica, sans-serif;
 	text-shadow: 1px 1px black, 
 	2px 2px black, 
 	3px 3px black,
 	4px 4px  black;
-	
 	
 }
 
@@ -270,7 +268,8 @@ box-shadow: 0px 0px 11px white;
 	width: 144px;
 	height: 144px;
 	position: relative;
-	margin: auto;
+	margin:auto;
+	
 }
 
 .dots{
@@ -279,3 +278,406 @@ box-shadow: 0px 0px 11px white;
 	height:-10px;
 	left:40px;
 }
+.dotsInformacao{
+	position:absolute;
+	left:55px;
+	top:115px;
+}
+.dotInformacao{
+	height: 8px;
+	width: 8px;
+	margin: 0 2px;
+	background-color:white;
+	border-radius: 50%;
+	display: inline-block;
+
+}
+.active{
+	background-color:black;
+	-moz-box-shadow: 0px 0px 11px white;
+-webkit-box-shadow: 0px 0px 11px white;
+box-shadow: 0px 0px 11px white;
+	
+}
+.HomeButton{
+	position:fixed;
+	cursor:pointer;
+	width:60px;
+	height:30px;
+	top:175px;
+	border-radius:0%;
+	right:970px;
+	background-color:transparent;
+	text-align:center;
+    color: whitesmoke;
+    font-size: 28px;
+	cursor: pointer;
+	-webkit-mask-image: linear-gradient(-75deg, rgba(0,0,0,.6) 30%, #000 50%, rgba(0,0,0,.6) 70%);
+	-webkit-mask-size: 200%;
+	animation: shine 2s infinite;
+}
+@-webkit-keyframes shine {
+	from {
+	  -webkit-mask-position: 150%;
+	}
+	
+	to {
+	  -webkit-mask-position: -50%;
+	}
+  }  
+
+.ReturnButton{
+	position:fixed;
+	cursor:pointer;
+	width:60px;
+	height:30px;
+	top:175px;
+	border-radius:0%;
+	right:890px;
+	background-color:transparent;
+	text-align:center;
+    color: whitesmoke;
+    font-size: 28px;
+	cursor: pointer;
+	-webkit-mask-image: linear-gradient(-75deg, rgba(0,0,0,.6) 30%, #000 50%, rgba(0,0,0,.6) 70%);
+	-webkit-mask-size: 200%;
+	animation: shine 2s infinite;
+}
+
+
+ #MenuInformacao{
+	color:white;
+	font-size: 22px;
+	top:30px;
+	font-family:Sans-serif;
+	background-size:100% 100%;
+	height: 144px;
+	width: 144px;
+	background-image: url("back4.png");
+	background-repeat: no-repeat;
+	background-position:center center;
+	background-color:#fff;
+
+ }
+
+ .Concertos{
+	cursor:pointer;
+    color:black;
+	font-size: 25px;
+	position:relative;
+	font-family:Sans-serif;
+	font-weight:bold;
+	text-align:center;
+	background-image:url("Concert.png");
+	height:100px;
+	background-size:60px ;
+	background-repeat: no-repeat;
+	background-position:center bottom 5px;
+	background-color:white;	
+	-webkit-mask-image: linear-gradient(-75deg, rgba(0,0,0,.6) 30%, #000 50%, rgba(0,0,0,.6) 70%);
+	-webkit-mask-size: 200%;
+	animation: shine 2s infinite;
+
+ }
+
+ .Passatempos{
+	cursor:pointer;
+    color:black;
+	position:relative;
+	font-family:Sans-serif;
+	font-weight:bold;
+	text-align:center;
+	background-image:url("passatempo.png");
+	height:100px;
+	background-size:60px ;
+	background-repeat: no-repeat;
+	background-position:center bottom 5px;
+	background-color:white;	
+	-webkit-mask-image: linear-gradient(-75deg, rgba(0,0,0,.6) 30%, #000 50%, rgba(0,0,0,.6) 70%);
+	-webkit-mask-size: 200%;
+	animation: shine 2s infinite;
+
+ }
+ .dotsConcerto{
+	position:absolute;
+	left:47px;
+	top:115px;
+}
+.dotConcerto{
+	height: 7.5px;
+	width: 7.5px;
+	margin: 0 2px;
+	background-color:white;
+	border-radius: 50%;
+	display: inline-block;
+
+}
+.active{
+	background-color:black;
+	-moz-box-shadow: 0px 0px 11px white;
+-webkit-box-shadow: 0px 0px 11px white;
+box-shadow: 0px 0px 11px white;
+	
+}
+#MenuConcerto{
+	color:white;
+	font-size: 25px;
+	top:30px;
+	font-family:Sans-serif;
+	background-size:100% 100%;
+	height: 144px;
+	width: 144px;
+	background-image: url("back4.png");
+	background-repeat: no-repeat;
+	background-position:center center;
+	background-color:#fff;
+
+ }
+ .Palco1{
+	cursor:pointer;
+    color:black;
+	font-size: 25px;
+	position:relative;
+	font-family:Sans-serif;
+	font-weight:bold;
+	text-align:center;
+	background-image:url("superbock.png");
+	height:100px;
+	background-size:75px ;
+	background-repeat: no-repeat;
+	background-position:center bottom 5px;
+	background-color:white;	
+	-webkit-mask-image: linear-gradient(-75deg, rgba(0,0,0,.6) 30%, #000 50%, rgba(0,0,0,.6) 70%);
+	-webkit-mask-size: 200%;
+	animation: shine 2s infinite;
+
+ }
+
+ 
+ 
+	.Palco2{
+		cursor:pointer;
+		color:black;
+		font-size: 25px;
+		position:relative;
+		font-family:Sans-serif;
+		font-weight:bold;
+		text-align:center;
+		background-image:url("Eristoff.png");
+		height:100px;
+		background-size:110px ;
+		background-repeat: no-repeat;
+		background-position:center bottom 5px;
+		background-color:white;	
+		-webkit-mask-image: linear-gradient(-75deg, rgba(0,0,0,.6) 30%, #000 50%, rgba(0,0,0,.6) 70%);
+		-webkit-mask-size: 200%;
+		animation: shine 2s infinite;
+	
+	 }
+	
+	 .Palco3{
+		cursor:pointer;
+		color:black;
+		position:relative;
+		font-family:Sans-serif;
+		font-weight:bold;
+		text-align:center;
+		background-image:url("heineken.png");
+		height:100px;
+		background-size:90px ;
+		background-repeat: no-repeat;
+		background-position:center bottom 5px;
+		background-color:white;	
+		-webkit-mask-image: linear-gradient(-75deg, rgba(0,0,0,.6) 30%, #000 50%, rgba(0,0,0,.6) 70%);
+		-webkit-mask-size: 200%;
+		animation: shine 2s infinite;
+	 }
+	.dotsPassatempos{
+			position:absolute;
+			left:55px;
+			top:112px;
+		}
+	.dotPassatempo{
+			height: 8px;
+			width: 8px;
+			margin: 0 2px;
+			background-color:white;
+			border-radius: 50%;
+			display: inline-block;
+		
+		}
+	.active{
+			background-color:black;
+			-moz-box-shadow: 0px 0px 11px white;
+		-webkit-box-shadow: 0px 0px 11px white;
+		box-shadow: 0px 0px 11px white;
+			
+		}
+	#MenuPassatempos{
+			color:white;
+			font-size: 25px;
+			top:30px;
+			font-family:Sans-serif;
+			background-size:100% 100%;
+			height: 144px;
+			width: 144px;
+			background-image: url("back4.png");
+			background-repeat: no-repeat;
+			background-position:center center;
+			background-color:#fff;
+		
+		 }
+	 .Zona1{
+			cursor:pointer;
+			color:black;
+			font-size: 25px;
+			position:relative;
+			font-family:Sans-serif;
+			font-weight:bold;
+			text-align:center;
+			background-image:url("yorn.png");
+			height:100px;
+			background-size:160px ;
+			background-repeat: no-repeat;
+			background-position:center bottom -10px;
+			background-color:white;	
+			-webkit-mask-image: linear-gradient(-75deg, rgba(0,0,0,.6) 30%, #000 50%, rgba(0,0,0,.6) 70%);
+			-webkit-mask-size: 200%;
+			animation: shine 2s infinite;
+		
+		 }
+		
+	.Zona2{
+				cursor:pointer;
+				color:black;
+				font-size: 25px;
+				position:relative;
+				font-family:Sans-serif;
+				font-weight:bold;
+				text-align:center;
+				background-image:url("MEO.png");
+				height:100px;
+				background-size:80px ;
+				background-repeat: no-repeat;
+				background-position:center bottom 30px;
+				background-color:white;	
+				-webkit-mask-image: linear-gradient(-75deg, rgba(0,0,0,.6) 30%, #000 50%, rgba(0,0,0,.6) 70%);
+				-webkit-mask-size: 200%;
+				animation: shine 2s infinite;
+			
+			 }
+	 table.info{
+				border-collapse:collapse;
+				width:135px;
+				height:144px;
+				
+				}
+	  table.info th, table.info td {
+				text-align:center;
+				border:1px solid black;
+				}
+			  
+	  table.info th {  
+				box-shadow:0px -2px;	
+				background-color:white;
+				position:sticky;
+				top:0;
+				width:144px;
+				height:44px;
+				
+				}
+			  
+	  table.info td:first-child
+				{
+					
+					background-color:rgba(0,240,300,0.2);
+				  height:45px;
+				}
+				
+				
+	  div.TabelaPassatempos1 {
+				  background-color: transparent;
+				  overflow:auto;
+				  height: 144px;
+				  width: 161px;
+		  }
+	  div.TabelaPassatempos2{
+				background-color: transparent;
+				overflow:auto;
+				height: 144px;
+				width: 161px;
+				
+			}
+
+			table.infoC{
+				border-collapse:collapse;
+				width:130px;
+				height:144px;
+				
+				}
+			  table.infoC th, table.infoC td {
+				text-align:center;
+				border:1px solid black;
+				}
+			  
+			  table.info tr:nth-child(odd){background-color:#f2f2f2;}
+			  
+			  table.infoC th {
+				box-shadow:0px -2px;
+				background-color:white;
+				position:sticky;
+				top:0;
+				width:130px;
+				height:44px;
+				
+				}
+			  
+			  table.infoC td:first-child
+				{
+					
+					background-color:lightblue;
+				  height:45px;
+				}
+				
+			  table.infoC td:nth-child(2){
+				  background-color:lightblue;}  
+				
+			  
+			  div.TabelaConcertos1 {
+				  background-color: transparent;
+				  overflow:auto;
+				  height: 144px;
+				  width: 161px;
+			  }
+			 div.TabelaConcertos2 {
+					background-color: transparent;
+					overflow:auto;
+					height: 144px;
+					width: 161px;
+			 }
+			div.TabelaConcertos3{
+					background-color: transparent;
+					overflow:auto;
+					height: 144px;
+					width: 161px;
+			}
+			
+			::-webkit-scrollbar {
+				width: 14px;
+				
+			}
+			
+			::-webkit-scrollbar-thumb {
+				-webkit-border-radius: 10px;
+				border-radius: 10px;
+				background: linear-gradient(45deg, grey, black); 
+			
+			}
+			::-webkit-scrollbar-track
+			{
+				-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+				
+				background-color: #F5F5F5;
+			}
+			
+			 
