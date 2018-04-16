@@ -111,6 +111,7 @@ function showSlidesConcertos(n) {
     dots[slideIndex - 1].className += " active";
 }
 
+
 showSlidesPassatempos(slideIndex);
 
 function plusSlidesPassatempos(n) {
@@ -141,5 +142,63 @@ function showSlidesPassatempos(n) {
     dots[slideIndex - 1].className += " active";
 }
 
+showSlidesDias(slideIndex);
 
+function plusSlidesDias(n) {
+    showSlidesDias(slideIndex += n);
+}
+
+function currentSlideDias(n) {
+    showSlidesDias(slideIndex = n);
+}
+
+function showSlidesDias(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlidesDias");
+    var dots = document.getElementsByClassName("dotDia");
+    if (n > slides.length) {
+        slideIndex = 1
+    }
+    if (n < 1) {
+        slideIndex = slides.length
+    }
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
+}
+
+showSlidesConcertos2(slideIndex);
+
+function plusSlidesConcertos2(n) {
+    showSlidesConcertos2(slideIndex += n);
+}
+
+function currentSlideConcertos2(n) {
+    showSlidesConcertos2(slideIndex = n);
+}
+
+function showSlidesConcertos2(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlidesConcertos2");
+    var dots = document.getElementsByClassName("dotConcerto2");
+    if (n > slides.length) {
+        slideIndex = 1
+    }
+    if (n < 1) {
+        slideIndex = slides.length
+    }
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
+}
 
