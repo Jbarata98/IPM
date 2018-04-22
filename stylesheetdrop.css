@@ -6,9 +6,21 @@ html {
 	display:table;
 	margin:auto;
 	height:100%;
+	background-image:url("blackstripe.png");
+	background-repeat: no-repeat;
+	background-position:center center;
+	background-size:900px 500px  ;
+	background-position:absolute;
+	background-position-y: -5%;
+	background-position-x: 52%;
+	
+	
+
+	
 }
 
 body  {
+	
 	height: 144px;
 	width: 144px;
 	border: 1px solid black;
@@ -27,7 +39,7 @@ body  {
 	box-shadow:0px 2px .7px 1px #777;
 	border-bottom-width:35px;
 	overflow:auto;
-    
+	
 }
 
 #horas{
@@ -149,6 +161,7 @@ a:active{
 	-webkit-mask-image: linear-gradient(-75deg, rgba(0,0,0,.6) 30%, #000 50%, rgba(0,0,0,.6) 70%);
 	-webkit-mask-size: 200%;
 	animation: shine 2s infinite;
+	
   }
   @-webkit-keyframes shine {
 	  from {
@@ -244,7 +257,7 @@ a:active{
 	  }
 	}
 
-.dot {
+.dot ,.dotInteresse{
 
 	height: 7.5px;
 	width: 7.5px;
@@ -270,9 +283,15 @@ box-shadow: 0px 0px 11px white;
 	position: relative;
 	margin:auto;
 	
+	
 }
 
-.dots{
+.mySlides{
+	opacity:1;
+	
+}
+
+.dots,.dotsInteresse{
 	position:absolute;
 	bottom:0px;
 	height:-10px;
@@ -343,7 +362,7 @@ box-shadow: 0px 0px 11px white;
 }
 
 
- #MenuInformacao{
+ #MenuInformacao,#MenuNavegacao,#MenuInteresse{
 	color:white;
 	font-size: 22px;
 	top:30px;
@@ -358,7 +377,7 @@ box-shadow: 0px 0px 11px white;
 
  }
 
- .Concertos{
+ .Concertos,.Amigos,.PontosInteresse,.PalcosInteresse,.LazerInteresse,.WCinteresse,.RestauracaoInteresse{
 	cursor:pointer;
     color:black;
 	font-size: 25px;
@@ -396,12 +415,35 @@ box-shadow: 0px 0px 11px white;
 	animation: shine 2s infinite;
 
  }
- .dotsConcerto,.dotsConcerto2{
+
+ .Metereologia{
+	cursor:pointer;
+    color:black;
+	position:relative;
+	font-family:Sans-serif;
+	font-weight:bold;
+	text-align:center;
+	background-image:url("weather.png");
+	height:100px;
+	background-size:60px ;
+	background-repeat: no-repeat;
+	background-position:center bottom 5px;
+	background-color:white;	
+	-webkit-mask-image: linear-gradient(-75deg, rgba(0,0,0,.6) 30%, #000 50%, rgba(0,0,0,.6) 70%);
+	-webkit-mask-size: 200%;
+	animation: shine 2s infinite;
+
+ }
+
+ .dotsConcerto,.dotsConcerto2,.dotsNavegacao{
 	position:absolute;
 	left:47px;
 	top:115px;
 }
-.dotConcerto,.dotConcerto2{
+.dotsNavegacao{
+	left:56px;
+}
+.dotConcerto,.dotConcerto2,.dotNavegacao{
 	height: 7.5px;
 	width: 7.5px;
 	margin: 0 2px;
@@ -417,7 +459,7 @@ box-shadow: 0px 0px 11px white;
 box-shadow: 0px 0px 11px white;
 	
 }
-#MenuConcerto {
+#MenuConcerto,.MenuInteresse {
 	color:white;
 	font-size: 25px;
 	top:30px;
@@ -583,6 +625,7 @@ box-shadow: 0px 0px 11px white;
 				width:135px;
 				height:144px;
 				
+				
 				}
 	  table.info th, table.info td {
 				text-align:center;
@@ -590,11 +633,11 @@ box-shadow: 0px 0px 11px white;
 				font-family: Sans-Serif;
 				font-weight: bold;
 				background:white;
-                text-shadow: 0 0 5px white;
+                text-shadow: 0 0 2px white;
 			
 	  }
 			
-				
+			
 				
 			  
 	  table.info th {  
@@ -610,13 +653,18 @@ box-shadow: 0px 0px 11px white;
 			  
 	  table.info td:first-child
 				{
-					
-					
+				  
+					text-decoration: underline solid black ;
+				  cursor:pointer;
 				  height:45px;
 				}
 				
-				
-	  div.TabelaPassatempos1 {
+				table.info td:first-child:hover
+				{
+					color:grey;
+					text-decoration: underline solid black ;
+				}
+	  div.TabelaPassatempos1,div.TabelaAmigos,div.TabelaLazer,div.TabelaRestauracao,div.TabelaWC,div.TabelaPalcos {
 				  background-color: lightblue;
 				  overflow:auto;
 				  height: 144px;
@@ -642,7 +690,7 @@ box-shadow: 0px 0px 11px white;
 				font-weight: bold;
 				background-color: white;
 				color:black;
-				text-shadow: 0 0 5px white;
+				text-shadow: 0 0 2px white;
 				}
 			 
 			  table.infoC th {
@@ -707,12 +755,12 @@ box-shadow: 0px 0px 11px white;
 				background:grey;
 				
 			}
-			.dotsDias{
+			.dotsDias,.dotsDias2{
 				position:absolute;
 				left:55px;
 				top:110px;
 			}
-			.dotDia{
+			.dotDia,.dotDia2{
 				height: 7.5px;
 				width: 7.5px;
 				margin: 0 2px;
@@ -728,7 +776,7 @@ box-shadow: 0px 0px 11px white;
 			box-shadow: 0px 0px 11px white;
 				
 			}
-			#MenuDias{
+			#MenuDias,#MenuDias2{
 				color:white;
 				font-size: 25px;
 				top:30px;
@@ -759,6 +807,8 @@ box-shadow: 0px 0px 11px white;
 				-webkit-mask-image: linear-gradient(-75deg, rgba(0,0,0,.6) 30%, #000 50%, rgba(0,0,0,.6) 70%);
 				-webkit-mask-size: 200%;
 				animation: shine 2s infinite;
+
+				
 			
 			 }
 			 .Dia2{
@@ -767,8 +817,165 @@ box-shadow: 0px 0px 11px white;
 			 }
 			
 			
+			#Atividade1{
+				background-color: white;
+				height:144px;
+				width: 144px;
+			}
+			#h1,#h2,#h3{
+				position:absolute;
+				color:black;
+				font-weight:bold;
+				font-family: Sans-serif;
+				width:144px;
+				top:4%;
+			}
 			
+			#h2{
+               top:8%;
+			}
 			
-			 
-			 
-				
+			#h3{
+              top:14%;
+			}
+
+			#Atividade2{
+				background-color: white;
+				height:144px;
+				width: 144px;
+			}
+
+			#Atividade3{
+				background-color: white;
+				height:144px;
+				width: 144px;
+			}
+			#Atividade4{
+				background-color: white;
+				height:144px;
+				width: 144px;
+			}
+
+
+			#Atividade5{
+				background-color: white;
+				height:144px;
+				width: 144px;
+			}
+
+			#Atividade6{
+				background-color: white;
+				height:144px;
+				width: 144px;
+			}
+			
+			#Atividade7{
+				background-color: white;
+				height:144px;
+				width: 144px;
+			}
+
+			#Atividade8{
+				background-color: white;
+				height:144px;
+				width: 144px;
+			}
+
+			#Atividade9{
+				background-color: white;
+				height:144px;
+				width: 144px;
+			}
+
+			#Atividade10{
+				background-color: white;
+				height:144px;
+				width: 144px;
+			}
+			
+         
+		  .temperatura{
+			position:absolute;
+			top:13%;
+			font-size: 25px;
+			display: inline-block;
+			margin-left: auto;
+			margin-right: auto;
+			right:49%;
+			font-family: Sans-serif;
+			   color: black;
+		
+		}
+		.temperatura::after{
+			content: "\00B0";
+		}
+		.card-info,.card-info1{
+			position:absolute;
+			top:2%;
+			width:144px;
+			height:144px;
+			font-weight:bold;
+			font-family:Sans-serif;
+			font-size:15.5px;
+			text-align:center;
+		}
+		#Metereologia1,#Metereologia2{
+			background-color: white;
+				height:144px;
+				width: 144px;
+
+		}
+
+		.icon1,.icon2{
+			position:absolute;
+		    width:144px;
+			height:85px;
+			background-image:url("cloud.png");
+			
+			top:9%;
+			background-size:90px ;
+			background-repeat: no-repeat;
+			background-position:center bottom 5px;
+			background-color:white;	
+		}
+
+		.icon2{
+			background-image:url("sun.png");
+			top:7%;
+			background-size:70px ;
+		}
+       .card-info1{
+		   font-size:20px;
+	   }
+
+	   .Amigos{
+        background-image:url("friends.png");
+	   }
+
+	   .LazerInteresse{
+		 background-image:url("interesse.png");
+		 background-size:40px;
+	   }
+	   .PalcosInteresse{
+
+		background-image:url("Concert.png");
+		background-size:60px;
+	   }
+
+	   .PontosInteresse{
+
+		background-image:url("interesse.png");
+		background-size:40px;
+	   }
+	.WCinteresse{
+		background-image:url("wc.png");
+		background-size:60px;
+	}
+
+	.RestauracaoInteresse{
+		background-image:url("restauracao.png");
+		background-size:40px;
+		font-size:23px;
+	}
+
+	   
