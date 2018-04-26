@@ -670,7 +670,7 @@ FECHO:18:00
     <th>Amigos</th>
     </tr>
     <tr>
-    <td href="#" onclick="return show('','TabelaAmigos');">Bruno </td>
+    <td href="#" onclick="return show('mapaBruno','TabelaAmigos');">Bruno </td>
     </tr>
     <tr>
     <td href="#" onclick="return show('','TabelaAmigos');">César</td>
@@ -681,7 +681,7 @@ FECHO:18:00
     <tr>
     <td href="#" onclick="return show('','TabelaAmigos');" >Francisca</td>
     </tr>  
-    <i class="ReturnButton"><i class="fa fa-undo" href="#" onclick="return show('MenuInteresse','TabelaAmigos');"></i></i>
+    <i class="ReturnButton"><i class="fa fa-undo" href="#" onclick="return show('MenuNavegacao','TabelaAmigos');"></i></i>
     <i class="HomeButton" href="#" onclick="return show('iRave','TabelaAmigos');"><i class="fa fa-home" href="#" onclick="return show('iRave','TabelaAmigos');"></i></i> 
     </table>
 </div>
@@ -768,6 +768,19 @@ FECHO:18:00
     </table>
 </div>
 
+<div id="mapaBruno" style="display:none">
+        <div class="pin"></div>
+        <div class ="flag" href="#" onclick="return show('Bussola','mapaBruno');"></div>
+    <i class="ReturnButton"><i class="fa fa-undo" href="#" onclick="return show('MenuNavegacao','mapaBruno');"></i></i>
+    <i class="HomeButton" href="#" onclick="return show('iRave','mapaBruno');"><i class="fa fa-home" href="#" onclick="return show('iRave','mapaBruno');"></i></i> 
+    </div>
+
+    <div id="Bussola" style="display:none">
+            <div class="seta"></div>
+            <div class ="BarraProgresso"></div>
+     <i class="ReturnButton"><i class="fa fa-undo" href="#" onclick="return show('mapaBruno','Bussola');"></i></i>
+    <i class="HomeButton" href="#" onclick="return show('iRave','Bussola');"><i class="fa fa-home" href="#" onclick="return show('iRave','Bussola');"></i></i> 
+ </div>
 </body>
 
 
