@@ -11,6 +11,8 @@
 	<script type="text/javascript" src="interactions.js">
 	
 	 </script>
+   <script type="text/javascript" src="jquery-3.3.1.js"></script>
+   <script type="text/javascript" src="QTransform.js"></script>
 
     </style>
 </head>
@@ -770,14 +772,19 @@ FECHO:18:00
 
 <div id="mapaBruno" style="display:none">
         <div class="pin"></div>
-        <div class ="flag" href="#" onclick="return show('Bussola','mapaBruno');"></div>
+        <div class ="flag" href="#"
+          onclick="show('Bussola','mapaBruno');navigate(35);"></div>
     <i class="ReturnButton"><i class="fa fa-undo" href="#" onclick="return show('MenuNavegacao','mapaBruno');"></i></i>
     <i class="HomeButton" href="#" onclick="return show('iRave','mapaBruno');"><i class="fa fa-home" href="#" onclick="return show('iRave','mapaBruno');"></i></i> 
     </div>
 
     <div id="Bussola" style="display:none">
-            <div class="seta"></div>
-            <div class ="BarraProgresso"></div>
+            <div class="seta">
+              <i class="fa fa-location-arrow"></i>
+            </div>
+            <div class ="BarraProgresso">
+              <span id="distance">xm</span>
+            </div>
      <i class="ReturnButton"><i class="fa fa-undo" href="#" onclick="return show('mapaBruno','Bussola');"></i></i>
     <i class="HomeButton" href="#" onclick="return show('iRave','Bussola');"><i class="fa fa-home" href="#" onclick="return show('iRave','Bussola');"></i></i> 
  </div>
