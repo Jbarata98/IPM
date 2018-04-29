@@ -1,3 +1,5 @@
+
+
 function startTime() {
     var today = new Date();
     var h = today.getHours();
@@ -286,12 +288,18 @@ function showSlidesInteresse(n) {
     dots[slideIndex - 1].className += " active";
 }
 
+
+
 function navigate(distance=100) {
+    
     if (distance == 0)
         return;
+  
     console.log(distance);
     $('#distance').text(distance + ' m');
     let degree = Math.random() > 0.5 ? 1 : -1;
     $('.fa-location-arrow').animate({rotate: degree});
-    setTimeout(navigate(--distance, Math.floor(Math.random()*1000)));
+    setTimeout(function() {
+        navigate(--distance)
+    }, Math.floor(Math.random()*1000));
 }

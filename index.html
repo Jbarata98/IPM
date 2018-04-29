@@ -675,13 +675,13 @@ FECHO:18:00
     <td href="#" onclick="return show('mapaBruno','TabelaAmigos');">Bruno </td>
     </tr>
     <tr>
-    <td href="#" onclick="return show('','TabelaAmigos');">César</td>
+    <td href="#" onclick="return show('mapaBarata','TabelaAmigos');">Barata</td>
     </tr>
     <tr>
-    <td href="#" onclick="return show('','TabelaAmigos');">João</td>
+    <td href="#" onclick="return show('mapaJoao','TabelaAmigos');">João</td>
     </tr>
     <tr>
-    <td href="#" onclick="return show('','TabelaAmigos');" >Francisca</td>
+    <td href="#" onclick="return show('mapaFrancisca','TabelaAmigos');" >Francisca</td>
     </tr>  
     <i class="ReturnButton"><i class="fa fa-undo" href="#" onclick="return show('MenuNavegacao','TabelaAmigos');"></i></i>
     <i class="HomeButton" href="#" onclick="return show('iRave','TabelaAmigos');"><i class="fa fa-home" href="#" onclick="return show('iRave','TabelaAmigos');"></i></i> 
@@ -695,13 +695,13 @@ FECHO:18:00
     <th>Pontos de Lazer</th>
     </tr>
     <tr>
-    <td href="#" onclick="return show('','TabelaLazer');">Zona MEO</td>
+    <td href="#" onclick="return show('Lazer1','TabelaLazer');">Zona MEO</td>
     </tr>
     <tr>
-    <td href="#" onclick="return show('','TabelaLazer');">Zona Yorn</td>
+    <td href="#" onclick="return show('Lazer2','TabelaLazer');">Zona Yorn</td>
     </tr>
     <tr>
-        <td href="#" onclick="return show('','TabelaLazer');">Zona Vodafone</td>
+        <td href="#" onclick="return show('Lazer3','TabelaLazer');">Zona Vodafone</td>
         </tr>
     <i class="ReturnButton"><i class="fa fa-undo" href="#" onclick="return show('MenuInteresse','TabelaLazer');"></i></i>
     <i class="HomeButton" href="#" onclick="return show('iRave','TabelaLazer');"><i class="fa fa-home" href="#" onclick="return show('iRave','TabelaLazer');"></i></i> 
@@ -715,13 +715,13 @@ FECHO:18:00
     <th>WC</th>
     </tr>
     <tr>
-    <td href="#" onclick="return show('','TabelaWC');">WC (norte)</td>
+    <td href="#" onclick="return show('WC1','TabelaWC');">WC (norte)</td>
     </tr>
     <tr>
-    <td href="#" onclick="return show('','TabelaWC');">WC (oeste)</td>
+    <td href="#" onclick="return show('WC2','TabelaWC');">WC (oeste)</td>
     </tr>
     <tr>
-    <td href="#" onclick="return show('','TabelaWC');">WC (sul)</td>
+    <td href="#" onclick="return show('WC3','TabelaWC');">WC (sul)</td>
     </tr>
    
     <i class="ReturnButton"><i class="fa fa-undo" href="#" onclick="return show('MenuInteresse','TabelaWC');"></i></i>
@@ -736,13 +736,13 @@ FECHO:18:00
     <th>Palcos</th>
     </tr>
     <tr>
-    <td href="#" onclick="return show('','TabelaPalcos');">Palco SuperBock</td>
+    <td href="#" onclick="return show('Palco11','TabelaPalcos');">Palco SuperBock</td>
     </tr>
     <tr>
-    <td href="#" onclick="return show('','TabelaPalcos');">Palco Eristoff</td>
+    <td href="#" onclick="return show('Palco22','TabelaPalcos');">Palco Eristoff</td>
     </tr>
     <tr>
-    <td href="#" onclick="return show('','TabelaPalcos');">Palco Heineken</td>
+    <td href="#" onclick="return show('Palco33','TabelaPalcos');">Palco Heineken</td>
     </tr>
     <i class="ReturnButton"><i class="fa fa-undo" href="#" onclick="return show('MenuInteresse','TabelaPalcos');"></i></i>
     <i class="HomeButton" href="#" onclick="return show('iRave','TabelaPalcos');"><i class="fa fa-home" href="#" onclick="return show('iRave','TabelaPalcos');"></i></i> 
@@ -756,13 +756,13 @@ FECHO:18:00
     <th>Pontos de Restauração</th>
     </tr>
     <tr>
-    <td href="#" onclick="return show('','TabelaAmigos');">Casa do Falafel</td>
+    <td href="#" onclick="return show('Piteu1','TabelaRestauracao');">Casa do Falafel</td>
     </tr>
     <tr>
-    <td href="#" onclick="return show('','TabelaAmigos');">Bifanas de Trancoso</td>
+    <td href="#" onclick="return show('Piteu2','TabelaRestauracao');">Bifanas de Trancoso</td>
     </tr>
     <tr>
-    <td href="#" onclick="return show('','TabelaAmigos');">Palácio do Kebab</td>
+    <td href="#" onclick="return show('Piteu3','TabelaRestauracao');">Palácio do Kebab</td>
     </tr>
     
     <i class="ReturnButton"><i class="fa fa-undo" href="#" onclick="return show('MenuInteresse','TabelaRestauracao');"></i></i>
@@ -774,7 +774,7 @@ FECHO:18:00
         <div class="pin"></div>
         <div class ="flag" href="#"
           onclick="show('Bussola','mapaBruno');navigate(35);"></div>
-    <i class="ReturnButton"><i class="fa fa-undo" href="#" onclick="return show('MenuNavegacao','mapaBruno');"></i></i>
+    <i class="ReturnButton"><i class="fa fa-undo" href="#" onclick="return show('TabelaAmigos','mapaBruno');"></i></i>
     <i class="HomeButton" href="#" onclick="return show('iRave','mapaBruno');"><i class="fa fa-home" href="#" onclick="return show('iRave','mapaBruno');"></i></i> 
     </div>
 
@@ -783,11 +783,133 @@ FECHO:18:00
               <i class="fa fa-location-arrow"></i>
             </div>
             <div class ="BarraProgresso">
-              <span id="distance">xm</span>
+              <span id="distance">m</span>
             </div>
-     <i class="ReturnButton"><i class="fa fa-undo" href="#" onclick="return show('mapaBruno','Bussola');"></i></i>
+     <i class="ReturnButton"><i class="fa fa-undo" href="#" onclick="return show('MenuNavegacao','Bussola');"></i></i>
     <i class="HomeButton" href="#" onclick="return show('iRave','Bussola');"><i class="fa fa-home" href="#" onclick="return show('iRave','Bussola');"></i></i> 
  </div>
+
+ 
+
+ <div id="mapaBarata" style="display:none">
+    <div class="pin"></div>
+    <div class ="flag1" href="#"
+      onclick="show('Bussola','mapaBarata');navigate(50);"></div>
+<i class="ReturnButton"><i class="fa fa-undo" href="#" onclick="return show('TabelaAmigos','mapaBarata');"></i></i>
+<i class="HomeButton" href="#" onclick="return show('iRave','mapaBarata');"><i class="fa fa-home" href="#" onclick="return show('iRave','mapaBarata');"></i></i> 
+</div>
+
+<div id="mapaJoao" style="display:none">
+    <div class="pin"></div>
+    <div class ="flag2" href="#"
+      onclick="show('Bussola','mapaJoao');navigate(80);"></div>
+<i class="ReturnButton"><i class="fa fa-undo" href="#" onclick="return show('TabelaAmigos','mapaJoao');"></i></i>
+<i class="HomeButton" href="#" onclick="return show('iRave','mapaJoao');"><i class="fa fa-home" href="#" onclick="return show('iRave','mapaJoao');"></i></i> 
+</div>
+
+
+<div id="mapaFrancisca" style="display:none">
+    <div class="pin"></div>
+    <div class ="flag3" href="#"
+      onclick="show('Bussola','mapaFrancisca');navigate(20);"></div>
+<i class="ReturnButton"><i class="fa fa-undo" href="#" onclick="return show('TabelaAmigos','mapaFrancisca');"></i></i>
+<i class="HomeButton" href="#" onclick="return show('iRave','mapaFrancisca');"><i class="fa fa-home" href="#" onclick="return show('iRave','mapaFrancisca');"></i></i> 
+</div>
+
+<div id="Lazer1" style="display:none">
+    <div class="pin"></div>
+    <div class ="flag4" href="#"
+      onclick="show('Bussola','Lazer1');navigate(25);"></div>
+<i class="ReturnButton"><i class="fa fa-undo" href="#" onclick="return show('TabelaLazer','Lazer1');"></i></i>
+<i class="HomeButton" href="#" onclick="return show('iRave','Lazer1');"><i class="fa fa-home" href="#" onclick="return show('iRave','Lazer1');"></i></i> 
+</div>
+
+<div id="Lazer2" style="display:none">
+    <div class="pin"></div>
+    <div class ="flag5" href="#"
+      onclick="show('Bussola','Lazer2');navigate(40);"></div>
+<i class="ReturnButton"><i class="fa fa-undo" href="#" onclick="return show('TabelaLazer','Lazer2');"></i></i>
+<i class="HomeButton" href="#" onclick="return show('iRave','Lazer2');"><i class="fa fa-home" href="#" onclick="return show('iRave','Lazer2');"></i></i> 
+</div>
+
+<div id="Lazer3" style="display:none">
+    <div class="pin"></div>
+    <div class ="flag6" href="#"
+      onclick="show('Bussola','Lazer3');navigate(15);"></div>
+<i class="ReturnButton"><i class="fa fa-undo" href="#" onclick="return show('TabelaLazer','Lazer3');"></i></i>
+<i class="HomeButton" href="#" onclick="return show('iRave','Lazer3');"><i class="fa fa-home" href="#" onclick="return show('iRave','Lazer3');"></i></i> 
+</div>
+
+<div id="WC3" style="display:none">
+    <div class="pin"></div>
+    <div class ="flag7" href="#"
+      onclick="show('Bussola','WC3');navigate(50);"></div>
+<i class="ReturnButton"><i class="fa fa-undo" href="#" onclick="return show('TabelaWC','WC3');"></i></i>
+<i class="HomeButton" href="#" onclick="return show('iRave','WC3');"><i class="fa fa-home" href="#" onclick="return show('iRave','WC3');"></i></i> 
+</div>
+
+<div id="WC1" style="display:none">
+    <div class="pin"></div>
+    <div class ="flag8" href="#"
+      onclick="show('Bussola','WC1');navigate(15);"></div>
+<i class="ReturnButton"><i class="fa fa-undo" href="#" onclick="return show('TabelaWC','WC1');"></i></i>
+<i class="HomeButton" href="#" onclick="return show('iRave','WC1');"><i class="fa fa-home" href="#" onclick="return show('iRave','WC1');"></i></i> 
+</div>
+
+<div id="WC2" style="display:none">
+    <div class="pin"></div>
+    <div class ="flag9" href="#"
+      onclick="show('Bussola','WC2');navigate(35);"></div>
+<i class="ReturnButton"><i class="fa fa-undo" href="#" onclick="return show('TabelaWC','WC2');"></i></i>
+<i class="HomeButton" href="#" onclick="return show('iRave','WC2');"><i class="fa fa-home" href="#" onclick="return show('iRave','WC2');"></i></i> 
+</div>
+
+<div id="Palco11" style="display:none">
+    <div class="pin"></div>
+    <div class ="flag10" href="#"
+      onclick="show('Bussola','Palco11');navigate(35);"></div>
+<i class="ReturnButton"><i class="fa fa-undo" href="#" onclick="return show('TabelaPalcos','Palco11');"></i></i>
+<i class="HomeButton" href="#" onclick="return show('iRave','Palco11');"><i class="fa fa-home" href="#" onclick="return show('iRave','Palco11');"></i></i> 
+</div>
+
+<div id="Palco22" style="display:none">
+    <div class="pin"></div>
+    <div class ="flag11" href="#"
+      onclick="show('Bussola','Palco22');navigate(35);"></div>
+<i class="ReturnButton"><i class="fa fa-undo" href="#" onclick="return show('TabelaPalcos','Palco22');"></i></i>
+<i class="HomeButton" href="#" onclick="return show('iRave','Palco22');"><i class="fa fa-home" href="#" onclick="return show('iRave','Palco22');"></i></i> 
+</div>
+
+<div id="Palco33" style="display:none">
+    <div class="pin"></div>
+    <div class ="flag12" href="#"
+      onclick="show('Bussola','Palco33');navigate(40);"></div>
+<i class="ReturnButton"><i class="fa fa-undo" href="#" onclick="return show('TabelaPalcos','Palco33');"></i></i>
+<i class="HomeButton" href="#" onclick="return show('iRave','Palco33');"><i class="fa fa-home" href="#" onclick="return show('iRave','Palco33');"></i></i> 
+</div>
+
+<div id="Piteu1" style="display:none">
+    <div class="pin"></div>
+    <div class ="flag13" href="#"
+      onclick="show('Bussola','Piteu1');navigate(40);"></div>
+<i class="ReturnButton"><i class="fa fa-undo" href="#" onclick="return show('TabelaRestauracao','Piteu1');"></i></i>
+<i class="HomeButton" href="#" onclick="return show('iRave','Piteu1');"><i class="fa fa-home" href="#" onclick="return show('iRave','Piteu1');"></i></i> 
+</div>
+<div id="Piteu2" style="display:none">
+    <div class="pin"></div>
+    <div class ="flag14" href="#"
+      onclick="show('Bussola','Piteu2');navigate(40);"></div>
+<i class="ReturnButton"><i class="fa fa-undo" href="#" onclick="return show('TabelaRestauracao','Piteu2');"></i></i>
+<i class="HomeButton" href="#" onclick="return show('iRave','Piteu2');"><i class="fa fa-home" href="#" onclick="return show('iRave','Piteu2');"></i></i> 
+</div>
+<div id="Piteu3" style="display:none">
+    <div class="pin"></div>
+    <div class ="flag15" href="#"
+      onclick="show('Bussola','Piteu3');navigate(40);"></div>
+<i class="ReturnButton"><i class="fa fa-undo" href="#" onclick="return show('TabelaRestauracao','Piteu3');"></i></i>
+<i class="HomeButton" href="#" onclick="return show('iRave','Piteu3');"><i class="fa fa-home" href="#" onclick="return show('iRave','Piteu3');"></i></i> 
+</div>
+
 </body>
 
 
