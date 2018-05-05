@@ -297,19 +297,22 @@ box-shadow: 0px 0px 11px white;
 	height:-10px;
 	left:40px;
 }
-.dotsInformacao{
+.dotsInformacao,.dotsPagamento{
 	position:absolute;
-	left:55px;
+	left:48px;
 	top:115px;
 }
-.dotInformacao{
+
+.dotInformacao,.dotPagamento{
 	height: 8px;
 	width: 8px;
 	margin: 0 2px;
 	background-color:white;
 	border-radius: 50%;
 	display: inline-block;
-
+}
+.dotsPagamento{
+	text-align: center;
 }
 .active{
 	background-color:black;
@@ -362,7 +365,7 @@ box-shadow: 0px 0px 11px white;
 }
 
 
- #MenuInformacao,#MenuNavegacao,#MenuInteresse{
+ #MenuInformacao,#MenuNavegacao,#MenuInteresse,#MenuPagamento,#MenuBebida{
 	color:white;
 	font-size: 22px;
 	top:30px;
@@ -377,7 +380,7 @@ box-shadow: 0px 0px 11px white;
 
  }
 
- .Concertos,.Amigos,.PontosInteresse,.PalcosInteresse,.LazerInteresse,.WCinteresse,.RestauracaoInteresse{
+ .Concertos,.Amigos,.PontosInteresse,.PalcosInteresse,.LazerInteresse,.WCinteresse,.RestauracaoInteresse,.SemAlcool,.ComAlcool{
 	cursor:pointer;
     color:black;
 	font-size: 25px;
@@ -396,7 +399,12 @@ box-shadow: 0px 0px 11px white;
 	animation: shine 2s infinite;
 
  }
-
+.ComAlcool{
+	background-image:url("beer.png");
+}
+.SemAlcool{
+	background-image:url("juice.png");
+}
  .Passatempos{
 	cursor:pointer;
     color:black;
@@ -435,15 +443,15 @@ box-shadow: 0px 0px 11px white;
 
  }
 
- .dotsConcerto,.dotsConcerto2,.dotsNavegacao{
+ .dotsConcerto,.dotsConcerto2,.dotsNavegacao,.dotsBebida{
 	position:absolute;
-	left:47px;
+	left:56px;
 	top:115px;
 }
 .dotsNavegacao{
 	left:56px;
 }
-.dotConcerto,.dotConcerto2,.dotNavegacao{
+.dotConcerto,.dotConcerto2,.dotNavegacao,.dotBebida{
 	height: 7.5px;
 	width: 7.5px;
 	margin: 0 2px;
@@ -487,7 +495,7 @@ box-shadow: 0px 0px 11px white;
 	background-color:#fff;
 
  }
- .Palco1{
+ .Palco1,.Comida,.Bebidas,.Merchandise{
 	cursor:pointer;
     color:black;
 	font-size: 25px;
@@ -507,7 +515,20 @@ box-shadow: 0px 0px 11px white;
 
  }
 
- 
+ .Comida{
+	background-image:url("burguer.png");
+ }
+
+ .Bebidas{
+
+	background-image:url("drink.png");
+ }
+
+
+ .Merchandise{
+	background-image:url("shirt.png");
+	font-size:23px;
+ }
  
 	.Palco2{
 		cursor:pointer;
@@ -993,17 +1014,24 @@ box-shadow: 0px 0px 11px white;
 	}
 
 	.flag,.flag1,.flag2,.flag3,.flag4,.flag5,.flag6,.flag7,.flag8,.flag9,.flag10,.flag11,.flag12,.flag13,.flag14,.flag15{
-		width:50px;
+		width:60px;
 		height:50px;
 		background-image:url("flag.png");
 		background-size:40px;
 		background-repeat: no-repeat;
 		position:absolute;
 		cursor:pointer;
+		background-color:white;
+		border-radius:60px;
+		-webkit-mask-image: linear-gradient(-75deg, rgba(0,0,0,.6) 30%, #000 50%, rgba(0,0,0,.6) 70%);
+				-webkit-mask-size: 200%;
+				animation: shine 2s infinite;
+		background-position:center;
+
 	}
 
 	.flag1{
-		top:14%;
+		top:13%;
 		right:49%;
 	}
 
@@ -1024,7 +1052,7 @@ box-shadow: 0px 0px 11px white;
 
 	.flag4{
 		top:13%;
-		right:51%;
+		right:48%;
 	}
 
 	.flag5{
@@ -1033,20 +1061,20 @@ box-shadow: 0px 0px 11px white;
 	}
 
 	.flag6{
-		top:14%;
+		top:12%;
 		right:49%;
 	}
 
 	.flag7{
 		top:12%;
-		right:51%;
+		right:47%;
 	}
 	.flag8{
-		top:13%;
-		right:51%;
+		top:12%;
+		right:49%;
 	}
 	.flag9{
-		top:13%;
+		top:12%;
 		right:49%;
 	}
 	.flag10{
@@ -1062,7 +1090,7 @@ box-shadow: 0px 0px 11px white;
 		right:51%;
 	}
 	.flag13{
-		top:14%;
+		top:11%;
 		right:50%;
 	}
 	.flag14{
@@ -1070,7 +1098,7 @@ box-shadow: 0px 0px 11px white;
 		right:50%;
 	}
 	.flag15{
-		top:13%;
+		top:12%;
 		right:51%;
 	}
 
@@ -1102,3 +1130,4 @@ box-shadow: 0px 0px 11px white;
 	height:144px;
 	width:144px;
 }
+
