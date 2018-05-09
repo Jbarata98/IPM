@@ -29,8 +29,14 @@ function navigate(p) {
 
 //adicionar parametro que chame a funcao show quando da return para a outra pagina a dizer " Encontrou o LALA"
 function step(p) {
-    if (currentLocation.distanceToInt(p) == 0)
-        return ;
+    if (currentLocation.distanceToInt(p) == 0) {
+        show('arrival', 'Bussola');
+        gnav = setTimeout(function() {
+            show('MenuNavegacao', 'arrival')
+        }, 5000);
+        return;
+    }
+
     let r = Math.random() > 0.5 ? 1 : -1;
     $('.fa-location-arrow').animate({rotate: r});
     currentLocation.moveCloserTo(p);

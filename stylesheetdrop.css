@@ -1131,3 +1131,19 @@ box-shadow: 0px 0px 11px white;
 	width:144px;
 }
 
+#arrival {
+	height: 100%;
+	text-align: center;
+}
+
+#arrival div {
+	height: 100%;
+	padding-top: 22px;
+}
+#arrival span {
+	color: white;
+	font-size: 2em;
+	font-family: sans-serif;
+	height: inherit;
+
+}
