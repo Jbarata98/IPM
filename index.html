@@ -1,787 +1,987 @@
 <!DOCTYPE html>
 <html>
 <meta charset="UTF-8">
-
 <head>
-  
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="stylesheetdrop.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-	<script type="text/javascript" src="interactions.js">
-	
-	 </script>
-
-    </style>
+    <script type="text/javascript" src="interactions.js"></script>
+    <script type="text/javascript" src="jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="QTransform.js"></script>
+    <script type="text/javascript" src="point.js"></script>
+    <script type="text/javascript" src="nav.js"></script>
 </head>
-
-<body onload="startTime()" >
-<div id="watch-background"></div>
-    <div id="iRave">
-           iRave
-        <p id="horas"></p>
-        <i  href="#" onclick="plusSlides(0); return show('MenuSecundario','iRave');" class="material-icons" >fingerprint</i>
-        <i class="HomeButton"><i class="fa fa-home" href="#" onclick="return show('iRave','iRave');"></i></i>
-        <i class="ReturnButton"><i class="fa fa-undo" href="#" onclick="return show('iRave','iRave');"></i></i>
+<body onload="startTime()">
+    <div id="watch-background">
     </div>
-
+    <div id="iRave">
+        iRave
+        <p id="horas"></p>
+        <i href="#" onclick="plusSlides(0); return show('MenuSecundario','iRave');" class="material-icons">fingerprint</i>
+        <i class="HomeButton">
+            <i class="fa fa-home" href="#" onclick="return show('iRave','iRave');"></i>
+        </i>
+        <i class="ReturnButton">
+            <i class="fa fa-reply" href="#" onclick="return show('iRave','iRave');"></i>
+        </i>
+    </div>
     <div id="MenuSecundario" style="display:none">
         <div class="slideshow-container ">
-
             <div class="mySlides">
-               
                 <div class="text1" href="#" onclick="plusSlidesNavegacao(0);return show('MenuNavegacao','MenuSecundario')">Navegação</div>
-              
             </div>
-    
             <div class="mySlides">
-               
-                <div class="text2">Pagamento</div>
+                <div class="text2" onclick="plusSlidesPagamento(0);return show('MenuPagamento','MenuSecundario')">Pagamento</div>
             </div>
-    
             <div class="mySlides">
-             
                 <div class="text3" href="#" onclick="plusSlidesInformacao(0);return show('MenuInformacao','MenuSecundario')">Informação</div>
             </div>
-    
             <div class="mySlides">
-                
                 <div class="text4">Ajuda</div>
             </div>
-          
-            <a class="prev " onclick="plusSlides(-1);">&#8249;</a>
+            <a class="prev" onclick="plusSlides(-1);">&#8249;</a>
             <a class="next" onclick="plusSlides(1);">&#8250;</a>
-          
-            <div class="dots"style="text-align:center" >
-                <span class="dot" ></span>
-                <span class="dot" ></span>
-                <span class="dot" ></span>
-                <span class="dot" > </span>
-            
-                
-          </div>
-          <i class="ReturnButton"><i class="fa fa-undo" href="#" onclick="return show('iRave','MenuSecundario');"></i></i>
-          <i class="HomeButton" href="#" onclick="return show('iRave','MenuSecundario');"><i class="fa fa-home" href="#" onclick="return show('iRave','MenuSecundario');"></i></i> 
+            <div class="dots" style="text-align:center">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+            <i class="ReturnButton">
+                <i class="fa fa-reply" href="#" onclick="return show('iRave','MenuSecundario');"></i>
+            </i>
+            <i class="HomeButton" href="#" onclick="return show('iRave','MenuSecundario');">
+                <i class="fa fa-home" href="#" onclick="return show('iRave','MenuSecundario');"></i>
+            </i>
         </div>
     </div>
-
     <div id="MenuInformacao" style="display:none">
         <div class="slideshow-container">
-
             <div class="mySlidesInformacao">
-                
-                <div class="Concertos" href="#" onclick="plusSlidesDias(0);return show('MenuDias','MenuInformacao')" >Atuações</div>
-              
+                <div class="Concertos" href="#" onclick="plusSlidesDias(0);return show('MenuDias','MenuInformacao')">Atuações</div>
             </div>
-    
             <div class="mySlidesInformacao">
-               
                 <div class="Passatempos" href="#" onclick="plusSlidesPassatempos(0);return show('MenuPassatempos','MenuInformacao')">Atividades</div>
             </div>
             <div class="mySlidesInformacao">
-               
                 <div class="Metereologia" href="#" onclick="plusSlidesDias2(0);return show('MenuDias2','MenuInformacao')">Metereologia</div>
             </div>
-          
             <a class="prev " onclick="plusSlidesInformacao(-1);">&#8249;</a>
             <a class="next" onclick="plusSlidesInformacao(1);">&#8250;</a>
-          
-            <div class="dotsInformacao"style="text-align:center" >
-                <span class="dotInformacao" ></span>
-                <span class="dotInformacao" ></span>
-                <span class="dotInformacao" ></span>
-             
-          </div>
-          <i class="ReturnButton"><i class="fa fa-undo" href="#" onclick="return show('MenuSecundario','MenuInformacao');"></i></i>
-          <i class="HomeButton" href="#" onclick="return show('iRave','MenuInformacao');"><i class="fa fa-home" href="#" onclick="return show('iRave','MenuSecundario');"></i></i> 
-        </div> 
+            <div class="dotsInformacao" style="text-align:center">
+                <span class="dotInformacao"></span>
+                <span class="dotInformacao"></span>
+                <span class="dotInformacao"></span>
+            </div>
+            <i class="ReturnButton">
+                <i class="fa fa-reply" href="#" onclick="return show('MenuSecundario','MenuInformacao');"></i>
+            </i>
+            <i class="HomeButton" href="#" onclick="return show('iRave','MenuInformacao');">
+                <i class="fa fa-home" href="#" onclick="return show('iRave','MenuSecundario');"></i>
+            </i>
+        </div>
     </div>
-    
     <div id="MenuNavegacao" style="display:none">
         <div class="slideshow-container">
-
             <div class="mySlidesNavegacao">
-                
-                <div class="Amigos" href="#" onclick="return show('TabelaAmigos','MenuNavegacao')" >Amigos</div>
-              
+                <div class="Amigos" href="#" onclick="return show('TabelaAmigos','MenuNavegacao')">Amigos</div>
             </div>
-    
             <div class="mySlidesNavegacao">
-               
                 <div class="PontosInteresse" href="#" onclick="plusSlidesInteresse(0);return show('MenuInteresse','MenuNavegacao')">Pontos de Interesse</div>
             </div>
-           
-          
             <a class="prev " onclick="plusSlidesNavegacao(-1);">&#8249;</a>
             <a class="next" onclick="plusSlidesNavegacao(1);">&#8250;</a>
-          
-            <div class="dotsNavegacao"style="text-align:center" >
-                <span class="dotNavegacao" ></span>
-                <span class="dotNavegacao" ></span>
-          </div>
-          <i class="ReturnButton"><i class="fa fa-undo" href="#" onclick="return show('MenuSecundario','MenuNavegacao');"></i></i>
-          <i class="HomeButton" href="#" onclick="return show('iRave','MenuNavegacao');"><i class="fa fa-home" href="#" onclick="return show('iRave','MenuNavegacao');"></i></i> 
-        </div> 
+            <div class="dotsNavegacao" style="text-align:center">
+                <span class="dotNavegacao"></span>
+                <span class="dotNavegacao"></span>
+            </div>
+            <i class="ReturnButton">
+                <i class="fa fa-reply" href="#" onclick="return show('MenuSecundario','MenuNavegacao');"></i>
+            </i>
+            <i class="HomeButton" href="#" onclick="return show('iRave','MenuNavegacao');">
+                <i class="fa fa-home" href="#" onclick="return show('iRave','MenuNavegacao');"></i>
+            </i>
+        </div>
     </div>
-
     <div id="MenuInteresse" style="display:none">
         <div class="slideshow-container">
-
             <div class="mySlidesInteresse">
-                
-                <div class="PalcosInteresse" href="#" onclick="return show('TabelaPalcos','MenuInteresse')" >Palcos</div>
-              
+                <div class="PalcosInteresse" href="#" onclick="return show('TabelaPalcos','MenuInteresse')">Palcos</div>
             </div>
-    
             <div class="mySlidesInteresse">
-               
                 <div class="LazerInteresse" href="#" onclick="return show('TabelaLazer','MenuInteresse')">Pontos de Lazer</div>
             </div>
-
             <div class="mySlidesInteresse">
-                
-                <div class="RestauracaoInteresse" href="#" onclick="return show('TabelaRestauracao','MenuInteresse')" >Pontos de Restauração</div>
-              </div>
+                <div class="RestauracaoInteresse" href="#" onclick="return show('TabelaRestauracao','MenuInteresse')">Pontos de Restauração</div>
+            </div>
             <div class="mySlidesInteresse">
-                
-                <div class="WCinteresse" href="#" onclick="return show('TabelaWC','MenuInteresse')" >WC's</div>
-                  
-             </div>
-        
-
+                <div class="WCinteresse" href="#" onclick="return show('TabelaWC','MenuInteresse')">WC's</div>
+            </div>
             <a class="prev " onclick="plusSlidesInteresse(-1);">&#8249;</a>
             <a class="next" onclick="plusSlidesInteresse(1);">&#8250;</a>
-          
-            <div class="dotsInteresse"style="text-align:center" >
-                <span class="dotInteresse" ></span>
-                <span class="dotInteresse" ></span>
-                <span class="dotInteresse" ></span>
-                <span class="dotInteresse" ></span>
-          </div>
-          <i class="ReturnButton"><i class="fa fa-undo" href="#" onclick="return show('MenuNavegacao','MenuInteresse');"></i></i>
-          <i class="HomeButton" href="#" onclick="return show('iRave','MenuInteresse');"><i class="fa fa-home" href="#" onclick="return show('iRave','MenuInteresse');"></i></i> 
-        </div> 
+            <div class="dotsInteresse" style="text-align:center">
+                <span class="dotInteresse"></span>
+                <span class="dotInteresse"></span>
+                <span class="dotInteresse"></span>
+                <span class="dotInteresse"></span>
+            </div>
+            <i class="ReturnButton">
+                <i class="fa fa-reply" href="#" onclick="return show('MenuNavegacao','MenuInteresse');"></i>
+            </i>
+            <i class="HomeButton" href="#" onclick="return show('iRave','MenuInteresse');">
+                <i class="fa fa-home" href="#" onclick="return show('iRave','MenuInteresse');"></i>
+            </i>
+        </div>
     </div>
-
-
-
     <div id="MenuDias" style="display:none">
         <div class="slideshow-container">
-            
             <div class="mySlidesDias">
-             
                 <div class="Dia1" href="#" onclick="plusSlidesConcertos(0);return show('MenuConcerto','MenuDias')">Dia </div>
             </div>
-            
             <div class="mySlidesDias">
-             
                 <div class="Dia2" href="#" onclick="plusSlidesConcertos2(-1);return show('MenuConcerto2','MenuDias')">Dia </div>
             </div>
-          
             <a class="prev " onclick="plusSlidesDias(-1);">&#8249;</a>
             <a class="next" onclick="plusSlidesDias(1);">&#8250;</a>
-          
-            <div class="dotsDias"style="text-align:center" >
-                <span class="dotDia" ></span>
-                <span class="dotDia" ></span>
-                
-          </div>
-          <i class="ReturnButton"><i class="fa fa-undo" href="#" onclick="return show('MenuInformacao','MenuDias');"></i></i>
-          <i class="HomeButton" href="#" onclick="return show('iRave','MenuSecundario');"><i class="fa fa-home" href="#" onclick="return show('iRave','MenuDias');"></i></i> 
+            <div class="dotsDias" style="text-align:center">
+                <span class="dotDia"></span>
+                <span class="dotDia"></span>
+            </div>
+            <i class="ReturnButton">
+                <i class="fa fa-reply" href="#" onclick="return show('MenuInformacao','MenuDias');"></i>
+            </i>
+            <i class="HomeButton" href="#" onclick="return show('iRave','MenuSecundario');">
+                <i class="fa fa-home" href="#" onclick="return show('iRave','MenuDias');"></i>
+            </i>
         </div>
     </div>
-    
     <div id="MenuDias2" style="display:none">
         <div class="slideshow-container">
-            
             <div class="mySlidesDias2">
-             
                 <div class="Dia1" href="#" onclick="return show('Metereologia1','MenuDias2')">Dia </div>
             </div>
-            
             <div class="mySlidesDias2">
-             
                 <div class="Dia2" href="#" onclick="return show('Metereologia2','MenuDias2')">Dia </div>
             </div>
-          
             <a class="prev " onclick="plusSlidesDias2(-1);">&#8249;</a>
             <a class="next" onclick="plusSlidesDias2(1);">&#8250;</a>
-          
-            <div class="dotsDias2"style="text-align:center" >
-                <span class="dotDia2" ></span>
-                <span class="dotDia2" ></span>
-                
-          </div>
-          <i class="ReturnButton"><i class="fa fa-undo" href="#" onclick="return show('MenuInformacao','MenuDias2');"></i></i>
-          <i class="HomeButton" href="#" onclick="return show('iRave','MenuDias2');"><i class="fa fa-home" href="#" onclick="return show('iRave','MenuDias2');"></i></i> 
+            <div class="dotsDias2" style="text-align:center">
+                <span class="dotDia2"></span>
+                <span class="dotDia2"></span>
+            </div>
+            <i class="ReturnButton">
+                <i class="fa fa-reply" href="#" onclick="return show('MenuInformacao','MenuDias2');"></i>
+            </i>
+            <i class="HomeButton" href="#" onclick="return show('iRave','MenuDias2');">
+                <i class="fa fa-home" href="#" onclick="return show('iRave','MenuDias2');"></i>
+            </i>
         </div>
     </div>
-    
     <div id="MenuConcerto" style="display:none">
         <div class="slideshow-container">
-
             <div class="mySlidesConcertos">
-                
-                <div class="Palco1" href="#" onclick="return show('TabelaConcertos1','MenuConcerto');" >Palco </div>
-              
+                <div class="Palco1" href="#" onclick="return show('TabelaConcertos1','MenuConcerto');">Palco </div>
             </div>
-    
             <div class="mySlidesConcertos">
-               
-                <div class="Palco2" href="#" onclick="return show('TabelaConcertos2','MenuConcerto');" >Palco </div>
+                <div class="Palco2" href="#" onclick="return show('TabelaConcertos2','MenuConcerto');">Palco </div>
             </div>
-           
             <div class="mySlidesConcertos">
-               
-                <div class="Palco3" href="#" onclick="return show('TabelaConcertos3','MenuConcerto');" >Palco </div>
+                <div class="Palco3" href="#" onclick="return show('TabelaConcertos3','MenuConcerto');">Palco </div>
             </div>
-          
             <a class="prev " onclick="plusSlidesConcertos(-1);">&#8249;</a>
             <a class="next" onclick="plusSlidesConcertos(1);">&#8250;</a>
-          
-            <div class="dotsConcerto"style="text-align:center" >
-                <span class="dotConcerto" ></span>
-                <span class="dotConcerto" ></span>
-                <span class="dotConcerto" ></span>
-             
-          </div>
-          <i class="ReturnButton"><i class="fa fa-undo" href="#" onclick="return show('MenuDias','MenuConcerto');"></i></i>
-          <i class="HomeButton" href="#" onclick="return show('iRave','MenuConcerto');"><i class="fa fa-home" href="#" onclick="return show('iRave','MenuConcerto');"></i></i> 
+            <div class="dotsConcerto" style="text-align:center">
+                <span class="dotConcerto"></span>
+                <span class="dotConcerto"></span>
+                <span class="dotConcerto"></span>
+            </div>
+            <i class="ReturnButton">
+                <i class="fa fa-reply" href="#" onclick="return show('MenuDias','MenuConcerto');"></i>
+            </i>
+            <i class="HomeButton" href="#" onclick="return show('iRave','MenuConcerto');">
+                <i class="fa fa-home" href="#" onclick="return show('iRave','MenuConcerto');"></i>
+            </i>
         </div>
-</div>
-
-<div id="MenuConcerto2" style="display:none">
-    <div class="slideshow-container">
-
-        <div class="mySlidesConcertos2">
-            
-            <div class="Palco1" href="#" onclick="return show('TabelaConcertos5','MenuConcerto2');" >Palco </div>
-          
-        </div>
-
-        <div class="mySlidesConcertos2">
-           
-            <div class="Palco2" href="#" onclick="return show('TabelaConcertos6','MenuConcerto2');" >Palco </div>
-        </div>
-       
-        <div class="mySlidesConcertos2">
-           
-            <div class="Palco3" href="#" onclick="return show('TabelaConcertos7','MenuConcerto2');" >Palco </div>
-        </div>
-      
-        <a class="prev " onclick="plusSlidesConcertos2(-1);">&#8249;</a>
-        <a class="next" onclick="plusSlidesConcertos2(1);">&#8250;</a>
-      
-        <div class="dotsConcerto2"style="text-align:center" >
-            <span class="dotConcerto2" ></span>
-            <span class="dotConcerto2" ></span>
-            <span class="dotConcerto2" ></span>
-         
-      </div>
-      <i class="ReturnButton"><i class="fa fa-undo" href="#" onclick="return show('MenuDias','MenuConcerto2');"></i></i>
-      <i class="HomeButton" href="#" onclick="return show('iRave','MenuConcerto2');"><i class="fa fa-home" href="#" onclick="return show('iRave','MenuConcerto');"></i></i> 
     </div>
-</div>
-
+    <div id="MenuConcerto2" style="display:none">
+        <div class="slideshow-container">
+            <div class="mySlidesConcertos2">
+                <div class="Palco1" href="#" onclick="return show('TabelaConcertos5','MenuConcerto2');">Palco </div>
+            </div>
+            <div class="mySlidesConcertos2">
+                <div class="Palco2" href="#" onclick="return show('TabelaConcertos6','MenuConcerto2');">Palco </div>
+            </div>
+            <div class="mySlidesConcertos2">
+                <div class="Palco3" href="#" onclick="return show('TabelaConcertos7','MenuConcerto2');">Palco </div>
+            </div>
+            <a class="prev " onclick="plusSlidesConcertos2(-1);">&#8249;</a>
+            <a class="next" onclick="plusSlidesConcertos2(1);">&#8250;</a>
+            <div class="dotsConcerto2" style="text-align:center">
+                <span class="dotConcerto2"></span>
+                <span class="dotConcerto2"></span>
+                <span class="dotConcerto2"></span>
+            </div>
+            <i class="ReturnButton">
+                <i class="fa fa-reply" href="#" onclick="return show('MenuDias','MenuConcerto2');"></i>
+            </i>
+            <i class="HomeButton" href="#" onclick="return show('iRave','MenuConcerto2');">
+                <i class="fa fa-home" href="#" onclick="return show('iRave','MenuConcerto');"></i>
+            </i>
+        </div>
+    </div>
     <div id="MenuPassatempos" style="display:none">
         <div class="slideshow-container">
-
             <div class="mySlidesPassatempos">
-                
-                <div class="Zona1" href="#" onclick="return show('TabelaPassatempos1','MenuPassatempos');" >Zona YORN</div>
-              
+                <div class="Zona1" href="#" onclick="return show('TabelaPassatempos1','MenuPassatempos');">Zona YORN</div>
             </div>
-    
-            <div class="mySlidesPassatempos" >
-               
+            <div class="mySlidesPassatempos">
                 <div class="Zona2" href="#" onclick="return show('TabelaPassatempos2','MenuPassatempos');">Zona MEO</div>
             </div>
-          
             <a class="prev " onclick="plusSlidesPassatempos(-1);">&#8249;</a>
             <a class="next" onclick="plusSlidesPassatempos(1);">&#8250;</a>
-          
-            <div class="dotsPassatempos"style="text-align:center" >
-                <span class="dotPassatempo" ></span>
-                <span class="dotPassatempo" ></span>
-               
-             
-          </div>
-          <i class="ReturnButton"><i class="fa fa-undo" href="#" onclick="return show('MenuInformacao','MenuPassatempos');"></i></i>
-          <i class="HomeButton" href="#" onclick="return show('iRave','MenuPassatempos');"><i class="fa fa-home" href="#" onclick="return show('iRave','MenuSecundario');"></i></i> 
-
+            <div class="dotsPassatempos" style="text-align:center">
+                <span class="dotPassatempo"></span>
+                <span class="dotPassatempo"></span>
+            </div>
+            <i class="ReturnButton">
+                <i class="fa fa-reply" href="#" onclick="return show('MenuInformacao','MenuPassatempos');"></i>
+            </i>
+            <i class="HomeButton" href="#" onclick="return show('iRave','MenuPassatempos');">
+                <i class="fa fa-home" href="#" onclick="return show('iRave','MenuSecundario');"></i>
+            </i>
         </div>
-
     </div>
-</div>
-    
-
-        <div id="TabelaConcertos2" style="display:none">
-
-            <table class="infoC" cellpadding="1,5" >
-            <tr>
-            <th>Artista(s)</th>
-            <th>Hora</th>
-            </tr>
-            <tr>
-            <td>NiN</td>
-            <td>22:30</td>
-            </tr>
-            <tr>
-            <td>Snow Patrol</td>
-            <td>23:30</td>
-            </tr>
-            <tr>
-            <td>D'Alva</td>
-            <td>00:30</td>
-            </tr>
-            <tr>
-            <td>Artic Monkeys</td>
-            <td>01:30</td>
-            </tr> 
-            <i class="ReturnButton"><i class="fa fa-undo" href="#" onclick="return show('MenuConcerto','TabelaConcertos2');"></i></i>
-            <i class="HomeButton" href="#" onclick="return show('iRave','MenuPassatempos');"><i class="fa fa-home" href="#" onclick="return show('iRave','TabelaConcertos2');"></i></i>  
-            </table>
-        </div>
-
-        <div id="TabelaConcertos3" style="display:none">
-
-            <table class="infoC" cellpadding="1,5" >
-            <tr>
-            <th>Artista(s)</th>
-            <th>Hora</th>
-            </tr>
-            <tr>
-            <td>DJ Glue</td>
-            <td>23:30</td>
-            </tr>
-            <tr>
-            <td>Fumaxa</td>
-            <td>00:30</td>
-            </tr>
-            <tr>
-            <td>Jain</td>
-            <td>01:30</td>
-            </tr>
-            <tr>
-            <td>Spdeville</td>
-            <td>02:30</td>
-            </tr>  
-            <i class="ReturnButton"><i class="fa fa-undo" href="#" onclick="return show('MenuConcerto','TabelaConcertos3');"></i></i>
-            <i class="HomeButton" href="#" onclick="return show('iRave','MenuPassatempos');"><i class="fa fa-home" href="#" onclick="return show('iRave','TabelaConcertos3');"></i></i> 
-            </table>
-        </div>
-        <div id="TabelaConcertos1" style="display:none">
-
-            <table class="infoC" cellpadding="1,5" >
-            <tr>
-            <th>Artista(s)</th>
-            <th>Hora</th>
-            </tr>
-            <tr>
-            <td>Khalid</td>
-            <td>21:30</td>
-            </tr>
-            <tr>
-            <td>Friendly Fires</td>
-            <td>22:30</td>
-            </tr>
-            <tr>
-            <td>Wolf Alice</td>
-            <td>23:30</td>
-            </tr>
-            <tr>
-            <td>Sampha</td>
-            <td>00:30</td>
-            </tr>  
-            <i class="ReturnButton"><i class="fa fa-undo" href="#" onclick="return show('MenuConcerto','TabelaConcertos1');"></i></i>
-            <i class="HomeButton" href="#" onclick="return show('iRave','MenuPassatempos');"><i class="fa fa-home" href="#" onclick="return show('iRave','TabelaConcertos1');"></i></i> 
-            </table>
-        </div>
-       
-       
-        <div id="TabelaPassatempos1" style="display:none" >
-
-            <table class="info" cellpadding="1,5" >
-            <tr>
-            <th>Atividades</th>
-            </tr>
-            <tr>
-            <td href="#" onclick="return show('Atividade1','TabelaPassatempos1');">Escalada</td>
-            </tr>
-            <tr>
-            <td href="#" onclick="return show('Atividade2','TabelaPassatempos1');">Futebol de praia</td>
-            </tr>
-            <tr>
-            <td href="#" onclick="return show('Atividade3','TabelaPassatempos1');">Bungee jumping</td>
-            </tr>
-            <tr>
-            <td href="#" onclick="return show('Atividade4','TabelaPassatempos1');">Concurso de Penaltis</td>
-            </tr>  
-            <tr>
-            <td href="#" onclick="return show('Atividade5','TabelaPassatempos1');">Paintball</td>
-            </tr> 
-            <i class="ReturnButton"><i class="fa fa-undo" href="#" onclick="return show('MenuPassatempos','TabelaPassatempos1');"></i></i>
-            <i class="HomeButton" href="#" onclick="return show('iRave','TabelaPassatempos2');"><i class="fa fa-home" href="#" onclick="return show('iRave','TabelaPassatempos1');"></i></i> 
-            </table>
+    <div id="MenuPagamento" style="display:none">
+        <div class="slideshow-container">
+            <div class="mySlidesPagamento">
+                <div class="Merchandise" href="#" onclick="">Merchandise</div>
             </div>
-    
-            <div id="TabelaPassatempos2" style="display:none" >
-    
-                <table class="info" cellpadding="1,5" >
-                <tr>
-                <th>Atividades</th>
-                </tr>
-                <tr>
-                <td href="#" onclick="return show('Atividade6','TabelaPassatempos2');">Tiro ao alvo</td>
-                </tr>
-                <tr>
-                <td href="#" onclick="return show('Atividade7','TabelaPassatempos2');">Concurso de Twerk</td>
-                </tr>
-                <tr>
-                <td href="#" onclick="return show('Atividade8','TabelaPassatempos2');">Roda Gigante</td>
-                </tr>
-                <tr>
-                <td href="#" onclick="return show('Atividade9','TabelaPassatempos2');" >Montanha-Russa</td>
-                </tr>  
-                <tr>
-                <td href="#" onclick="return show('Atividade10','TabelaPassatempos2');">Insuflável</td>
-                </tr> 
-                <i class="ReturnButton"><i class="fa fa-undo" href="#" onclick="return show('MenuPassatempos','TabelaPassatempos2');"></i></i>
-                <i class="HomeButton" href="#" onclick="return show('iRave','TabelaPassatempos2');"><i class="fa fa-home" href="#" onclick="return show('iRave','TabelaPassatempos2');"></i></i> 
-                </table>
+            <div class="mySlidesPagamento">
+                <div class="Comida" href="#" onclick="">Comida</div>
             </div>
-    
-            
-    
-            <div id="TabelaConcertos5" style="display:none">
-    
-                <table class="infoC" cellpadding="1,5" >
-                    <tr>
-                    <th>Artista(s)</th>
-                    <th>Hora</th>
-                    </tr>
-                    <tr>
-                    <td>Martin Garrix</td>
-                    <td>23:30</td>
-                    </tr>
-                    <tr>
-                    <td>Hardwell</td>
-                    <td>00:30</td>
-                    </tr>
-                    <tr>
-                    <td>Deadmau</td>
-                    <td>01:30</td>
-                    </tr>
-                    <tr>
-                    <td>Calvin Harris</td>
-                    <td>02:30</td>
-                    </tr>  
-                    <i class="ReturnButton"><i class="fa fa-undo" href="#" onclick="return show('MenuConcerto2','TabelaConcertos5');"></i></i>
-                    <i class="HomeButton" href="#" onclick="return show('iRave','TabelaConcertos5');"><i class="fa fa-home" href="#" onclick="return show('iRave','TabelaConcertos5');"></i></i> 
-                    </table>
+            <div class="mySlidesPagamento">
+                <div class="Bebidas" href="#" onclick="plusSlidesBebida(0);return show('MenuBebida','MenuPagamento')">Bebida</div>
             </div>
-    
-            <div id="TabelaConcertos6" style="display:none">
-    
-                <table class="infoC" cellpadding="1,5" >
-                <tr>
+            <div class="mySlidesPagamento">
+                <div class="Carrinho" href="#" onclick="">Carrinho</div>
+            </div>
+            <a class="prev " onclick="plusSlidesPagamento(-1);">&#8249;</a>
+            <a class="next" onclick="plusSlidesPagamento(1);">&#8250;</a>
+            <div class="dotsPagamento" style="text-align:center">
+                <span class="dotPagamento"></span>
+                <span class="dotPagamento"></span>
+                <span class="dotPagamento"></span>
+                <span class="dotPagamento"></span>
+            </div>
+            <i class="ReturnButton">
+                <i class="fa fa-reply" href="#" onclick="return show('MenuSecundario','MenuPagamento');"></i>
+            </i>
+            <i class="HomeButton" href="#" onclick="return show('iRave','MenuPagamento');">
+                <i class="fa fa-home" href="#" onclick="return show('iRave','MenuPagamento');"></i>
+            </i>
+        </div>
+    </div>
+    <div id="TabelaConcertos2" style="display:none">
+        <table class="infoC" cellpadding="1,5">
+            <tr>
                 <th>Artista(s)</th>
                 <th>Hora</th>
-                </tr>
-                <tr>
+            </tr>
+            <tr>
+                <td>NiN</td>
+                <td>22:30</td>
+            </tr>
+            <tr>
+                <td>Snow Patrol</td>
+                <td>23:30</td>
+            </tr>
+            <tr>
+                <td>D'Alva</td>
+                <td>00:30</td>
+            </tr>
+            <tr>
+                <td>Artic Monkeys</td>
+                <td>01:30</td>
+            </tr>
+            <i class="ReturnButton">
+                <i class="fa fa-reply" href="#" onclick="return show('MenuConcerto','TabelaConcertos2');"></i>
+            </i>
+            <i class="HomeButton" href="#" onclick="return show('iRave','MenuPassatempos');">
+                <i class="fa fa-home" href="#" onclick="return show('iRave','TabelaConcertos2');"></i>
+            </i>
+        </table>
+    </div>
+    <div id="TabelaConcertos3" style="display:none">
+        <table class="infoC" cellpadding="1,5">
+            <tr>
+                <th>Artista(s)</th>
+                <th>Hora</th>
+            </tr>
+            <tr>
+                <td>DJ Glue</td>
+                <td>23:30</td>
+            </tr>
+            <tr>
+                <td>Fumaxa</td>
+                <td>00:30</td>
+            </tr>
+            <tr>
+                <td>Jain</td>
+                <td>01:30</td>
+            </tr>
+            <tr>
+                <td>Spdeville</td>
+                <td>02:30</td>
+            </tr>
+            <i class="ReturnButton">
+                <i class="fa fa-reply" href="#" onclick="return show('MenuConcerto','TabelaConcertos3');"></i>
+            </i>
+            <i class="HomeButton" href="#" onclick="return show('iRave','MenuPassatempos');">
+                <i class="fa fa-home" href="#" onclick="return show('iRave','TabelaConcertos3');"></i>
+            </i>
+        </table>
+    </div>
+    <div id="TabelaConcertos1" style="display:none">
+        <table class="infoC" cellpadding="1,5">
+            <tr>
+                <th>Artista(s)</th>
+                <th>Hora</th>
+            </tr>
+            <tr>
+                <td>Khalid</td>
+                <td>21:30</td>
+            </tr>
+            <tr>
+                <td>Friendly Fires</td>
+                <td>22:30</td>
+            </tr>
+            <tr>
+                <td>Wolf Alice</td>
+                <td>23:30</td>
+            </tr>
+            <tr>
+                <td>Sampha</td>
+                <td>00:30</td>
+            </tr>
+            <i class="ReturnButton">
+                <i class="fa fa-reply" href="#" onclick="return show('MenuConcerto','TabelaConcertos1');"></i>
+            </i>
+            <i class="HomeButton" href="#" onclick="return show('iRave','MenuPassatempos');">
+                <i class="fa fa-home" href="#" onclick="return show('iRave','TabelaConcertos1');"></i>
+            </i>
+        </table>
+    </div>
+    <div id="TabelaPassatempos1" style="display:none">
+        <table class="info" cellpadding="1,5">
+            <tr>
+                <th>Atividades</th>
+            </tr>
+            <tr>
+                <td href="#" onclick="return show('Atividade1','TabelaPassatempos1');">Escalada</td>
+            </tr>
+            <tr>
+                <td href="#" onclick="return show('Atividade2','TabelaPassatempos1');">Futebol de praia</td>
+            </tr>
+            <tr>
+                <td href="#" onclick="return show('Atividade3','TabelaPassatempos1');">Bungee jumping</td>
+            </tr>
+            <tr>
+                <td href="#" onclick="return show('Atividade4','TabelaPassatempos1');">Concurso de Penaltis</td>
+            </tr>
+            <tr>
+                <td href="#" onclick="return show('Atividade5','TabelaPassatempos1');">Paintball</td>
+            </tr>
+            <i class="ReturnButton">
+                <i class="fa fa-reply" href="#" onclick="return show('MenuPassatempos','TabelaPassatempos1');"></i>
+            </i>
+            <i class="HomeButton" href="#" onclick="return show('iRave','TabelaPassatempos2');">
+                <i class="fa fa-home" href="#" onclick="return show('iRave','TabelaPassatempos1');"></i>
+            </i>
+        </table>
+    </div>
+    <div id="TabelaPassatempos2" style="display:none">
+        <table class="info" cellpadding="1,5">
+            <tr>
+                <th>Atividades</th>
+            </tr>
+            <tr>
+                <td href="#" onclick="return show('Atividade6','TabelaPassatempos2');">Tiro ao alvo</td>
+            </tr>
+            <tr>
+                <td href="#" onclick="return show('Atividade7','TabelaPassatempos2');">Concurso de Twerk</td>
+            </tr>
+            <tr>
+                <td href="#" onclick="return show('Atividade8','TabelaPassatempos2');">Roda Gigante</td>
+            </tr>
+            <tr>
+                <td href="#" onclick="return show('Atividade9','TabelaPassatempos2');">Montanha-Russa</td>
+            </tr>
+            <tr>
+                <td href="#" onclick="return show('Atividade10','TabelaPassatempos2');">Insuflável</td>
+            </tr>
+            <i class="ReturnButton">
+                <i class="fa fa-reply" href="#" onclick="return show('MenuPassatempos','TabelaPassatempos2');"></i>
+            </i>
+            <i class="HomeButton" href="#" onclick="return show('iRave','TabelaPassatempos2');">
+                <i class="fa fa-home" href="#" onclick="return show('iRave','TabelaPassatempos2');"></i>
+            </i>
+        </table>
+    </div>
+    <div id="TabelaConcertos5" style="display:none">
+        <table class="infoC" cellpadding="1,5">
+            <tr>
+                <th>Artista(s)</th>
+                <th>Hora</th>
+            </tr>
+            <tr>
+                <td>Martin Garrix</td>
+                <td>23:30</td>
+            </tr>
+            <tr>
+                <td>Hardwell</td>
+                <td>00:30</td>
+            </tr>
+            <tr>
+                <td>Deadmau</td>
+                <td>01:30</td>
+            </tr>
+            <tr>
+                <td>Calvin Harris</td>
+                <td>02:30</td>
+            </tr>
+            <i class="ReturnButton">
+                <i class="fa fa-reply" href="#" onclick="return show('MenuConcerto2','TabelaConcertos5');"></i>
+            </i>
+            <i class="HomeButton" href="#" onclick="return show('iRave','TabelaConcertos5');">
+                <i class="fa fa-home" href="#" onclick="return show('iRave','TabelaConcertos5');"></i>
+            </i>
+        </table>
+    </div>
+    <div id="TabelaConcertos6" style="display:none">
+        <table class="infoC" cellpadding="1,5">
+            <tr>
+                <th>Artista(s)</th>
+                <th>Hora</th>
+            </tr>
+            <tr>
                 <td>The Kooks</td>
                 <td>23:30</td>
-                </tr>
-                <tr>
+            </tr>
+            <tr>
                 <td>Surma</td>
                 <td>00:30</td>
-                </tr>
-                <tr>
+            </tr>
+            <tr>
                 <td>Bernardo</td>
                 <td>01:30</td>
-                </tr>
-                <tr>
+            </tr>
+            <tr>
                 <td>Yo la Tengo</td>
                 <td>02:30</td>
-                </tr>  
-                <i class="ReturnButton"><i class="fa fa-undo" href="#" onclick="return show('MenuConcerto2','TabelaConcertos6');"></i></i>
-                <i class="HomeButton" href="#" onclick="return show('iRave','TabelaConcertos6');"><i class="fa fa-home" href="#" onclick="return show('iRave','TabelaConcertos6');"></i></i> 
-                </table>
-            </div>
-                <div id="TabelaConcertos7" style="display:none">
-    
-                    <table class="infoC" cellpadding="1,5" >
-                    <tr>
-                    <th>Artista(s)</th>
-                    <th>Hora</th>
-                    </tr>
-                    <tr>
-                    <td>BRMC</td>
-                    <td>23:30</td>
-                    </tr>
-                    <tr>
-                    <td>KOKOKO</td>
-                    <td>00:30</td>
-                    </tr>
-                    <tr>
-                    <td>BRANKO</td>
-                    <td>01:30</td>
-                    </tr>
-                    <tr>
-                    <td>Pearl Jam</td>
-                    <td>02:30</td>
-                    </tr>  
-                    <i class="ReturnButton"><i class="fa fa-undo" href="#" onclick="return show('MenuConcerto2','TabelaConcertos7');"></i></i>
-                    <i class="HomeButton" href="#" onclick="return show('iRave','TabelaConcertos7');"><i class="fa fa-home" href="#" onclick="return show('iRave','TabelaConcertos7');"></i></i> 
-                    </table>
-                    </div>
-
-                    <div id="Atividade1" style="display:none" >
-                             <h id="h1">PREÇO:GRÁTIS</h>
-                             <h  id="h2">INÍCIO: 12:00 
-                              FECHO:15:00
-                             </h>
-                             
-                             <h id="h3">IDADE MÍNIMA:12</h>
-                            <i class="ReturnButton"><i class="fa fa-undo" href="#" onclick="return show('TabelaPassatempos1','Atividade1');"></i></i>
-                            <i class="HomeButton" href="#" onclick="return show('iRave','Atividade1');"><i class="fa fa-home" href="#" onclick="return show('iRave','Atividade1');"></i></i> 
-                    </div>
-
-                    <div id="Atividade2" style="display:none" >
-                            <h id="h1">PREÇO:GRÁTIS</h>
-                            <h  id="h2">INÍCIO: 14:00 
-                             FECHO:15:00
-                            </h>
-                            
-                            <h id="h3">IDADE MÍNIMA:6</h>
-                           <i class="ReturnButton"><i class="fa fa-undo" href="#" onclick="return show('TabelaPassatempos1','Atividade2');"></i></i>
-                           <i class="HomeButton" href="#" onclick="return show('iRave','Atividade2');"><i class="fa fa-home" href="#" onclick="return show('iRave','Atividade2');"></i></i> 
-                   </div>
-
-                   <div id="Atividade3" style="display:none" >
-                        <h id="h1">PREÇO:10 EUROS</h>
-                        <h  id="h2">INÍCIO: 12:00 
-                         FECHO:15:00
-                        </h>
-                        
-                        <h id="h3">IDADE MÍNIMA:16</h>
-                       <i class="ReturnButton"><i class="fa fa-undo" href="#" onclick="return show('TabelaPassatempos1','Atividade3');"></i></i>
-                       <i class="HomeButton" href="#" onclick="return show('iRave','Atividade3');"><i class="fa fa-home" href="#" onclick="return show('iRave','Atividade3');"></i></i> 
-               </div>
-
-               <div id="Atividade4" style="display:none" >
-                    <h id="h1">PREÇO:GRÁTIS</h>
-                    <h  id="h2">INÍCIO: 18:00 
-                     FECHO:18:30
-                    </h>
-                    
-                    <h id="h3">IDADE MÍNIMA:18</h>
-                   <i class="ReturnButton"><i class="fa fa-undo" href="#" onclick="return show('TabelaPassatempos1','Atividade4');"></i></i>
-                   <i class="HomeButton" href="#" onclick="return show('iRave','Atividade4');"><i class="fa fa-home" href="#" onclick="return show('iRave','Atividade4');"></i></i> 
-           </div>
-
-           <div id="Atividade5" style="display:none" >
-                <h id="h1">PREÇO:GRÁTIS</h>
-                <h  id="h2">INÍCIO: 12:00 
-                 FECHO:15:00
-                </h>
-                
-                <h id="h3">IDADE MÍNIMA:12</h>
-               <i class="ReturnButton"><i class="fa fa-undo" href="#" onclick="return show('TabelaPassatempos1','Atividade5');"></i></i>
-               <i class="HomeButton" href="#" onclick="return show('iRave','Atividade5');"><i class="fa fa-home" href="#" onclick="return show('iRave','Atividade5');"></i></i> 
-       </div>
-  
-       <div id="Atividade6" style="display:none" >
-            <h id="h1">PREÇO:GRÁTIS</h>
-            <h  id="h2">INÍCIO: 12:00 
-             FECHO:15:00
-            </h>
-            
-            <h id="h3">IDADE MÍNIMA:18</h>
-           <i class="ReturnButton"><i class="fa fa-undo" href="#" onclick="return show('TabelaPassatempos2','Atividade6');"></i></i>
-           <i class="HomeButton" href="#" onclick="return show('iRave','Atividade6');"><i class="fa fa-home" href="#" onclick="return show('iRave','Atividade6');"></i></i> 
-   </div>
-
-   <div id="Atividade7" style="display:none" >
-           <h id="h1">PREÇO:GRÁTIS</h>
-           <h  id="h2">INÍCIO: 14:00 
-            FECHO:15:00
-           </h>
-           
-           <h id="h3">IDADE MÍNIMA:18</h>
-          <i class="ReturnButton"><i class="fa fa-undo" href="#" onclick="return show('TabelaPassatempos2','Atividade7');"></i></i>
-          <i class="HomeButton" href="#" onclick="return show('iRave','Atividade7');"><i class="fa fa-home" href="#" onclick="return show('iRave','Atividade7');"></i></i> 
-  </div>
-
-  <div id="Atividade8" style="display:none" >
-       <h id="h1">PREÇO:10 EUROS</h>
-       <h  id="h2">INÍCIO: 12:00 
-        FECHO:15:00
-       </h>
-       
-       <h id="h3">IDADE MÍNIMA:12</h>
-      <i class="ReturnButton"><i class="fa fa-undo" href="#" onclick="return show('TabelaPassatempos2','Atividade8');"></i></i>
-      <i class="HomeButton" href="#" onclick="return show('iRave','Atividade8');"><i class="fa fa-home" href="#" onclick="return show('iRave','Atividade8');"></i></i> 
-</div>
-
-<div id="Atividade9" style="display:none" >
-   <h id="h1">PREÇO:GRÁTIS</h>
-   <h  id="h2">INÍCIO: 18:00 
-    FECHO:18:30
-   </h>
-   
-   <h id="h3">IDADE MÍNIMA:14</h>
-  <i class="ReturnButton"><i class="fa fa-undo" href="#" onclick="return show('TabelaPassatempos2','Atividade9');"></i></i>
-  <i class="HomeButton" href="#" onclick="return show('iRave','Atividade9');"><i class="fa fa-home" href="#" onclick="return show('iRave','Atividade9');"></i></i> 
-</div>
-
-<div id="Atividade10" style="display:none" >
-<h id="h1">PREÇO:GRÁTIS</h>
-<h  id="h2">INÍCIO: 10:00 
-FECHO:18:00
-</h>
-
-<h id="h3">IDADE MÍNIMA:6</h>
-<i class="ReturnButton"><i class="fa fa-undo" href="#" onclick="return show('TabelaPassatempos2','Atividade10');"></i></i>
-<i class="HomeButton" href="#" onclick="return show('iRave','Atividade10');"><i class="fa fa-home" href="#" onclick="return show('iRave','Atividade10');"></i></i> 
-</div>
-
-<div id="Metereologia1" style="display:none" >
-   <div class="icon1"></div>
-<p class="card-info">Tempo estável com algumas nuvens</p>
-<p class="temperatura">30</p>
-   <i class="ReturnButton"><i class="fa fa-undo" href="#" onclick="return show('MenuDias2','Metereologia1');"></i></i>
-   <i class="HomeButton" href="#" onclick="return show('iRave','Metereologia1');"><i class="fa fa-home" href="#" onclick="return show('iRave','Metereologia1');"></i></i> 
-
-</div>
-
- <div id="Metereologia2" style="display:none" >
-    <div class="icon2"></div>
-    <p class="card-info1">Céu limpo</p>
-    <p class="temperatura">35</p>
-    <i class="ReturnButton"><i class="fa fa-undo" href="#" onclick="return show('MenuDias2','Metereologia2');"></i></i>
-    <i class="HomeButton" href="#" onclick="return show('iRave','Metereologia2');"><i class="fa fa-home" href="#" onclick="return show('iRave','Metereologia2');"></i></i> 
-  </div>
-  
-  <div id="TabelaAmigos" style="display:none" >
-    
-    <table class="info" cellpadding="1,5" >
-    <tr>
-    <th>Amigos</th>
-    </tr>
-    <tr>
-    <td href="#" onclick="return show('mapaBruno','TabelaAmigos');">Bruno </td>
-    </tr>
-    <tr>
-    <td href="#" onclick="return show('','TabelaAmigos');">César</td>
-    </tr>
-    <tr>
-    <td href="#" onclick="return show('','TabelaAmigos');">João</td>
-    </tr>
-    <tr>
-    <td href="#" onclick="return show('','TabelaAmigos');" >Francisca</td>
-    </tr>  
-    <i class="ReturnButton"><i class="fa fa-undo" href="#" onclick="return show('MenuNavegacao','TabelaAmigos');"></i></i>
-    <i class="HomeButton" href="#" onclick="return show('iRave','TabelaAmigos');"><i class="fa fa-home" href="#" onclick="return show('iRave','TabelaAmigos');"></i></i> 
-    </table>
-</div>
-
-<div id="TabelaLazer" style="display:none" >
-    
-    <table class="info" cellpadding="1,5" >
-    <tr>
-    <th>Pontos de Lazer</th>
-    </tr>
-    <tr>
-    <td href="#" onclick="return show('','TabelaLazer');">Zona MEO</td>
-    </tr>
-    <tr>
-    <td href="#" onclick="return show('','TabelaLazer');">Zona Yorn</td>
-    </tr>
-    <tr>
-        <td href="#" onclick="return show('','TabelaLazer');">Zona Vodafone</td>
-        </tr>
-    <i class="ReturnButton"><i class="fa fa-undo" href="#" onclick="return show('MenuInteresse','TabelaLazer');"></i></i>
-    <i class="HomeButton" href="#" onclick="return show('iRave','TabelaLazer');"><i class="fa fa-home" href="#" onclick="return show('iRave','TabelaLazer');"></i></i> 
-    </table>
-</div>
-
-<div id="TabelaWC" style="display:none" >
-    
-    <table class="info" cellpadding="1,5" >
-    <tr>
-    <th>WC</th>
-    </tr>
-    <tr>
-    <td href="#" onclick="return show('','TabelaWC');">WC (norte)</td>
-    </tr>
-    <tr>
-    <td href="#" onclick="return show('','TabelaWC');">WC (oeste)</td>
-    </tr>
-    <tr>
-    <td href="#" onclick="return show('','TabelaWC');">WC (sul)</td>
-    </tr>
-   
-    <i class="ReturnButton"><i class="fa fa-undo" href="#" onclick="return show('MenuInteresse','TabelaWC');"></i></i>
-    <i class="HomeButton" href="#" onclick="return show('iRave','TabelaWC');"><i class="fa fa-home" href="#" onclick="return show('iRave','TabelaWC');"></i></i> 
-    </table>
-</div>
-
-<div id="TabelaPalcos" style="display:none" >
-    
-    <table class="info" cellpadding="1,5" >
-    <tr>
-    <th>Palcos</th>
-    </tr>
-    <tr>
-    <td href="#" onclick="return show('','TabelaPalcos');">Palco SuperBock</td>
-    </tr>
-    <tr>
-    <td href="#" onclick="return show('','TabelaPalcos');">Palco Eristoff</td>
-    </tr>
-    <tr>
-    <td href="#" onclick="return show('','TabelaPalcos');">Palco Heineken</td>
-    </tr>
-    <i class="ReturnButton"><i class="fa fa-undo" href="#" onclick="return show('MenuInteresse','TabelaPalcos');"></i></i>
-    <i class="HomeButton" href="#" onclick="return show('iRave','TabelaPalcos');"><i class="fa fa-home" href="#" onclick="return show('iRave','TabelaPalcos');"></i></i> 
-    </table>
-</div>
-
-<div id="TabelaRestauracao" style="display:none" >
-    
-    <table class="info" cellpadding="1,5" >
-    <tr>
-    <th>Pontos de Restauração</th>
-    </tr>
-    <tr>
-    <td href="#" onclick="return show('','TabelaAmigos');">Casa do Falafel</td>
-    </tr>
-    <tr>
-    <td href="#" onclick="return show('','TabelaAmigos');">Bifanas de Trancoso</td>
-    </tr>
-    <tr>
-    <td href="#" onclick="return show('','TabelaAmigos');">Palácio do Kebab</td>
-    </tr>
-    
-    <i class="ReturnButton"><i class="fa fa-undo" href="#" onclick="return show('MenuInteresse','TabelaRestauracao');"></i></i>
-    <i class="HomeButton" href="#" onclick="return show('iRave','TabelaRestauracao');"><i class="fa fa-home" href="#" onclick="return show('iRave','TabelaRestauracao');"></i></i> 
-    </table>
-</div>
-
-<div id="mapaBruno" style="display:none">
-        <div class="pin"></div>
-        <div class ="flag" href="#" onclick="return show('Bussola','mapaBruno');"></div>
-    <i class="ReturnButton"><i class="fa fa-undo" href="#" onclick="return show('MenuNavegacao','mapaBruno');"></i></i>
-    <i class="HomeButton" href="#" onclick="return show('iRave','mapaBruno');"><i class="fa fa-home" href="#" onclick="return show('iRave','mapaBruno');"></i></i> 
+            </tr>
+            <i class="ReturnButton">
+                <i class="fa fa-reply" href="#" onclick="return show('MenuConcerto2','TabelaConcertos6');"></i>
+            </i>
+            <i class="HomeButton" href="#" onclick="return show('iRave','TabelaConcertos6');">
+                <i class="fa fa-home" href="#" onclick="return show('iRave','TabelaConcertos6');"></i>
+            </i>
+        </table>
     </div>
-
+    <div id="TabelaConcertos7" style="display:none">
+        <table class="infoC" cellpadding="1,5">
+            <tr>
+                <th>Artista(s)</th>
+                <th>Hora</th>
+            </tr>
+            <tr>
+                <td>BRMC</td>
+                <td>23:30</td>
+            </tr>
+            <tr>
+                <td>KOKOKO</td>
+                <td>00:30</td>
+            </tr>
+            <tr>
+                <td>BRANKO</td>
+                <td>01:30</td>
+            </tr>
+            <tr>
+                <td>Pearl Jam</td>
+                <td>02:30</td>
+            </tr>
+            <i class="ReturnButton">
+                <i class="fa fa-reply" href="#" onclick="return show('MenuConcerto2','TabelaConcertos7');"></i>
+            </i>
+            <i class="HomeButton" href="#" onclick="return show('iRave','TabelaConcertos7');">
+                <i class="fa fa-home" href="#" onclick="return show('iRave','TabelaConcertos7');"></i>
+            </i>
+        </table>
+    </div>
+    <div id="Atividade1" style="display:none">
+        <h id="h1">PREÇO:GRÁTIS</h>
+        <h id="h2">INÍCIO: 12:00 FECHO:15:00
+        </h>
+        <h id="h3">IDADE MÍNIMA:12</h>
+        <i class="ReturnButton">
+            <i class="fa fa-reply" href="#" onclick="return show('TabelaPassatempos1','Atividade1');"></i>
+        </i>
+        <i class="HomeButton" href="#" onclick="return show('iRave','Atividade1');">
+            <i class="fa fa-home" href="#" onclick="return show('iRave','Atividade1');"></i>
+        </i>
+    </div>
+    <div id="Atividade2" style="display:none">
+        <h id="h1">PREÇO:GRÁTIS</h>
+        <h id="h2">INÍCIO: 14:00 FECHO:15:00
+        </h>
+        <h id="h3">IDADE MÍNIMA:6</h>
+        <i class="ReturnButton">
+            <i class="fa fa-reply" href="#" onclick="return show('TabelaPassatempos1','Atividade2');"></i>
+        </i>
+        <i class="HomeButton" href="#" onclick="return show('iRave','Atividade2');">
+            <i class="fa fa-home" href="#" onclick="return show('iRave','Atividade2');"></i>
+        </i>
+    </div>
+    <div id="Atividade3" style="display:none">
+        <h id="h1">PREÇO:10 EUROS</h>
+        <h id="h2">INÍCIO: 12:00 FECHO:15:00
+        </h>
+        <h id="h3">IDADE MÍNIMA:16</h>
+        <i class="ReturnButton">
+            <i class="fa fa-reply" href="#" onclick="return show('TabelaPassatempos1','Atividade3');"></i>
+        </i>
+        <i class="HomeButton" href="#" onclick="return show('iRave','Atividade3');">
+            <i class="fa fa-home" href="#" onclick="return show('iRave','Atividade3');"></i>
+        </i>
+    </div>
+    <div id="Atividade4" style="display:none">
+        <h id="h1">PREÇO:GRÁTIS</h>
+        <h id="h2">INÍCIO: 18:00 FECHO:18:30
+        </h>
+        <h id="h3">IDADE MÍNIMA:18</h>
+        <i class="ReturnButton">
+            <i class="fa fa-reply" href="#" onclick="return show('TabelaPassatempos1','Atividade4');"></i>
+        </i>
+        <i class="HomeButton" href="#" onclick="return show('iRave','Atividade4');">
+            <i class="fa fa-home" href="#" onclick="return show('iRave','Atividade4');"></i>
+        </i>
+    </div>
+    <div id="Atividade5" style="display:none">
+        <h id="h1">PREÇO:GRÁTIS</h>
+        <h id="h2">INÍCIO: 12:00 FECHO:15:00
+        </h>
+        <h id="h3">IDADE MÍNIMA:12</h>
+        <i class="ReturnButton">
+            <i class="fa fa-reply" href="#" onclick="return show('TabelaPassatempos1','Atividade5');"></i>
+        </i>
+        <i class="HomeButton" href="#" onclick="return show('iRave','Atividade5');">
+            <i class="fa fa-home" href="#" onclick="return show('iRave','Atividade5');"></i>
+        </i>
+    </div>
+    <div id="Atividade6" style="display:none">
+        <h id="h1">PREÇO:GRÁTIS</h>
+        <h id="h2">INÍCIO: 12:00 FECHO:15:00
+        </h>
+        <h id="h3">IDADE MÍNIMA:18</h>
+        <i class="ReturnButton">
+            <i class="fa fa-reply" href="#" onclick="return show('TabelaPassatempos2','Atividade6');"></i>
+        </i>
+        <i class="HomeButton" href="#" onclick="return show('iRave','Atividade6');">
+            <i class="fa fa-home" href="#" onclick="return show('iRave','Atividade6');"></i>
+        </i>
+    </div>
+    <div id="Atividade7" style="display:none">
+        <h id="h1">PREÇO:GRÁTIS</h>
+        <h id="h2">INÍCIO: 14:00 FECHO:15:00
+        </h>
+        <h id="h3">IDADE MÍNIMA:18</h>
+        <i class="ReturnButton">
+            <i class="fa fa-reply" href="#" onclick="return show('TabelaPassatempos2','Atividade7');"></i>
+        </i>
+        <i class="HomeButton" href="#" onclick="return show('iRave','Atividade7');">
+            <i class="fa fa-home" href="#" onclick="return show('iRave','Atividade7');"></i>
+        </i>
+    </div>
+    <div id="Atividade8" style="display:none">
+        <h id="h1">PREÇO:10 EUROS</h>
+        <h id="h2">INÍCIO: 12:00 FECHO:15:00
+        </h>
+        <h id="h3">IDADE MÍNIMA:12</h>
+        <i class="ReturnButton">
+            <i class="fa fa-reply" href="#" onclick="return show('TabelaPassatempos2','Atividade8');"></i>
+        </i>
+        <i class="HomeButton" href="#" onclick="return show('iRave','Atividade8');">
+            <i class="fa fa-home" href="#" onclick="return show('iRave','Atividade8');"></i>
+        </i>
+    </div>
+    <div id="Atividade9" style="display:none">
+        <h id="h1">PREÇO:GRÁTIS</h>
+        <h id="h2">INÍCIO: 18:00 FECHO:18:30
+        </h>
+        <h id="h3">IDADE MÍNIMA:14</h>
+        <i class="ReturnButton">
+            <i class="fa fa-reply" href="#" onclick="return show('TabelaPassatempos2','Atividade9');"></i>
+        </i>
+        <i class="HomeButton" href="#" onclick="return show('iRave','Atividade9');">
+            <i class="fa fa-home" href="#" onclick="return show('iRave','Atividade9');"></i>
+        </i>
+    </div>
+    <div id="Atividade10" style="display:none">
+        <h id="h1">PREÇO:GRÁTIS</h>
+        <h id="h2">INÍCIO: 10:00 FECHO:18:00
+        </h>
+        <h id="h3">IDADE MÍNIMA:6</h>
+        <i class="ReturnButton">
+            <i class="fa fa-reply" href="#" onclick="return show('TabelaPassatempos2','Atividade10');"></i>
+        </i>
+        <i class="HomeButton" href="#" onclick="return show('iRave','Atividade10');">
+            <i class="fa fa-home" href="#" onclick="return show('iRave','Atividade10');"></i>
+        </i>
+    </div>
+    <div id="Metereologia1" style="display:none">
+        <div class="icon1"></div>
+        <p class="card-info">Tempo estável com algumas nuvens</p>
+        <p class="temperatura">30</p>
+        <i class="ReturnButton">
+            <i class="fa fa-reply" href="#" onclick="return show('MenuDias2','Metereologia1');"></i>
+        </i>
+        <i class="HomeButton" href="#" onclick="return show('iRave','Metereologia1');">
+            <i class="fa fa-home" href="#" onclick="return show('iRave','Metereologia1');"></i>
+        </i>
+    </div>
+    <div id="Metereologia2" style="display:none">
+        <div class="icon2"></div>
+        <p class="card-info1">Céu limpo</p>
+        <p class="temperatura">35</p>
+        <i class="ReturnButton">
+            <i class="fa fa-reply" href="#" onclick="return show('MenuDias2','Metereologia2');"></i>
+        </i>
+        <i class="HomeButton" href="#" onclick="return show('iRave','Metereologia2');">
+            <i class="fa fa-home" href="#" onclick="return show('iRave','Metereologia2');"></i>
+        </i>
+    </div>
+    <div id="TabelaAmigos" style="display:none">
+        <table class="info" cellpadding="1,5">
+            <tr>
+                <th>Amigos</th>
+            </tr>
+            <tr>
+                <td href="#" onclick="return show('mapaBruno','TabelaAmigos');">Bruno </td>
+            </tr>
+            <tr>
+                <td href="#" onclick="return show('mapaBarata','TabelaAmigos');">Barata</td>
+            </tr>
+            <tr>
+                <td href="#" onclick="return show('mapaJoao','TabelaAmigos');">João</td>
+            </tr>
+            <tr>
+                <td href="#" onclick="return show('mapaFrancisca','TabelaAmigos');">Francisca</td>
+            </tr>
+            <i class="ReturnButton">
+                <i class="fa fa-reply" href="#" onclick="return show('MenuNavegacao','TabelaAmigos');"></i>
+            </i>
+            <i class="HomeButton" href="#" onclick="return show('iRave','TabelaAmigos');">
+                <i class="fa fa-home" href="#" onclick="return show('iRave','TabelaAmigos');"></i>
+            </i>
+        </table>
+    </div>
+    <div id="TabelaLazer" style="display:none">
+        <table class="info" cellpadding="1,5">
+            <tr>
+                <th>Pontos de Lazer</th>
+            </tr>
+            <tr>
+                <td href="#" onclick="return show('Lazer1','TabelaLazer');">Zona MEO</td>
+            </tr>
+            <tr>
+                <td href="#" onclick="return show('Lazer2','TabelaLazer');">Zona Yorn</td>
+            </tr>
+            <tr>
+                <td href="#" onclick="return show('Lazer3','TabelaLazer');">Zona Vodafone</td>
+            </tr>
+            <i class="ReturnButton">
+                <i class="fa fa-reply" href="#" onclick="return show('MenuInteresse','TabelaLazer');"></i>
+            </i>
+            <i class="HomeButton" href="#" onclick="return show('iRave','TabelaLazer');">
+                <i class="fa fa-home" href="#" onclick="return show('iRave','TabelaLazer');"></i>
+            </i>
+        </table>
+    </div>
+    <div id="TabelaWC" style="display:none">
+        <table class="info" cellpadding="1,5">
+            <tr>
+                <th>WC</th>
+            </tr>
+            <tr>
+                <td href="#" onclick="return show('WC1','TabelaWC');">WC (norte)</td>
+            </tr>
+            <tr>
+                <td href="#" onclick="return show('WC2','TabelaWC');">WC (oeste)</td>
+            </tr>
+            <tr>
+                <td href="#" onclick="return show('WC3','TabelaWC');">WC (sul)</td>
+            </tr>
+            <i class="ReturnButton">
+                <i class="fa fa-reply" href="#" onclick="return show('MenuInteresse','TabelaWC');"></i>
+            </i>
+            <i class="HomeButton" href="#" onclick="return show('iRave','TabelaWC');">
+                <i class="fa fa-home" href="#" onclick="return show('iRave','TabelaWC');"></i>
+            </i>
+        </table>
+    </div>
+    <div id="TabelaPalcos" style="display:none">
+        <table class="info" cellpadding="1,5">
+            <tr>
+                <th>Palcos</th>
+            </tr>
+            <tr>
+                <td href="#" onclick="return show('Palco11','TabelaPalcos');">Palco SuperBock</td>
+            </tr>
+            <tr>
+                <td href="#" onclick="return show('Palco22','TabelaPalcos');">Palco Eristoff</td>
+            </tr>
+            <tr>
+                <td href="#" onclick="return show('Palco33','TabelaPalcos');">Palco Heineken</td>
+            </tr>
+            <i class="ReturnButton">
+                <i class="fa fa-reply" href="#" onclick="return show('MenuInteresse','TabelaPalcos');"></i>
+            </i>
+            <i class="HomeButton" href="#" onclick="return show('iRave','TabelaPalcos');">
+                <i class="fa fa-home" href="#" onclick="return show('iRave','TabelaPalcos');"></i>
+            </i>
+        </table>
+    </div>
+    <div id="TabelaRestauracao" style="display:none">
+        <table class="info" cellpadding="1,5">
+            <tr>
+                <th>Pontos de Restauração</th>
+            </tr>
+            <tr>
+                <td href="#" onclick="return show('Piteu1','TabelaRestauracao');">Casa do Falafel</td>
+            </tr>
+            <tr>
+                <td href="#" onclick="return show('Piteu2','TabelaRestauracao');">Bifanas de Trancoso</td>
+            </tr>
+            <tr>
+                <td href="#" onclick="return show('Piteu3','TabelaRestauracao');">Palácio do Kebab</td>
+            </tr>
+            <i class="ReturnButton">
+                <i class="fa fa-reply" href="#" onclick="return show('MenuInteresse','TabelaRestauracao');"></i>
+            </i>
+            <i class="HomeButton" href="#" onclick="return show('iRave','TabelaRestauracao');">
+                <i class="fa fa-home" href="#" onclick="return show('iRave','TabelaRestauracao');"></i>
+            </i>
+        </table>
+    </div>
+    <div id="mapaBruno" style="display:none">
+        <div class="pin"></div>
+        <div class="flag" href="#" onclick="show('Bussola','mapaBruno');navigate(locations.bruno);"></div>
+        <i class="ReturnButton">
+            <i class="fa fa-reply" href="#" onclick="return show('TabelaAmigos','mapaBruno');"></i>
+        </i>
+        <i class="HomeButton" href="#" onclick="return show('iRave','mapaBruno');">
+            <i class="fa fa-home" href="#" onclick="return show('iRave','mapaBruno');"></i>
+        </i>
+    </div>
+    <div id="arrival" style="display:none">
+        <div>
+            <span>Chegou ao seu destino!</span>
+        </div>
+        <i class="ReturnButton">
+            <i class="fa fa-reply" href="#" onclick="clearTimeout(gnav); show('MenuNavegacao','arrival');"></i>
+        </i>
+        <i class="HomeButton" href="#" onclick="clearTimeout(gnav); show('iRave','arrival');">
+            <i class="fa fa-home" href="#" onclick="clearTimeout(gnav); show('iRave','arrival');"></i>
+        </i>
+    </div>
     <div id="Bussola" style="display:none">
-            <div class="seta"></div>
-            <div class ="BarraProgresso"></div>
-     <i class="ReturnButton"><i class="fa fa-undo" href="#" onclick="return show('mapaBruno','Bussola');"></i></i>
-    <i class="HomeButton" href="#" onclick="return show('iRave','Bussola');"><i class="fa fa-home" href="#" onclick="return show('iRave','Bussola');"></i></i> 
- </div>
+        <div class="seta">
+            <i class="fa fa-location-arrow"></i>
+        </div>
+        <div class="BarraProgresso">
+            <span id="distance">m</span>
+        </div>
+        <i class="ReturnButton">
+            <i class="fa fa-reply" href="#" onclick="clearTimeout(gnav); show('MenuNavegacao','Bussola');"></i>
+        </i>
+        <i class="HomeButton" href="#" onclick="clearTimeout(gnav); show('iRave','Bussola');">
+            <i class="fa fa-home" href="#" onclick="return show('iRave','Bussola');"></i>
+        </i>
+    </div>
+    <div id="ArrivalScreen" style="display:none">
+        <div class="text"></div>
+    </div>
+    <div id="mapaBarata" style="display:none">
+        <div class="pin"></div>
+        <div class="flag1" href="#" onclick="show('Bussola','mapaBarata');navigate(locations.barata);"></div>
+        <i class="ReturnButton">
+            <i class="fa fa-reply" href="#" onclick="return show('TabelaAmigos','mapaBarata');"></i>
+        </i>
+        <i class="HomeButton" href="#" onclick="return show('iRave','mapaBarata');">
+            <i class="fa fa-home" href="#" onclick="return show('iRave','mapaBarata');"></i>
+        </i>
+    </div>
+    <div id="mapaJoao" style="display:none">
+        <div class="pin"></div>
+        <div class="flag2" href="#" onclick="show('Bussola','mapaJoao');navigate(locations.joao);"></div>
+        <i class="ReturnButton">
+            <i class="fa fa-reply" href="#" onclick="return show('TabelaAmigos','mapaJoao');"></i>
+        </i>
+        <i class="HomeButton" href="#" onclick="return show('iRave','mapaJoao');">
+            <i class="fa fa-home" href="#" onclick="return show('iRave','mapaJoao');"></i>
+        </i>
+    </div>
+    <div id="mapaFrancisca" style="display:none">
+        <div class="pin"></div>
+        <div class="flag3" href="#" onclick="show('Bussola','mapaFrancisca');navigate(locations.francisca);"></div>
+        <i class="ReturnButton">
+            <i class="fa fa-reply" href="#" onclick="return show('TabelaAmigos','mapaFrancisca');"></i>
+        </i>
+        <i class="HomeButton" href="#" onclick="return show('iRave','mapaFrancisca');">
+            <i class="fa fa-home" href="#" onclick="return show('iRave','mapaFrancisca');"></i>
+        </i>
+    </div>
+    <div id="Lazer1" style="display:none">
+        <div class="pin"></div>
+        <div class="flag4" href="#" onclick="show('Bussola','Lazer1');navigate(locations.lazer1);"></div>
+        <i class="ReturnButton">
+            <i class="fa fa-reply" href="#" onclick="return show('TabelaLazer','Lazer1');"></i>
+        </i>
+        <i class="HomeButton" href="#" onclick="return show('iRave','Lazer1');">
+            <i class="fa fa-home" href="#" onclick="return show('iRave','Lazer1');"></i>
+        </i>
+    </div>
+    <div id="Lazer2" style="display:none">
+        <div class="pin"></div>
+        <div class="flag5" href="#" onclick="show('Bussola','Lazer2');navigate(locations.lazer2);"></div>
+        <i class="ReturnButton">
+            <i class="fa fa-reply" href="#" onclick="return show('TabelaLazer','Lazer2');"></i>
+        </i>
+        <i class="HomeButton" href="#" onclick="return show('iRave','Lazer2');">
+            <i class="fa fa-home" href="#" onclick="return show('iRave','Lazer2');"></i>
+        </i>
+    </div>
+    <div id="Lazer3" style="display:none">
+        <div class="pin"></div>
+        <div class="flag6" href="#" onclick="show('Bussola','Lazer3');navigate(locations.lazer3);"></div>
+        <i class="ReturnButton">
+            <i class="fa fa-reply" href="#" onclick="return show('TabelaLazer','Lazer3');"></i>
+        </i>
+        <i class="HomeButton" href="#" onclick="return show('iRave','Lazer3');">
+            <i class="fa fa-home" href="#" onclick="return show('iRave','Lazer3');"></i>
+        </i>
+    </div>
+    <div id="WC3" style="display:none">
+        <div class="pin"></div>
+        <div class="flag7" href="#" onclick="show('Bussola','WC3');navigate(locations.wc3);"></div>
+        <i class="ReturnButton">
+            <i class="fa fa-reply" href="#" onclick="return show('TabelaWC','WC3');"></i>
+        </i>
+        <i class="HomeButton" href="#" onclick="return show('iRave','WC3');">
+            <i class="fa fa-home" href="#" onclick="return show('iRave','WC3');"></i>
+        </i>
+    </div>
+    <div id="WC1" style="display:none">
+        <div class="pin"></div>
+        <div class="flag8" href="#" onclick="show('Bussola','WC1');navigate(locations.wc1);"></div>
+        <i class="ReturnButton">
+            <i class="fa fa-reply" href="#" onclick="return show('TabelaWC','WC1');"></i>
+        </i>
+        <i class="HomeButton" href="#" onclick="return show('iRave','WC1');">
+            <i class="fa fa-home" href="#" onclick="return show('iRave','WC1');"></i>
+        </i>
+    </div>
+    <div id="WC2" style="display:none">
+        <div class="pin"></div>
+        <div class="flag9" href="#" onclick="show('Bussola','WC2');navigate(locaitons.wc2);"></div>
+        <i class="ReturnButton">
+            <i class="fa fa-reply" href="#" onclick="return show('TabelaWC','WC2');"></i>
+        </i>
+        <i class="HomeButton" href="#" onclick="return show('iRave','WC2');">
+            <i class="fa fa-home" href="#" onclick="return show('iRave','WC2');"></i>
+        </i>
+    </div>
+    <div id="Palco11" style="display:none">
+        <div class="pin"></div>
+        <div class="flag10" href="#" onclick="show('Bussola','Palco11');navigate(locations.palco1);"></div>
+        <i class="ReturnButton">
+            <i class="fa fa-reply" href="#" onclick="return show('TabelaPalcos','Palco11');"></i>
+        </i>
+        <i class="HomeButton" href="#" onclick="return show('iRave','Palco11');">
+            <i class="fa fa-home" href="#" onclick="return show('iRave','Palco11');"></i>
+        </i>
+    </div>
+    <div id="Palco22" style="display:none">
+        <div class="pin"></div>
+        <div class="flag11" href="#" onclick="show('Bussola','Palco22');navigate(locations.palco2);"></div>
+        <i class="ReturnButton">
+            <i class="fa fa-reply" href="#" onclick="return show('TabelaPalcos','Palco22');"></i>
+        </i>
+        <i class="HomeButton" href="#" onclick="return show('iRave','Palco22');">
+            <i class="fa fa-home" href="#" onclick="return show('iRave','Palco22');"></i>
+        </i>
+    </div>
+    <div id="Palco33" style="display:none">
+        <div class="pin"></div>
+        <div class="flag12" href="#" onclick="show('Bussola','Palco33');navigate(locations.palco3);"></div>
+        <i class="ReturnButton">
+            <i class="fa fa-reply" href="#" onclick="return show('TabelaPalcos','Palco33');"></i>
+        </i>
+        <i class="HomeButton" href="#" onclick="return show('iRave','Palco33');">
+            <i class="fa fa-home" href="#" onclick="return show('iRave','Palco33');"></i>
+        </i>
+    </div>
+    <div id="Piteu1" style="display:none">
+        <div class="pin"></div>
+        <div class="flag13" href="#" onclick="show('Bussola','Piteu1');navigate(locations.piteu1);"></div>
+        <i class="ReturnButton">
+            <i class="fa fa-reply" href="#" onclick="return show('TabelaRestauracao','Piteu1');"></i>
+        </i>
+        <i class="HomeButton" href="#" onclick="return show('iRave','Piteu1');">
+            <i class="fa fa-home" href="#" onclick="return show('iRave','Piteu1');"></i>
+        </i>
+    </div>
+    <div id="Piteu2" style="display:none">
+        <div class="pin"></div>
+        <div class="flag14" href="#" onclick="show('Bussola','Piteu2');navigate(locations.piteu2);"></div>
+        <i class="ReturnButton">
+            <i class="fa fa-reply" href="#" onclick="return show('TabelaRestauracao','Piteu2');"></i>
+        </i>
+        <i class="HomeButton" href="#" onclick="return show('iRave','Piteu2');">
+            <i class="fa fa-home" href="#" onclick="return show('iRave','Piteu2');"></i>
+        </i>
+    </div>
+    <div id="Piteu3" style="display:none">
+        <div class="pin"></div>
+        <div class="flag15" href="#" onclick="show('Bussola','Piteu3');navigate(locations.piteu3);"></div>
+        <i class="ReturnButton">
+            <i class="fa fa-reply" href="#" onclick="return show('TabelaRestauracao','Piteu3');"></i>
+        </i>
+        <i class="HomeButton" href="#" onclick="return show('iRave','Piteu3');">
+            <i class="fa fa-home" href="#" onclick="return show('iRave','Piteu3');"></i>
+        </i>
+    </div>
+    <div id="MenuBebida" style="display:none">
+        <div class="slideshow-container">
+            <div class="mySlidesBebida">
+                <div class="ComAlcool" href="#" onclick="">Com Álcool</div>
+            </div>
+            <div class="mySlidesBebida">
+                <div class="SemAlcool" href="#" onclick="">Sem Álcool</div>
+            </div>
+            <a class="prev " onclick="plusSlidesBebida(-1);">&#8249;</a>
+            <a class="next" onclick="plusSlidesBebida(1);">&#8250;</a>
+            <div class="dotsBebida" style="text-align:center">
+                <span class="dotBebida"></span>
+                <span class="dotBebida"></span>
+            </div>
+            <i class="ReturnButton">
+                <i class="fa fa-reply" href="#" onclick="return show('MenuPagamento','MenuBebida');"></i>
+            </i>
+            <i class="HomeButton" href="#" onclick="return show('iRave','MenuBebida');">
+                <i class="fa fa-home" href="#" onclick="return show('iRave','MenuBebida');"></i>
+            </i>
+        </div>
+
+    
 </body>
-
-
 </html>
