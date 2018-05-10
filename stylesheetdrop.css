@@ -297,22 +297,18 @@ box-shadow: 0px 0px 11px white;
 	height:-10px;
 	left:40px;
 }
-.dotsInformacao,.dotsPagamento{
+.dotsInformacao{
 	position:absolute;
-	left:38px;
+	left:55px;
 	top:115px;
 }
-
-.dotInformacao,.dotPagamento{
+.dotInformacao{
 	height: 8px;
 	width: 8px;
 	margin: 0 2px;
 	background-color:white;
 	border-radius: 50%;
 	display: inline-block;
-}
-.dotsPagamento{
-	text-align: center;
 
 }
 .active{
@@ -366,7 +362,7 @@ box-shadow: 0px 0px 11px white;
 }
 
 
- #MenuInformacao,#MenuNavegacao,#MenuInteresse,#MenuPagamento,#MenuBebida{
+ #MenuInformacao,#MenuNavegacao,#MenuInteresse{
 	color:white;
 	font-size: 22px;
 	top:30px;
@@ -381,7 +377,7 @@ box-shadow: 0px 0px 11px white;
 
  }
 
- .Concertos,.Amigos,.PontosInteresse,.PalcosInteresse,.LazerInteresse,.WCinteresse,.RestauracaoInteresse,.SemAlcool,.ComAlcool{
+ .Concertos,.Amigos,.PontosInteresse,.PalcosInteresse,.LazerInteresse,.WCinteresse,.RestauracaoInteresse{
 	cursor:pointer;
     color:black;
 	font-size: 25px;
@@ -400,12 +396,7 @@ box-shadow: 0px 0px 11px white;
 	animation: shine 2s infinite;
 
  }
-.ComAlcool{
-	background-image:url("beer.png");
-}
-.SemAlcool{
-	background-image:url("juice.png");
-}
+
  .Passatempos{
 	cursor:pointer;
     color:black;
@@ -444,15 +435,15 @@ box-shadow: 0px 0px 11px white;
 
  }
 
- .dotsConcerto,.dotsConcerto2,.dotsNavegacao,.dotsBebida{
+ .dotsConcerto,.dotsConcerto2,.dotsNavegacao{
 	position:absolute;
-	left:56px;
+	left:47px;
 	top:115px;
 }
 .dotsNavegacao{
 	left:56px;
 }
-.dotConcerto,.dotConcerto2,.dotNavegacao,.dotBebida{
+.dotConcerto,.dotConcerto2,.dotNavegacao{
 	height: 7.5px;
 	width: 7.5px;
 	margin: 0 2px;
@@ -468,7 +459,7 @@ box-shadow: 0px 0px 11px white;
 box-shadow: 0px 0px 11px white;
 	
 }
-#MenuConcerto,#mapaBruno,#mapaBarata,#mapaFrancisca,#mapaJoao, #Lazer1, #Lazer2, #Lazer3, #Palco11, #Palco22, #Palco33, #WC1, #WC2, #WC3, #Piteu1, #Piteu2, #Piteu3{
+#MenuConcerto,#mapaBruno {
 	color:white;
 	font-size: 25px;
 	top:30px;
@@ -496,7 +487,7 @@ box-shadow: 0px 0px 11px white;
 	background-color:#fff;
 
  }
- .Palco1,.Comida,.Bebidas,.Merchandise,.Carrinho{
+ .Palco1{
 	cursor:pointer;
     color:black;
 	font-size: 25px;
@@ -516,25 +507,7 @@ box-shadow: 0px 0px 11px white;
 
  }
 
- .Comida{
-	background-image:url("burguer.png");
- }
-
- .Bebidas{
-
-	background-image:url("drink.png");
- }
-
-
- .Merchandise{
-	background-image:url("shirt.png");
-	font-size:23px;
- }
-
- .Carrinho{
-	background-image:url("shop.png");
-	background-size:70px;
- }
+ 
  
 	.Palco2{
 		cursor:pointer;
@@ -1005,7 +978,7 @@ box-shadow: 0px 0px 11px white;
 		font-size:23px;
 	}
 
-	#mapaBruno,#mapaBarata, #mapaFrancisca, #mapaJoao, #Lazer1, #Lazer2, #Lazer3, #Palco11, #Palco22, #Palco33, #WC1, #WC2, #WC3, #Piteu1, #Piteu2, #Piteu3{
+	#mapaBruno{
 		background-image: url("festival.png");
 	}
 	.pin{
@@ -1019,138 +992,16 @@ box-shadow: 0px 0px 11px white;
 		position:absolute;
 	}
 
-	.flag,.flag1,.flag2,.flag3,.flag4,.flag5,.flag6,.flag7,.flag8,.flag9,.flag10,.flag11,.flag12,.flag13,.flag14,.flag15{
-		width:60px;
+	.flag{
+		width:50px;
 		height:50px;
 		background-image:url("flag.png");
+		top:13%;
+		right:48%;
 		background-size:40px;
 		background-repeat: no-repeat;
 		position:absolute;
 		cursor:pointer;
-		background-color:white;
-		border-radius:60px;
-		-webkit-mask-image: linear-gradient(-75deg, rgba(0,0,0,.6) 30%, #000 50%, rgba(0,0,0,.6) 70%);
-				-webkit-mask-size: 200%;
-				animation: shine 2s infinite;
-		background-position:center;
-
 	}
 
-	.flag1{
-		top:13%;
-		right:49%;
-	}
-
-	.flag2{
-		top:11%;
-		right:48%;
-	}
-
-	.flag{
-		top:13%;
-		right:48%;
-	}
-
-	.flag3{
-		top:12%;
-		right:50%;
-	}
-
-	.flag4{
-		top:13%;
-		right:48%;
-	}
-
-	.flag5{
-		top:10%;
-		right:48%;
-	}
-
-	.flag6{
-		top:12%;
-		right:49%;
-	}
-
-	.flag7{
-		top:12%;
-		right:47%;
-	}
-	.flag8{
-		top:12%;
-		right:49%;
-	}
-	.flag9{
-		top:12%;
-		right:49%;
-	}
-	.flag10{
-		top:9%;
-		right:50%;
-	}
-	.flag11{
-		top:12%;
-		right:49%;
-	}
-	.flag12{
-		top:8%;
-		right:51%;
-	}
-	.flag13{
-		top:11%;
-		right:50%;
-	}
-	.flag14{
-		top:11%;
-		right:50%;
-	}
-	.flag15{
-		top:12%;
-		right:51%;
-	}
-
-.seta {
-    font-size: 5em;
-    color: black;
-}
-
-.fa-location-arrow {
-    margin-top: 20px;
-	margin-left: 40px;
-	font-weight:bold;
-	width:60px;
-}
-
-.BarraProgresso {
-    color: black;
-	text-align: center;
-	font-weight:bold;
-	font-size:30px;
-	background-color:white;
-	height:25%;
-}
-
-#Bussola{
-	background-image:url('path.gif');
-	background-size:cover;
-	background-size: 100% 75%;
-	height:144px;
-	width:144px;
-}
-
-#arrival {
-	height: 100%;
-	text-align: center;
-	background-color: white;
-}
-
-#arrival div {
-	height: 100%;
 	
-}
-#arrival span {
-	color: black;
-	font-size: 1.5em;
-	font-family: sans-serif;
-	height: inherit;
-
-}
