@@ -10,6 +10,7 @@
     <script type="text/javascript" src="QTransform.js"></script>
     <script type="text/javascript" src="point.js"></script>
     <script type="text/javascript" src="nav.js"></script>
+    <script type="text/javascript" src="shoopCart.js"></script>
 </head>
 <body onload="startTime()">
     <div id="watch-background">
@@ -31,7 +32,7 @@
                 <div class="text1" href="#" onclick="plusSlidesNavegacao(0);return show('MenuNavegacao','MenuSecundario')">Navegação</div>
             </div>
             <div class="mySlides">
-                <div class="text2" onclick="plusSlidesPagamento(0);return show('MenuPagamento','MenuSecundario')">Pagamento</div>
+                <div class="text2" onclick="plusSlidesPagamento(-1);return show('MenuPagamento','MenuSecundario')">Pagamento</div>
             </div>
             <div class="mySlides">
                 <div class="text3" href="#" onclick="plusSlidesInformacao(0);return show('MenuInformacao','MenuSecundario')">Informação</div>
@@ -254,17 +255,21 @@
     <div id="MenuPagamento" style="display:none">
         <div class="slideshow-container">
             <div class="mySlidesPagamento">
-                <div class="Merchandise" href="#" onclick="">Merchandise</div>
+                <div class="Merchandise" href="#" onclick="presentQuantity(); return show('MerchandiseList','MenuPagamento');">Merchandise</div>
             </div>
             <div class="mySlidesPagamento">
-                <div class="Comida" href="#" onclick="">Comida</div>
+                <div class="Comida" href="#" onclick="presentQuantity(); return show('ComidaList','MenuPagamento');">Comida</div>
             </div>
             <div class="mySlidesPagamento">
-                <div class="Bebidas" href="#" onclick="plusSlidesBebida(0);return show('MenuBebida','MenuPagamento')">Bebida</div>
+                <div class="Bebidas" href="#" onclick= "plusSlidesBebida(0); return show('MenuBebida','MenuPagamento')">Bebida</div>
+            </div>
+            <div class="mySlidesPagamento">
+                <div class="Carrinho" href="#" onclick="getSum(); return show('Car','MenuPagamento');">Carrinho</div>
             </div>
             <a class="prev " onclick="plusSlidesPagamento(-1);">&#8249;</a>
             <a class="next" onclick="plusSlidesPagamento(1);">&#8250;</a>
             <div class="dotsPagamento" style="text-align:center">
+                <span class="dotPagamento"></span>
                 <span class="dotPagamento"></span>
                 <span class="dotPagamento"></span>
                 <span class="dotPagamento"></span>
@@ -277,6 +282,665 @@
             </i>
         </div>
     </div>
+
+    <div id="Car" style="display:none">
+            <table class="LetsSeeThatCar" id="ShoopCar" style="display:table"  cellpadding="1,5">
+                    <tr style="display:table-row">
+                        <th >Produto</th>
+                        <th>Qtd</th>
+                        <th>€</th>
+                        
+                    </tr>
+                    <tr id ="shirtDIV" style="display:none">
+                        <td href="#" id="shirt_name_cart"style="display:table-cell" ></td>
+                        <td id="shirt_qntCar"style="display:table-cell"></td>
+                        <td id="shirt_total_price"style="display:table-cell"></td>
+                    </tr>
+                    <tr id ="flagDIV" style="display:none">
+                        <td href="#" id="flag_name_cart" style="display:table-cell"></td>
+                        <td id="flag_qntCar"style="display:table-cell"></td>
+                        <td id="flag_total_price"style="display:table-cell"></td>
+                    </tr>   
+                    <tr id ="pussyDIV" style="display:none">
+                        <td href="#" id="pussy_name_cart" style="display:table-cell"></td>
+                        <td id="pussy_qntCar"style="display:table-cell"></td>
+                        <td id="pussy_total_price"style="display:table-cell"></td>
+                    </tr>
+                    <tr id ="fartDIV" style="display:none">
+                        <td href="#" id="fart_name_cart" style="display:table-cell"></td>
+                        <td id="fart_qntCar"style="display:table-cell"></td>
+                        <td id="fart_total_price"style="display:table-cell"></td>
+                    </tr>
+                    <tr id ="burguerDIV" style="display:none">
+                            <td href="#" id="burguer_name_cart"style="display:table-cell" ></td>
+                            <td id="burguer_qntCar"style="display:table-cell"></td>
+                            <td id="burguer_total_price"style="display:table-cell"></td>
+                        </tr>
+                        <tr id ="hotdogDIV" style="display:none">
+                            <td href="#" id="hotdog_name_cart" style="display:table-cell"></td>
+                            <td id="hotdog_qntCar"style="display:table-cell"></td>
+                            <td id="hotdog_total_price"style="display:table-cell"></td>
+                        </tr>   
+                        <tr id ="pizzaDIV" style="display:none">
+                            <td href="#" id="pizza_name_cart" style="display:table-cell"></td>
+                            <td id="pizza_qntCar" style="display:table-cell"></td>
+                            <td id="pizza_total_price" style="display:table-cell"></td>
+                        </tr>
+                        <tr id ="kebabDIV" style="display:none">
+                            <td href="#" id="kebab_name_cart"style="display:table-cell" ></td>
+                            <td id="kebab_qntCar"style="display:table-cell"></td>
+                            <td id="kebab_total_price"style="display:table-cell"></td>
+                        </tr>
+
+                        <tr id ="cervejaDIV" style="display:none">
+                                <td href="#" id="cerveja_name_cart"style="display:table-cell" ></td>
+                                <td id="cerveja_qntCar"style="display:table-cell"></td>
+                                <td id="cerveja_total_price"style="display:table-cell"></td>
+                            </tr>
+                            <tr id ="sangriaDIV" style="display:none">
+                                <td href="#" id="sangria_name_cart"style="display:table-cell" ></td>
+                                <td id="sangria_qntCar"style="display:table-cell"></td>
+                                <td id="sangria_total_price"style="display:table-cell"></td>
+                            </tr>   
+                            <tr id ="sidraDIV" style="display:none">
+                                <td href="#" id="sidra_name_cart"style="display:table-cell" ></td>
+                                <td id="sidra_qntCar"style="display:table-cell"></td>
+                                <td id="sidra_total_price"style="display:table-cell"></td>
+                            </tr>
+                            <tr id ="vinhoDIV" style="display:none">
+                                <td href="#" id="vinho_name_cart" style="display:table-cell"></td>
+                                <td id="vinho_qntCar"style="display:table-cell"></td>
+                                <td id="vinho_total_price"style="display:table-cell"></td>
+                            </tr>
+
+                            <tr id ="iceteaDIV" style="display:none">
+                                    <td href="#" id="icetea_name_cart"style="display:table-cell" ></td>
+                                    <td id="icetea_qntCar"style="display:table-cell"></td>
+                                    <td id="icetea_total_price"style="display:table-cell"></td>
+                                </tr>
+                                <tr id ="cocacolaDIV" style="display:none">
+                                    <td href="#" id="cocacola_name_cart"style="display:table-cell" ></td>
+                                    <td id="cocacola_qntCar"style="display:table-cell"></td>
+                                    <td id="cocacola_total_price"style="display:table-cell"></td>
+                                </tr>   
+                                <tr id ="compalDIV" style="display:none">
+                                    <td href="#" id="compal_name_cart"style="display:table-cell" ></td>
+                                    <td id="compal_qntCar" style="display:table-cell"></td>
+                                    <td id="compal_total_price" style="display:table-cell"></td>
+                                </tr>
+                                <tr id ="limonadaDIV" style="display:none">
+                                    <td href="#" id="limonada_name_cart"style="display:table-cell" ></td>
+                                    <td id="limonada_qntCar"style="display:table-cell"></td>
+                                    <td id="limonada_total_price"style="display:table-cell"></td>
+                                </tr>
+            </table>
+         
+            <a class="PreçoTotal" href="#" onclick = "return show('YouSureFinalScreen','Car');">Clique para pagar</a>
+           
+            <input type="shopcar_price" id="shopcar_price" value="0" />
+            <label class="unit">€</label>
+            <i class="ReturnButton">
+                    <i class="fa fa-reply" href="#" onclick="return show('MenuPagamento','Car');"></i>
+                </i>
+                <i class="HomeButton" href="#" onclick="return show('iRave','Car');">
+                    <i class="fa fa-home" href="#" onclick="return show('iRave','Car');"></i>
+                </i>
+    </div>
+
+    <div id="MerchandiseList" style="display:none">
+        <table class="PayWhatYouOwe" id="Merchandise" cellpadding="1,5">
+            <tr>
+                <th>Produto</th>
+                <th>Qtd</th>
+               
+            </tr>
+            <tr>
+                <td href="#" id="shirt_name" onclick="return show('ShirtMerch','MerchandiseList');"></td>
+                <td id="shirt_qnt"></td>
+            </tr>
+            <tr>
+                <td href="#" id="flag_name" onclick="return show('FlagMerch','MerchandiseList');"></td>
+                <td id="flag_qnt"></td>
+            </tr>   
+            <tr>
+                <td href="#" id="pussy_name" onclick="return show('PussyMerch','MerchandiseList');"></td>
+                <td id="pussy_qnt"></td>
+            </tr>
+            <tr>
+                <td href="#" id="fart_name" onclick="return show('FartMerch','MerchandiseList');"></td>
+                <td id="fart_qnt"></td>
+            </tr>
+        <i class="ReturnButton">
+            <i class="fa fa-reply" href="#" onclick="return show('MenuPagamento','MerchandiseList');"></i>
+        </i>
+        <i class="HomeButton" href="#" onclick="return show('iRave','MerchandiseList');">
+            <i class="fa fa-home" href="#" onclick="return show('iRave','MerchandiseList');"></i>
+        </i>
+    </table>
+    </div>
+
+    <div id="ShirtMerch" style="display:none">
+           
+            <div class="value-button-shirt" id="decrease-shirt" onclick="decreaseValueShirt()" value="Decrease Value">-</div>
+            <input type="number_shirt" id="number_shirt" value="0" />
+            <div class="value-button-shirt" id="increase-shirt" onclick="increaseValueShirt()" value="Increase Value">+</div>
+            <input type="shirt_price" id="shirt_price" value="10.0" />
+            <a class="Euro"></a>
+            <a class="imgshirt"></a>
+        <i class="ReturnButton">
+                <i class="fa fa-reply" href="#" onclick="presentQuantity(); return show('MerchandiseList','ShirtMerch');"></i>
+            </i>
+            <i class="HomeButton" href="#" onclick=" presentQuantity(); return show('iRave','ShirtMerch');">
+                <i class="fa fa-home" href="#" onclick=" presentQuantity(); return show('iRave','ShirtMerch');"></i>
+            </i>
+
+    </div>
+
+    <div id="FlagMerch" style="display:none">
+           
+                    <div class="value-button-flag" id="decrease-flag" onclick="decreaseValueFlag()" value="Decrease Value">-</div>
+                    <input type="number_flag" id="number_flag" value="0" />
+                    <div class="value-button-flag" id="increase-flag" onclick="increaseValueFlag()" value="Increase Value">+</div>
+                    <input type="flag_price" id="flag_price" value="22.0" />
+                    <a class="Euro"></a>
+                    <a class="imgflag"></a>
+                <i class="ReturnButton">
+                        <i class="fa fa-reply" href="#" onclick=" presentQuantity(); return show('MerchandiseList','FlagMerch');"></i>
+                    </i>
+                    <i class="HomeButton" href="#" onclick=" presentQuantity(); return show('iRave','FlagMerch');">
+                        <i class="fa fa-home" href="#" onclick=" presentQuantity(); return show('iRave','FlagMerch');"></i>
+                    </i>
+    </div>
+    
+    <div id="PussyMerch" style="display:none">
+           
+                    <div class="value-button-pussy" id="decrease-pussy" onclick="decreaseValuePussy()" value="Decrease Value">-</div>
+                    <input type="number_pussy" id="number_pussy" value="0" />
+                    <div class="value-button-pussy" id="increase-pussy" onclick="increaseValuePussy()" value="Increase Value">+</div>
+                    <input type="pussy_price" id="pussy_price" value="17.0" />
+                    <a class="Euro"></a>
+                    <a class="imgPin"></a>
+                <i class="ReturnButton">
+                        <i class="fa fa-reply" href="#" onclick=" presentQuantity(); return show('MerchandiseList','PussyMerch');"></i>
+                    </i>
+                    <i class="HomeButton" href="#" onclick=" presentQuantity(); return show('iRave','PussyMerch');">
+                        <i class="fa fa-home" href="#" onclick=" presentQuantity(); return show('iRave','PussyMerch');"></i>
+                    </i>
+    </div>
+
+    <div id="FartMerch" style="display:none">
+            
+                    <div class="value-button-fart" id="decrease-fart" onclick="decreaseValueFart()" value="Decrease Value">-</div>
+                    <input type="number_fart" id="number_fart" value="0" />
+                    <div class="value-button-fart" id="increase-fart" onclick="increaseValueFart()" value="Increase Value">+</div>
+                    <input type="fart_price" id="fart_price" value="18.0" />
+                    <a class="Euro"></a>
+                    <a class="imgPowerBank"></a>
+                <i class="ReturnButton">
+                        <i class="fa fa-reply" href="#" onclick="presentQuantity(); return show('MerchandiseList','FartMerch');"></i>
+                    </i>
+                    <i class="HomeButton" href="#" onclick="presentQuantity(); return show('iRave','FartMerch');">
+                        <i class="fa fa-home" href="#" onclick="presentQuantity(); return show('iRave','FartMerch');"></i>
+                    </i>
+    </div>
+
+    <div id="ComidaList" style="display:none">
+        <table class="PayWhatYouOwe" id="Comida" cellpadding="1,5">
+            <tr>
+                <th>Produto</th>
+                <th>Qtd</th>
+            </tr>
+            <tr>
+                <td href="#" id="burguer_name" onclick="return show('BurguerMerch','ComidaList');"></td>
+                <td id="burguer_qnt"></td>
+            </tr>
+            <tr>
+                <td href="#" id="hotdog_name" onclick="return show('HotdogMerch','ComidaList');"></td>
+                <td id="hotdog_qnt"></td>
+            </tr>   
+            <tr>
+                <td href="#" id="pizza_name" onclick="return show('PizzaMerch','ComidaList');"></td>
+                <td id="pizza_qnt"></td>
+            </tr>
+            <tr>
+                <td href="#" id="kebab_name" onclick="return show('KebabMerch','ComidaList');"></td>
+                <td id="kebab_qnt"></td>
+            </tr>
+        <i class="ReturnButton">
+            <i class="fa fa-reply" href="#" onclick="return show('MenuPagamento','ComidaList');"></i>
+        </i>
+        <i class="HomeButton" href="#" onclick="return show('iRave','ComidaList');">
+            <i class="fa fa-home" href="#" onclick="return show('iRave','ComidaList');"></i>
+        </i>
+    </table>
+    </div>
+
+    <div id="BurguerMerch" style="display:none">
+           
+        <div class="value-button-burguer" id="decrease-burguer" onclick="decreaseValueBurguer()" value="Decrease Value">-</div>
+        <input type="number_burguer" id="number_burguer" value="0" />
+        <div class="value-button-burguer" id="increase-burguer" onclick="increaseValueBurguer()" value="Increase Value">+</div>
+        <input type="burguer_price" id="burguer_price" value="8.0" />
+        <a class="Euro"></a>
+        <a class="imgburguer"></a>
+    <i class="ReturnButton">
+            <i class="fa fa-reply" href="#" onclick="presentQuantity(); return show('ComidaList','BurguerMerch');"></i>
+        </i>
+        <i class="HomeButton" href="#" onclick=" presentQuantity(); return show('iRave','BurguerMerch');">
+            <i class="fa fa-home" href="#" onclick=" presentQuantity(); return show('iRave','BurguerMerch');"></i>
+        </i>
+</div>
+
+
+<div id="HotdogMerch" style="display:none">
+           
+    <div class="value-button-hotdog" id="decrease-hotdog" onclick="decreaseValueHotDog()" value="Decrease Value">-</div>
+    <input type="number_hotdog" id="number_hotdog" value="0" />
+    <div class="value-button-hotdog" id="increase-hotdog" onclick="increaseValueHotDog()" value="Increase Value">+</div>
+    <input type="hotdog_price" id="hotdog_price" value="5.0" />
+    <a class="Euro"></a>
+    <a class="imghotdog"></a>
+<i class="ReturnButton">
+        <i class="fa fa-reply" href="#" onclick=" presentQuantity(); return show('ComidaList','HotdogMerch');"></i>
+    </i>
+    <i class="HomeButton" href="#" onclick=" presentQuantity(); return show('iRave','HotdogMerch');">
+        <i class="fa fa-home" href="#" onclick=" presentQuantity(); return show('iRave','HotdogMerch');"></i>
+    </i>
+</div>
+
+<div id="PizzaMerch" style="display:none">
+           
+    <div class="value-button-pizza" id="decrease-pizza" onclick="decreaseValuePizza()" value="Decrease Value">-</div>
+    <input type="number_pizza" id="number_pizza" value="0" />
+    <div class="value-button-pizza" id="increase-pizza" onclick="increaseValuePizza()" value="Increase Value">+</div>
+    <input type="pizza_price" id="pizza_price" value="5.0" />
+    <a class="Euro"></a>
+    <a class="imgpizza"></a>
+<i class="ReturnButton">
+        <i class="fa fa-reply" href="#" onclick=" presentQuantity(); return show('ComidaList','PizzaMerch');"></i>
+    </i>
+    <i class="HomeButton" href="#" onclick=" presentQuantity(); return show('iRave','PizzaMerch');">
+        <i class="fa fa-home" href="#" onclick=" presentQuantity(); return show('iRave','PizzaMerch');"></i>
+    </i>
+</div>
+
+<div id="KebabMerch" style="display:none">
+           
+    <div class="value-button-kebab" id="decrease-kebab" onclick="decreaseValueKebab()" value="Decrease Value">-</div>
+    <input type="number_kebab" id="number_kebab" value="0" />
+    <div class="value-button-kebab" id="increase-kebab" onclick="increaseValueKebab()" value="Increase Value">+</div>
+    <input type="kebab_price" id="kebab_price" value="3.0" />
+    <a class="Euro"></a>
+    <a class="imgkebab"></a>
+<i class="ReturnButton">
+        <i class="fa fa-reply" href="#" onclick=" presentQuantity(); return show('ComidaList','KebabMerch');"></i>
+    </i>
+    <i class="HomeButton" href="#" onclick=" presentQuantity(); return show('iRave','KebabMerch');">
+        <i class="fa fa-home" href="#" onclick=" presentQuantity(); return show('iRave','KebabMerch');"></i>
+    </i>
+</div>
+
+<div id="AlcoolList" style="display:none">
+        <table class="PayWhatYouOwe" id="Alcool" cellpadding="1,5">
+            <tr>
+                <th>Produto</th>
+                <th>Qtd</th>
+               
+            </tr>
+            <tr>
+                    <td href="#" id="cerveja_name" onclick="return show('CervejaMerch','AlcoolList');"></td>
+                    <td id="cerveja_qnt"></td>
+                </tr>   
+            <tr>
+                <td href="#" id="sangria_name" onclick="return show('SangriaMerch','AlcoolList');"></td>
+                <td id="sangria_qnt"></td>
+            </tr>   
+            <tr>
+                <td href="#" id="sidra_name" onclick="return show('CidraMerch','AlcoolList');"></td>
+                <td id="sidra_qnt"></td>
+            </tr>
+            <tr>
+                <td href="#" id="vinho_name" onclick="return show('VinhoMerch','AlcoolList');"></td>
+                <td id="vinho_qnt"></td>
+            </tr>
+        <i class="ReturnButton">
+            <i class="fa fa-reply" href="#" onclick="return show('MenuBebida','AlcoolList');"></i>
+        </i>
+        <i class="HomeButton" href="#" onclick="return show('iRave','AlcoolList');">
+            <i class="fa fa-home" href="#" onclick="return show('iRave','AlcoolList');"></i>
+        </i>
+    </table>
+    </div>
+
+    <div id="CervejaMerch" style="display:none">
+           
+            <div class="value-button-cerveja" id="decrease-cerveja" onclick="decreaseValueCerveja()" value="Decrease Value">-</div>
+            <input type="number_cerveja" id="number_cerveja" value="0" />
+            <div class="value-button-kebab" id="increase-cerveja" onclick="increaseValueCerveja()" value="Increase Value">+</div>
+            <input type="cerveja_price" id="cerveja_price" value="3.0" />
+            <a class="Euro"></a>
+            <a class="imgcerveja"></a>
+        <i class="ReturnButton">
+                <i class="fa fa-reply" href="#" onclick=" presentQuantity(); return show('AlcoolList','CervejaMerch');"></i>
+            </i>
+            <i class="HomeButton" href="#" onclick=" presentQuantity(); return show('iRave','CervejaMerch');">
+                <i class="fa fa-home" href="#" onclick=" presentQuantity(); return show('iRave','CervejaMerch');"></i>
+            </i>
+        </div>
+
+        <div id="SangriaMerch" style="display:none">
+           
+                <div class="value-button-sangria" id="decrease-sangria" onclick="decreaseValueSangria()" value="Decrease Value">-</div>
+                <input type="number_sangria" id="number_sangria" value="0" />
+                <div class="value-button-sangria" id="increase-sangria" onclick="increaseValueSangria()" value="Increase Value">+</div>
+                <input type="sangria_price" id="sangria_price" value="3.0" />
+                <a class="Euro"></a>
+                <a class="imgsangria"></a>
+            <i class="ReturnButton">
+                    <i class="fa fa-reply" href="#" onclick=" presentQuantity(); return show('AlcoolList','SangriaMerch');"></i>
+                </i>
+                <i class="HomeButton" href="#" onclick=" presentQuantity(); return show('iRave','SangriaMerch');">
+                    <i class="fa fa-home" href="#" onclick=" presentQuantity(); return show('iRave','SangriaMerch');"></i>
+                </i>
+            </div>
+
+            <div id="CidraMerch" style="display:none">
+           
+                    <div class="value-button-sidra" id="decrease-sidra" onclick="decreaseValueSidra()" value="Decrease Value">-</div>
+                    <input type="number_sidra" id="number_sidra" value="0" />
+                    <div class="value-button-sidra" id="increase-sidra" onclick="increaseValueSidra()" value="Increase Value">+</div>
+                    <input type="sidra_price" id="sidra_price" value="3.0" />
+                    <a class="Euro"></a>
+                    <a class="imgsidra"></a>
+                <i class="ReturnButton">
+                        <i class="fa fa-reply" href="#" onclick=" presentQuantity(); return show('AlcoolList','CidraMerch');"></i>
+                    </i>
+                    <i class="HomeButton" href="#" onclick=" presentQuantity(); return show('iRave','CidraMerch');">
+                        <i class="fa fa-home" href="#" onclick=" presentQuantity(); return show('iRave','CidraMerch');"></i>
+                    </i>
+                </div>
+
+                <div id="VinhoMerch" style="display:none">
+           
+                        <div class="value-button-vinho" id="decrease-vinho" onclick="decreaseValueVinho()" value="Decrease Value">-</div>
+                        <input type="number_vinho" id="number_vinho" value="0" />
+                        <div class="value-button-vinho" id="increase-vinho" onclick="increaseValueVinho()" value="Increase Value">+</div>
+                        <input type="vinho_price" id="vinho_price" value="3.0" />
+                        <a class="Euro"></a>
+                        <a class="imgvinho"></a>
+                    <i class="ReturnButton">
+                            <i class="fa fa-reply" href="#" onclick=" presentQuantity(); return show('AlcoolList','VinhoMerch');"></i>
+                        </i>
+                        <i class="HomeButton" href="#" onclick=" presentQuantity(); return show('iRave','VinhoMerch');">
+                            <i class="fa fa-home" href="#" onclick=" presentQuantity(); return show('iRave','VinhoMerch');"></i>
+                        </i>
+                    </div>
+
+                    <div id="SemAlcoolList" style="display:none">
+                            <table class="PayWhatYouOwe" id="SemAlcool" cellpadding="1,5">
+                                <tr>
+                                    <th>Produto</th>
+                                    <th>Qtd</th>
+                                   
+                                </tr>
+                                <tr>
+                                        <td href="#" id="icetea_name" onclick="return show('IceTeaMerch','SemAlcoolList');"></td>
+                                        <td id="icetea_qnt"></td>
+                                    </tr>   
+                                <tr>
+                                    <td href="#" id="cocacola_name" onclick="return show('CocaColaMerch','SemAlcoolList');"></td>
+                                    <td id="cocacola_qnt"></td>
+                                </tr>   
+                                <tr>
+                                    <td href="#" id="compal_name" onclick="return show('CompalMerch','SemAlcoolList');"></td>
+                                    <td id="compal_qnt"></td>
+                                </tr>
+                                <tr>
+                                    <td href="#" id="limonada_name" onclick="return show('LimonadaMerch','SemAlcoolList');"></td>
+                                    <td id="limonada_qnt"></td>
+                                </tr>
+                            <i class="ReturnButton">
+                                <i class="fa fa-reply" href="#" onclick="return show('MenuBebida','SemAlcoolList');"></i>
+                            </i>
+                            <i class="HomeButton" href="#" onclick="return show('iRave','SemAlcoolList');">
+                                <i class="fa fa-home" href="#" onclick="return show('iRave','SemAlcoolList');"></i>
+                            </i>
+                        </table>
+                        </div>
+
+                        <div id="IceTeaMerch" style="display:none">
+           
+                                <div class="value-button-icetea" id="decrease-icetea" onclick="decreaseValueIceTea()" value="Decrease Value">-</div>
+                                <input type="number_icetea" id="number_icetea" value="0" />
+                                <div class="value-button-icetea" id="increase-icetea" onclick="increaseValueIceTea()" value="Increase Value">+</div>
+                                <input type="icetea_price" id="icetea_price" value="3.0" />
+                                <a class="Euro"></a>
+                                <a class="imgicetea"></a>
+                            <i class="ReturnButton">
+                                    <i class="fa fa-reply" href="#" onclick=" presentQuantity(); return show('SemAlcoolList','IceTeaMerch');"></i>
+                                </i>
+                                <i class="HomeButton" href="#" onclick=" presentQuantity(); return show('iRave','IceTeaMerch');">
+                                    <i class="fa fa-home" href="#" onclick=" presentQuantity(); return show('iRave','IceTeaMerch');"></i>
+                                </i>
+                            </div>
+
+
+                        
+                <div id="CocaColaMerch" style="display:none">
+           
+                        <div class="value-button-cocacola" id="decrease-cocacola" onclick="decreaseValueCocaCola()" value="Decrease Value">-</div>
+                        <input type="number_cocacola" id="number_cocacola" value="0" />
+                        <div class="value-button-cocacola" id="increase-cocacola" onclick="increaseValueCocaCola()" value="Increase Value">+</div>
+                        <input type="cocacola_price" id="cocacola_price" value="3.0" />
+                        <a class="Euro"></a>
+                        <a class="imgcocacola"></a>
+                    <i class="ReturnButton">
+                            <i class="fa fa-reply" href="#" onclick=" presentQuantity(); return show('SemAlcoolList','CocaColaMerch');"></i>
+                        </i>
+                        <i class="HomeButton" href="#" onclick=" presentQuantity(); return show('iRave','CocaColaMerch');">
+                            <i class="fa fa-home" href="#" onclick=" presentQuantity(); return show('iRave','CocaColaMerch');"></i>
+                        </i>
+                    </div>
+
+                
+                    <div id="CompalMerch" style="display:none">
+           
+                            <div class="value-button-compal" id="decrease-compal" onclick="decreaseValueCompal()" value="Decrease Value">-</div>
+                            <input type="number_compal" id="number_compal" value="0" />
+                            <div class="value-button-compal" id="increase-compal" onclick="increaseValueCompal()" value="Increase Value">+</div>
+                            <input type="compal_price" id="compal_price" value="3.0" />
+                            <a class="Euro"></a>
+                            <a class="imgcompal"></a>
+                        <i class="ReturnButton">
+                                <i class="fa fa-reply" href="#" onclick=" presentQuantity(); return show('SemAlcoolList','CompalMerch');"></i>
+                            </i>
+                            <i class="HomeButton" href="#" onclick=" presentQuantity(); return show('iRave','CompalMerch');">
+                                <i class="fa fa-home" href="#" onclick=" presentQuantity(); return show('iRave','CompalMerch');"></i>
+                            </i>
+                        </div>
+
+                
+                        <div id="LimonadaMerch" style="display:none">
+           
+                                <div class="value-button-limonada" id="decrease-limonada" onclick="decreaseValueLimonada()" value="Decrease Value">-</div>
+                                <input type="number_limonada" id="number_limonada" value="0" />
+                                <div class="value-button-limonada" id="increase-limonada" onclick="increaseValueLimonada()" value="Increase Value">+</div>
+                                <input type="limonada_price" id="limonada_price" value="3.0" />
+                                <a class="Euro"></a>
+                                <a class="imglimonada"></a>
+                            <i class="ReturnButton">
+                                    <i class="fa fa-reply" href="#" onclick=" presentQuantity(); return show('SemAlcoolList','LimonadaMerch');"></i>
+                                </i>
+                                <i class="HomeButton" href="#" onclick=" presentQuantity(); return show('iRave','LimonadaMerch');">
+                                    <i class="fa fa-home" href="#" onclick=" presentQuantity(); return show('iRave','LimonadaMerch');"></i>
+                                </i>
+                            </div>
+                    
+                              
+                              <div id="Checkout" style="display:none">
+                                      <table class="PayWhatYouOwe"  cellpadding="1,5">
+                                              <tr>
+                                                  <th >Produto</th>
+                                                  <th>Tempo</th>
+                                              </tr>
+                                              <tr id ="shirtDIV1" style="display:none">
+                                                  <td id="shirt_name_checkout" onclick="show('EcranRecolha1','Checkout')" style="display:table-cell" ></td>
+                                                  <td id="shirt_timer" style="display:table-cell"></td>                 </tr>
+                                                </tr>
+                                                <tr id ="flagDIV1" style="display:none">
+                                                    <td id="flag_name_checkout" onclick="show('EcranRecolha1','Checkout')" style="display:table-cell"></td>
+                                                    <td id="flag_timer" style="display:table-cell"></td>                 </tr>
+                                          
+                                                </tr>
+                                                <tr id ="pussyDIV1" style="display:none">
+                                                    <td id="pussy_name_checkout" onclick="show('EcranRecolha1','Checkout')" style="display:table-cell" ></td>
+                                                    <td id="pussy_timer" style="display:table-cell"></td>                 </tr>
+                                          
+                                                </tr>
+                                                <tr id ="fartDIV1" style="display:none">
+                                                    <td id="fart_name_checkout" onclick="show('EcranRecolha1','Checkout')" style="display:table-cell"></td>
+                                                    <td id="fart_timer" style="display:table-cell"></td>                 </tr>
+                                          
+                                                </tr>
+                                                <tr id ="burguerDIV1" style="display:none">
+                                                    <td id="burguer_name_checkout" onclick="show('EcranRecolha2','Checkout')" style="display:table-cell"></td>
+                                                    <td id="burguer_timer" style="display:table-cell"></td>                 </tr>
+                                          
+                                                </tr>
+                                                <tr id ="hotdogDIV1" style="display:none">
+                                                    <td id="hotdog_name_checkout" onclick="show('EcranRecolha2','Checkout')" style="display:table-cell"></td>
+                                                    <td id="hotdog_timer" style="display:table-cell"></td>                 </tr>
+                                          
+                                                </tr>
+                                                <tr id ="pizzaDIV1" style="display:none">
+                                                    <td id="pizza_name_checkout" onclick="show('EcranRecolha2','Checkout')" style="display:table-cell"></td>
+                                                    <td id="pizza_timer" style="display:table-cell"></td>                 </tr>
+                                          
+                                                </tr>
+                                                <tr id ="kebabDIV1" style="display:none">
+                                                    <td id="kebab_name_checkout"  onclick="show('EcranRecolha2','Checkout')" style="display:table-cell"></td>
+                                                    <td id="kebab_timer" style="display:table-cell"></td>                 </tr>
+                                          
+                                                </tr>
+                                                <tr id ="cervejaDIV1" style="display:none">
+                                                    <td id="cerveja_name_checkout" onclick="show('EcranRecolha3','Checkout')" style="display:table-cell" ></td>
+                                                    <td id="cerveja_timer" style="display:table-cell"></td>                 </tr>
+                                          
+                                                </tr>
+                                                <tr id ="sangriaDIV1" style="display:none">
+                                                    <td id="sangria_name_checkout"  onclick="show('EcranRecolha3','Checkout')" style="display:table-cell" ></td>
+                                                    <td id="sangria_timer" style="display:table-cell"></td>                 </tr>
+
+
+                                                    <tr id ="sidraDIV1" style="display:none">
+                                                            <td id="sidra_name_checkout" onclick="show('EcranRecolha3','Checkout')" style="display:table-cell" ></td>
+                                                            <td id="sidra_timer" style="display:table-cell"></td>                 </tr>
+                                                  
+                                                        </tr>
+
+
+                                                        <tr id ="vinhoDIV1" style="display:none">
+                                                            <td id="vinho_name_checkout" onclick="show('EcranRecolha3','Checkout')" style="display:table-cell" ></td>
+                                                            <td id="vinho_timer"style="display:table-cell"></td>                 </tr>
+
+
+
+                                                            <tr id ="iceteaDIV1" style="display:none">
+                                                                    <td id="icetea_name_checkout" onclick="show('EcranRecolha4','Checkout')" style="display:table-cell"></td>
+                                                                    <td id="icetea_timer" style="display:table-cell"></td>                 </tr>
+                                                          
+                                                                </tr>
+
+
+                                                                <tr id ="cocacolaDIV1" style="display:none">
+                                                                    <td id="cocacola_name_checkout" onclick="show('EcranRecolha4','Checkout')" style="display:table-cell"></td>
+                                                                    <td id="cocacola_timer"style="display:table-cell"></td>                 </tr>
+
+                                                                    <tr id ="compalDIV1" style="display:none">
+                                                                            <td id="compal_name_checkout" onclick="show('EcranRecolha4','Checkout')" style="display:table-cell" ></td>
+                                                                            <td id="compal_timer"style="display:table-cell"></td>                 </tr>
+                                                                  
+                                                                        </tr>
+
+
+
+                                                                        <tr id ="limonadaDIV1" style="display:none">
+                                                                            <td id="limonada_name_checkout" onclick="show('EcranRecolha4','Checkout')" style="display:table-cell"></td>
+                                                                            <td id="limonada_timer"style="display:table-cell"></td>                 </tr>
+                                          
+                                                    
+                                          
+                                                          
+                                      </table>  
+                                      <i class="ReturnButton">
+                                          <i class="fa fa-reply" href="#" onclick=" presentQuantity(); return show('MenuPagamento','Checkout');"></i>
+                                      </i>
+                                      <i class="HomeButton" href="#" onclick=" presentQuantity(); return show('iRave','Checkout');">
+                                          <i class="fa fa-home" href="#" onclick=" presentQuantity(); return show('iRave','Checkout');"></i>
+                                      </i>   
+                                  </div>
+                
+                                  <div id="EcranRecolha1" style="display:none">
+                                        <div>
+                                            <span>Dirija-se à ZONA MEO!</span>
+                                            <i class="ReturnButton">
+                                                    <i class="fa fa-reply" href="#" onclick=" presentQuantity(); return show('Checkout','EcranRecolha1');"></i>
+                                                </i>
+                                                <i class="HomeButton" href="#" onclick=" presentQuantity(); return show('iRave','EcranRecolha1');">
+                                                    <i class="fa fa-home" href="#" onclick=" presentQuantity(); return show('iRave','EcranRecolha1');"></i>
+                                                </i>   
+                                        </div>
+                                    </div>
+
+                                    <div id="YouSureFinalScreen" style="display:none">
+                                            <div>
+                                                <span>Tem a certeza que quer continuar?</span>
+                                            <div class="YesButton"  href="#" onclick=" startTimeCounters(); return show('Checkout','YouSureFinalScreen');"></div> ´
+                                            <div class="NoButton"  href="#" onclick=" startTimeCounters(); return show('Car','YouSureFinalScreen');"></div> 
+                                            <i class="ReturnButton">
+                                                <i class="fa fa-reply" href="#" onclick=" show('Car','YouSureFinalScreen');"></i>
+                                            </i>
+                                            <i class="HomeButton" href="#" onclick="show('iRave','YouSureFinalScreen');">
+                                                <i class="fa fa-home" href="#" onclick=" show('iRave','YouSureFinalScreen');"></i>
+                                            </i>
+                                        </div>
+                                  </div>
+
+                                    <div id="EcranRecolha2" style="display:none">
+                                            <div>
+                                                <span>Dirija-se à Zona da Restauração 1!</span>
+                                                <i class="ReturnButton">
+                                                        <i class="fa fa-reply" href="#" onclick=" presentQuantity(); return show('Checkout','EcranRecolha2');"></i>
+                                                    </i>
+                                                    <i class="HomeButton" href="#" onclick=" presentQuantity(); return show('iRave','EcranRecolha2');">
+                                                        <i class="fa fa-home" href="#" onclick=" presentQuantity(); return show('iRave','EcranRecolha2');"></i>
+                                                    </i>   
+                                            </div>
+                                        </div>
+                                        <div id="EcranRecolha3" style="display:none">
+                                                <div>
+                                                    <span>Dirija-se à Zona de Restauração 1!</span>
+                                                    <i class="ReturnButton">
+                                                            <i class="fa fa-reply" href="#" onclick=" presentQuantity(); return show('Checkout','EcranRecolha3');"></i>
+                                                        </i>
+                                                        <i class="HomeButton" href="#" onclick=" presentQuantity(); return show('iRave','EcranRecolha3');">
+                                                            <i class="fa fa-home" href="#" onclick=" presentQuantity(); return show('iRave','EcranRecolha3');"></i>
+                                                        </i>   
+                                                </div>
+                                            </div>
+                                            <div id="EcranRecolha4" style="display:none">
+                                                    <div>
+                                                        <span>Dirija-se à Zona de Restauração 2!</span>
+                                                        <i class="ReturnButton">
+                                                                <i class="fa fa-reply" href="#" onclick=" presentQuantity(); return show('Checkout','EcranRecolha4');"></i>
+                                                            </i>
+                                                            <i class="HomeButton" href="#" onclick=" presentQuantity(); return show('iRave','EcranRecolha4');">
+                                                                <i class="fa fa-home" href="#" onclick=" presentQuantity(); return show('iRave','EcranRecolha4');"></i>
+                                                            </i>   
+                                                    </div>
+                                                </div>
+                                              
+                                
     <div id="TabelaConcertos2" style="display:none">
         <table class="infoC" cellpadding="1,5">
             <tr>
@@ -959,10 +1623,10 @@
     <div id="MenuBebida" style="display:none">
         <div class="slideshow-container">
             <div class="mySlidesBebida">
-                <div class="ComAlcool" href="#" onclick="">Com Álcool</div>
+                <div class="ComAlcool" href="#" onclick="presentQuantity(); return show('AlcoolList','MenuBebida');">Com Álcool</div>
             </div>
             <div class="mySlidesBebida">
-                <div class="SemAlcool" href="#" onclick="">Sem Álcool</div>
+                <div class="SemAlcool" href="#" onclick="presentQuantity(); return show('SemAlcoolList','MenuBebida');">Sem Álcool</div>
             </div>
             <a class="prev " onclick="plusSlidesBebida(-1);">&#8249;</a>
             <a class="next" onclick="plusSlidesBebida(1);">&#8250;</a>

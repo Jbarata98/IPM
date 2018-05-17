@@ -303,6 +303,10 @@ box-shadow: 0px 0px 11px white;
 	top:115px;
 }
 
+.dotsPagamento{
+	left:38px;
+}
+
 .dotInformacao,.dotPagamento{
 	height: 8px;
 	width: 8px;
@@ -365,7 +369,9 @@ box-shadow: 0px 0px 11px white;
 }
 
 
- #MenuInformacao,#MenuNavegacao,#MenuInteresse,#MenuPagamento,#MenuBebida{
+ #MenuInformacao,#MenuNavegacao,#MenuInteresse,#MenuPagamento,#MenuBebida,#ShirtMerch,#FlagMerch,#FartMerch,#PussyMerch,#BurguerMerch,#PizzaMerch,#KebabMerch
+ ,#HotdogMerch,#CervejaMerch,#CidraMerch,#SangriaMerch,#VinhoMerch,
+ #CocaColaMerch,#LimonadaMerch,#IceTeaMerch,#CompalMerch{
 	color:white;
 	font-size: 22px;
 	top:30px;
@@ -378,6 +384,11 @@ box-shadow: 0px 0px 11px white;
 	background-position:center center;
 	background-color:#fff;
 
+ }
+
+ #ShirtMerch,#FlagMerch,#FartMerch,#PussyMerch,#BurguerMerch,#PizzaMerch,#HotdogMerch,#KebabMerch,#CervejaMerch,#CidraMerch,#VinhoMerch,#SangriaMerch,
+ #CocaColaMerch,#LimonadaMerch,#IceTeaMerch,#CompalMerch{
+	 background-image:url("shopping.jpg");
  }
 
  .Concertos,.Amigos,.PontosInteresse,.PalcosInteresse,.LazerInteresse,.WCinteresse,.RestauracaoInteresse,.SemAlcool,.ComAlcool{
@@ -495,7 +506,7 @@ box-shadow: 0px 0px 11px white;
 	background-color:#fff;
 
  }
- .Palco1,.Comida,.Bebidas,.Merchandise{
+ .Palco1,.Comida,.Bebidas,.Merchandise,.Carrinho{
 	cursor:pointer;
     color:black;
 	font-size: 25px;
@@ -530,6 +541,10 @@ box-shadow: 0px 0px 11px white;
 	font-size:23px;
  }
  
+ .Carrinho{
+	 background-image: url("shop.png");
+	 background-size: 70px;
+ }
 	.Palco2{
 		cursor:pointer;
 		color:black;
@@ -732,7 +747,51 @@ box-shadow: 0px 0px 11px white;
 				  height:45px;
 				}
 				
-			 
+				
+			table.PayWhatYouOwe{
+				border-collapse:collapse;
+				width:130px;
+				height:144px;
+				
+			}
+			table.PayWhatYouOwe th, table.PayWhatYouOwe td {
+				text-align:center;
+				border:1px solid black;
+				font-family: Sans-Serif;
+				font-weight: bold;
+				background-color: white;
+				color:black;
+				text-shadow: 0 0 2px white;
+
+				
+				}
+
+				table.PayWhatYouOwe th {
+					box-shadow:0px -2px;
+					background-color:black;
+					color:white;
+					position:sticky;
+					top:0;
+					width:130px;
+					height:44px;
+					box-shadow:0px -2px black;	
+					
+					}
+
+			 table.PayWhatYouOwe td:first-child
+				{
+					
+				  background-color:white;
+				  height:45px;
+				text-decoration: underline solid black ;
+				} 
+			
+				table.PayWhatYouOwe td:first-child:hover
+				{
+					
+				  background-color:greenyellow;
+				  height:45px;
+				} 	
 				
 			  
 			  div.TabelaConcertos1 {
@@ -1147,3 +1206,548 @@ box-shadow: 0px 0px 11px white;
 	height: inherit;
 
 }
+
+
+#YouSureFinalScreen {
+	height: 144px;
+	text-align: center;
+	background-color:white;
+}
+
+#YouSureFinalScreen div {
+	height: 144px;
+	
+}
+#YouSureFinalScreen span {
+	height: 144px;
+	font-size: 1.4em;
+	font-family: sans-serif;
+	color: black;
+
+}
+#EcranRecolha1,#EcranRecolha2,#EcranRecolha3,#EcranRecolha4,#EcranRecolha5,#EcranRecolha6
+,#EcranRecolha7,#EcranRecolha8,#EcranRecolha9,#EcranRecolha10,#EcranRecolha11,#EcranRecolha12
+,#EcranRecolha13,#EcranRecolha14,#EcranRecolha15,#EcranRecolha16 {
+	height: 144px;
+	text-align: center;
+	background-color:white;
+}
+
+#EcranRecolha1 div,#EcranRecolha2 div,#EcranRecolha3 div,#EcranRecolha4 div,#EcranRecolha5 div,#EcranRecolha6 div
+#EcranRecolha7 div,#EcranRecolha8 div,#EcranRecolha9 div,#EcranRecolha10 div,#EcranRecolha11 div
+#EcranRecolha12 div,#EcranRecolha13 div,#EcranRecolha14 div,#EcranRecolha15 div,#EcranRecolha16 div {
+	height: 144px;
+	
+}
+#EcranRecolha1 span,#EcranRecolha2 span,#EcranRecolha3 span,#EcranRecolha4 span,EcranRecolha5 span,
+EcranRecolha6 span,EcranRecolha7 span,EcranRecolha8 span,EcranRecolha9 span,EcranRecolha10 span,
+EcranRecolha11 span,EcranRecolha12 span,EcranRecolha13 span,EcranRecolha14 span,EcranRecolha15 span,EcranRecolha16 span {
+	color: black;
+	font-size: 1.5em;
+	font-family: sans-serif;
+	height: 144px;
+}
+
+div.MerchandiseList {
+	background-color: transparent;
+	overflow:auto;
+	height: 144px;
+	width: 161px;
+}
+
+div.car {
+	background-color: transparent;
+	overflow:auto;
+	height: 144px;
+	width: 161px;
+}
+
+div.Checkout {
+	background-color: transparent;
+	overflow:auto;
+	height: 144px;
+	width: 161px;
+}
+  
+  
+
+
+
+ 
+  
+  .value-button-shirt,.value-button-burguer,.value-button-hotdog,.value-button-pizza,.value-button-kebab,.value-button-cerveja,.value-button-sidra,.value-button-sangria,.value-button-vinho,
+  .value-button-icetea,.value-button-cocacola,.value-button-compal,.value-button-limonada{
+	position:relative;
+	display: inline-block;
+	margin: 0px;
+	width: 40px;
+	height: 20px;
+	text-align: center;
+	vertical-align: middle;
+	padding: 11px 0;
+	background:black;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	top:63%;
+  }
+  
+  .value-button-shirt:hover,.value-button-burguer:hover,.value-button-pizza:hover,.value-button-kebab:hover,.value-button-pizza:hover,
+  .value-button-cerveja:hover,.value-button-sidra:hover,.value-button-sangria:hover,.value-button-vinho:hover,.value-button-icetea:hover,
+  .value-button-cocacola:hover,.value-button-compal:hover,.value-button-limonada:hover
+   {
+	cursor: pointer;
+  }
+  .value-button-shirt:active,.value-button-burguer:active,.value-button-hotdog:active,.value-button-kebab:active,
+  .value-button-pizza:active,.value-button-cerveja:active,.value-button-sidra:active,.value-button-sangria:active,.value-button-vinho:active,
+  .value-button-icetea:hover,.value-button-compal:hover,.value-button-limonada:hover,.value-button-cocacola:hover {
+	cursor: pointer;
+	background-color:grey;
+  }
+  
+  #decrease-shirt,#decrease-burguer,#decrease-pizza,#decrease-kebab,#decrease-hotdog,#decrease-cerveja,#decrease-sangria,
+  #decrease-sidra,#decrease-vinho,#decrease-icetea,#decrease-compal,#decrease-limonada,#decrease-cocacola {
+	right:-5%;
+	border-radius: 8px 0 0 8px;
+  }
+  
+   #increase-shirt,#increase-burger,#increase-pizza,#increase-kebab,#increase-hotdog,#increase-cerveja,#increase-sidra,
+   #increase-sangria,#increase-vinho, #increase-cocacola,#increase-icetea,#increase-limonada,#increase-compal {
+	right:-5%;
+	border-radius: 0 8px 8px 0;
+  }
+  
+   
+  
+  input#number_shirt,#shirt_price,#flag_price,#pussy_price,#fart_price,#kebab_price,#pizza_price,#burguer_price,#hotdog_price,#cerveja_price,#sangria_price,#sidra_price,#vinho_price,#cocacola_price,#icetea_price,#limonada_price,#compal_price,input#shopcar_price,input#number_burguer,input#number_hotdog,input#number_pizza,input#number_kebab,input#burguer_price,
+  input#kebab_price,input#pizza_price,input#hotdog_price,input#number_kebab,input#cerveja_price,input#sangria_price,input#sidra_price,input#vinho_price,
+  input#number_cerveja,input#number_sangria,input#number_sidra,input#number_vinho,input#cocacola_price,input#icetea_price,input#compal_price,input#limonada_price,
+  input#number_cocacola,input#number_icetea,input#number_limonada,input#number_compal {
+	position:relative;
+	text-align: center;
+	font-weight:bold;
+	width: 35px;
+	height: 30px;
+	top:63%;
+	right:-6%;
+  }
+  
+  input#shopcar_price{
+	  top:62%;
+  }
+ 
+  input[type=number_shirt]::-webkit-inner-spin-button,
+  input[type=number_shirt]::-webkit-outer-spin-button ,input[type=number_burguer]::-webkit-inner-spin-button,
+  input[type=number_burguer]::-webkit-outer-spin-button .input[type=number_hotdog]::-webkit-inner-spin-button,
+  input[type=number_hotdog]::-webkit-outer-spin-button ,input[type=number_pizza]::-webkit-inner-spin-button,
+  input[type=number_pizza]::-webkit-outer-spin-button ,input[type=number_kebab]::-webkit-inner-spin-button,
+  input[type=number_kebab]::-webkit-outer-spin-button ,input[type=number_cerveja]::-webkit-inner-spin-button,
+  input[type=number_cerveja]::-webkit-outer-spin-button .input[type=number_sangria]::-webkit-inner-spin-button,
+  input[type=number_sangria]::-webkit-outer-spin-button ,input[type=number_sidra]::-webkit-inner-spin-button,
+  input[type=number_sidra]::-webkit-outer-spin-button ,input[type=number_vinho]::-webkit-inner-spin-button,
+  input[type=number_vinho]::-webkit-outer-spin-button, input[type=number_icetea]::-webkit-inner-spin-button,
+  input[type=number_icetea]::-webkit-outer-spin-button ,input[type=number_cocacola]::-webkit-inner-spin-button,
+  input[type=number_cocacola]::-webkit-outer-spin-button .input[type=number_compal]::-webkit-inner-spin-button,
+  input[type=number_compal]::-webkit-outer-spin-button ,input[type=number_limonada]::-webkit-inner-spin-button,
+  input[type=number_limonada]::-webkit-outer-spin-button {
+	  -webkit-appearance: none;
+	  margin: 0;
+  }
+
+  input#shirt_price,input#burguer_price,input#kebab_price,input#pizza_price,input#hotdog_price,input#cerveja_price,
+  input#sangria_price,input#sidra_price,input#vinho_price,
+  input#icetea_price,input#cocacola_price,input#limonada_price,input#compal_price{
+	top:-15%;
+	right:-47%;
+  }
+
+  
+  .value-button-flag {
+	position:relative;
+	display: inline-block;
+	
+	margin: 0px;
+	width: 40px;
+	height: 20px;
+	text-align: center;
+	vertical-align: middle;
+	padding: 11px 0;
+	background:black;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	top:63%;
+  }
+  
+  .value-button-flag:hover {
+	cursor: pointer;
+  }
+  
+  .value-button-shirt:active {
+	cursor: pointer;
+	background-color:grey;
+  }
+  
+   #decrease-flag {
+	right:-5%;
+	border-radius: 8px 0 0 8px;
+  }
+  
+   #increase-flag {
+	right:-5%;
+	border-radius: 0 8px 8px 0;
+  }
+  
+  
+  input#number_flag,input#flag_price {
+	position:relative;
+	text-align: center;
+	
+	width: 35px;
+	height: 30px;
+	top:63%;
+	right:-6%;
+  }
+  input#flag_price{
+	top:-15%;
+	right:-47%;
+  }
+
+  
+  input[type=number_flag]::-webkit-inner-spin-button,
+  input[type=number_flag]::-webkit-outer-spin-button {
+	  -webkit-appearance: none;
+	  margin: 0;
+  }
+
+  .value-button-pussy {
+	position:relative;
+	display: inline-block;
+	
+	margin: 0px;
+	width: 40px;
+	height: 20px;
+	text-align: center;
+	vertical-align: middle;
+	padding: 11px 0;
+	background:black;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	top:63%;
+  }
+  
+  .value-button-pussy:hover {
+	cursor: pointer;
+  }
+  
+   #decrease-pussy {
+	right:-5%;
+	border-radius: 8px 0 0 8px;
+  }
+  
+   #increase-pussy {
+	right:-5%;
+	border-radius: 0 8px 8px 0;
+  }
+  
+  
+  input#number_pussy,input#pussy_price {
+	position:relative;
+	text-align: center;
+	
+	width: 35px;
+	height: 30px;
+	top:63%;
+	right:-6%;
+  }
+  input#pussy_price{
+	top:-15%;
+	right:-47%;
+  }
+  
+  input[type=number_pussy]::-webkit-inner-spin-button,
+  input[type=number_pussy]::-webkit-outer-spin-button {
+	  -webkit-appearance: none;
+	  margin: 0;
+  }
+
+  .value-button-fart {
+	position:relative;
+	display: inline-block;
+	
+	margin: 0px;
+	width: 40px;
+	height: 20px;
+	text-align: center;
+	vertical-align: middle;
+	padding: 11px 0;
+	background:black;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	top:63%;
+  }
+  
+  .value-button-fart:hover {
+	cursor: pointer;
+  }
+  
+   #decrease-fart {
+	right:-5%;
+	border-radius: 8px 0 0 8px;
+  }
+  
+  #increase-fart {
+	right:-5%;
+	border-radius: 0 8px 8px 0;
+  }
+  
+  
+  input#number_fart,input#fart_price {
+	position:relative;
+	text-align: center;
+	
+	width: 35px;
+	height: 30px;
+	top:63%;
+	right:-6%;
+  }
+
+  input#fart_price{
+	top:-15%;
+	right:-47%;
+  }
+  
+  input[type=number_fart]::-webkit-inner-spin-button,
+  input[type=number_fart]::-webkit-outer-spin-button {
+	  -webkit-appearance: none;
+	  margin: 0;
+  }
+
+  input#number_shopcar {
+	text-align: center;
+	border: none;
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	margin: 0px;
+	width: 40px;
+	height: 40px;
+  }
+  
+  input[type=number_shopcar]::-webkit-inner-spin-button,
+  input[type=number_shopcar]::-webkit-outer-spin-button {
+	  -webkit-appearance: none;
+	  margin: 0;
+  }
+
+  .Euro{
+	  position:relative;
+	  background-image: url("euro.png");
+	  background-repeat: no-repeat;
+	  background-position:center center;
+	  height:20px;
+	  width:10px;
+	  background-size:20px;
+	  top:-5%;
+	  right:-37%;
+	  background-color:white;
+	  
+  }
+
+  .imgshirt,.imgflag,.imgPin,.imgPowerBank,.imgburguer,.imgpizza,.imghotdog,
+  .imgkebab,.imgcerveja,.imgvinho,.imgsidra,.imgsangria,.imgicetea,.imgcocacola,.imgcompal,.imglimonada{
+	  position:relative;
+	  background-image: url("shirt.jpg");
+	  background-repeat: no-repeat;
+	  background-position:center center;
+	  height:28px;
+	  width:22px;
+	  background-size:50px;
+	  top:-45%;
+	  right:-5%;
+  }
+
+  .imgflag{
+	  background-image:url("nirvana.png");
+	  height:29px;
+  }
+
+  .imgPin{
+
+	background-image:url("pin.jpg");
+	height:29px;
+  }
+
+  .imgPowerBank{
+	background-image:url("lanterna.png");
+	background-size:70px;
+	height:30px;
+	width:25px;
+  }
+ 
+  table.LetsSeeThatCar{
+	border-collapse:collapse;
+	width:130px;
+	height:144px;
+	
+}
+
+
+.imgburguer{
+	background-image:url("burguer.jpg");
+	height:29px;
+}
+.imgpizza{
+	background-image:url("pizza.jpg");
+	height:29px;
+}
+.imghotdog{
+	background-image:url("hotdog.jpg");
+	height:29px;
+}
+.imgkebab{
+	background-image:url("kebab.jpg");
+	height:29px;
+}
+.imgcerveja{
+	background-image:url("cerveja.jpg");
+	height:29px;
+}
+
+.imgsangria{
+	background-image:url("sangria.jpg");
+	height:29px;
+}
+.imgsidra{
+	background-image:url("sidra.jpg");
+	height:29px;
+}
+.imgvinho{
+	background-image:url("vinho.jpg");
+	height:29px;
+}
+
+.imglimonada{
+	background-image:url("limonada.jpg");
+	height:29px;
+}
+.imgcocacola{
+	background-image:url("cocacola.jpg");
+	height:29px;
+}
+.imgicetea{
+	background-image:url("icetea.jpg");
+	height:29px;
+}
+.imgcompal{
+	background-image:url("compal.jpg");
+	height:29px;
+}
+table.LetsSeeThatCar th, table.LetsSeeThatCar td {
+	text-align:center;
+	border:1px solid black;
+	font-family: Sans-Serif;
+	font-weight: bold;
+	background-color: white;
+	color:black;
+	text-shadow: 0 0 2px white;
+
+	
+	}
+
+	table.LetsSeeThatCar th {
+		box-shadow:0px -2px;
+		background-color:black;
+		color:white;
+		position:sticky;
+		top:0;
+		width:130px;
+		height:44px;
+		box-shadow:0px -2px black;	
+		
+		}
+
+ table.LetsSeeThatCar td:first-child
+	{
+		
+	  background-color:white;
+	  height:45px;
+	text-decoration: underline solid black ;
+	} 
+
+	table.LetsSeeThatCar td:first-child:hover
+	{
+		
+	  background-color:greenyellow;
+	  height:45px;
+	} 	
+
+
+	
+
+	#shirtDIV,#flagDIV,#pussyDIV,#fartDiv{
+		width:100%;
+	}
+
+	.PreçoTotal{
+	position:relative;
+	text-align: center;
+	width: 40px;
+	height: 50px;
+	top:63%;
+	color:white;
+	font-weight:bold;
+	background-color:green;
+    
+	font-size:14px;
+		
+		 }
+	
+ .YesButton,.NoButton{
+	position:absolute;
+	background-image:url("yes.png");
+	background-size:50px;
+	text-align: center;
+	background-repeat: no-repeat;
+	width: 60px;
+	height: 40px;
+	top:12%;
+	color:white;
+	font-weight:bold;
+	right:38%;
+	font-size:14px;	
+	cursor:pointer;
+	
+	 }
+	
+.NoButton{
+	background-image:url("no.jpg");
+	top:12%;
+	right:51%;
+	background-size:60px;
+}
+	#Car{
+		background-image:url("shopping.jpg");
+		background-size:144px 144px;
+	}
+	.unit{
+		position: relative;
+		width: auto;
+		height: 20px;
+		font-weight: bold;
+		color: black;
+		right: 6%;
+	}	
